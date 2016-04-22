@@ -2,13 +2,48 @@
 <html>
 <head>
   <title>Genetic Golf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="app/assets/images/Logo Favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Muli|Josefin+Sans|Cinzel" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 
-<%= yield %>
+<div id="wrap">
+<!-- no image for now
+<div class="container">
+  <img src="app/assets/images/Logo_Black_Main.png" class="center-block col-xs-3 col-md-2">
+</div>
+-->
+<div class="container">
+  <h1 class="text-center">Welcome to Genetic Golf</h1>
+  <p class="text-center">Golf is a personal game. Your golf game has to fit you.<br>
+    We don’t guess, we test to find what works best for you.</p>
+</div>
 
+
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><%= link_to "Home", welcome_index_path %></li>
+    <li><%= link_to "Your Personality", welcome_personality_path %></li>
+    <li><%= link_to "Your Game", welcome_game_path %></li>
+    <li><%= link_to "Your Body", welcome_body_path %></li>
+    <li><%= link_to "Resources", welcome_resources_path %></li>
+    <li><%= link_to "About Us", welcome_about_path %></li>
+  </ul>
+  <%= yield %>
+</div>
+
+</div> <!-- wrap div end -->
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted credit footer-text text-center">Find your personalized Genetic Golf swing today!</p>
+  </div>
+</div>
 </body>
 </html>
