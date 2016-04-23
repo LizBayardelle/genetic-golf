@@ -18,6 +18,17 @@
   <img src="app/assets/images/Logo_Black_Main.png" class="center-block col-xs-3 col-md-2">
 </div>
 -->
+<div class="container very-top">
+  <div class="pull-right user-info">
+  <% if current_user %>
+    <%= current_user.name %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_session_path %> or
+    <%= link_to "Sign Up", new_user_path %>
+  <% end %>
+  </div>
+</div>
+
 <div class="container">
   <h1 class="text-center">Welcome to Genetic Golf</h1>
   <p class="text-center">Golf is a personal game. Your golf game has to fit you.<br>
@@ -29,9 +40,9 @@
 <div class="container">
   <ul class="nav nav-tabs">
     <li><%= link_to "Home", welcome_index_path %></li>
-    <li><%= link_to "Your Personality", welcome_personality_path %></li>
-    <li><%= link_to "Your Game", welcome_game_path %></li>
-    <li><%= link_to "Your Body", welcome_body_path %></li>
+    <li><%= link_to "Know Your Personality", welcome_personality_path %></li>
+    <li><%= link_to "Improve Your Game", welcome_game_path %></li>
+    <li><%= link_to "Understand Your Body", welcome_body_path %></li>
     <li><%= link_to "Resources", welcome_resources_path %></li>
     <li><%= link_to "About Us", welcome_about_path %></li>
   </ul>
