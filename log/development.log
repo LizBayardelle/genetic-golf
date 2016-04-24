@@ -3337,3 +3337,3208 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-22 17:39:00 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToUser (20160424010200)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "q_bs_code" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "q_fl_code" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD "q_bb_code" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "q_md_code" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD "gender" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "birthday" date
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD "dom_hand" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "sport" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD "g_years" int[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "g_rounds" int
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD "g_practice" int[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "handicap" int
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160424010200"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddGScoreToUser (20160424173306)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "users" ADD "g_score" int[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160424173306"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 10:44:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0x007f8f9bc05ad0>:0x007f8f9bbfda60>):
+    22:   <div id="your_information">
+    23:       <div class="text-center">
+    24:         <h2>Your Information</h2>
+    25:         <%= link_to "Edit Your Information", edit_user_path(@user), class: 'btn btn-success' %>
+    26:       </div>
+    27:       <div class="col-xs-6"><div id="personal_information" class="well">
+    28:         <h3 class="text-center">Personal Stats</h3>
+  app/views/users/show.html.erb:25:in `_app_views_users_show_html_erb___1184802314569843575_70127376786740'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.7ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 10:44:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0x007f8f9bc05ad0>:0x007f8f9d4450c8>):
+    22:   <div id="your_information">
+    23:       <div class="text-center">
+    24:         <h2>Your Information</h2>
+    25:         <%= link_to "Edit Your Information", edit_user_path(@user), class: 'btn btn-success' %>
+    26:       </div>
+    27:       <div class="col-xs-6"><div id="personal_information" class="well">
+    28:         <h3 class="text-center">Personal Stats</h3>
+  app/views/users/show.html.erb:25:in `_app_views_users_show_html_erb___1184802314569843575_70127376786740'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 10:47:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 603ms (Views: 587.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 10:47:56 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:49:23 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.7ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:49:23 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.9ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:50:08 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.2ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:50:24 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.1ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:50:36 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:51:17 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/edit.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:51:44 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:46: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:48: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/edit.html.erb:46: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/edit.html.erb:48: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:51:50 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:44: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:46: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/edit.html.erb:44: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/edit.html.erb:46: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:53:01 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (29.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `radio_button_tag' for #<ActionView::Helpers::FormBuilder:0x007f8f9d661320>):
+    17:           </div>
+    18:           <div class="form-group">
+    19:             <%= u.label :gender %>
+    20:             <%= u.radio_button_tag :gender, 'Male'%>
+    21:             <%= u.radio_button_tag :gender, 'Female'%>
+    22:           </div>
+    23:           <div class="form-group">
+  app/views/users/edit.html.erb:20:in `block in _app_views_users_edit_html_erb___3443030301807227728_70127445885780'
+  app/views/users/edit.html.erb:9:in `_app_views_users_edit_html_erb___3443030301807227728_70127445885780'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:54:49 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 10:54:49 -0700
+
+
+Started GET "/users/1/app/assets/images/Logo%20Favicon.ico" for ::1 at 2016-04-24 10:54:49 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/1/app/assets/images/Logo%20Favicon.ico"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.7ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:58:45 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 10:58:45 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:59:16 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 10:59:16 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 10:59:30 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 10:59:31 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:01:10 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:20: syntax error, unexpected ')', expecting =>
+... class: 'form-control', 'Male');@output_buffer.safe_append='...
+...                               ^
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:21: syntax error, unexpected ')', expecting =>
+...lass: 'form-control', 'Female');@output_buffer.safe_append='...
+...                               ^
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end 
+                       ^
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:47: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/edit.html.erb:20: syntax error, unexpected ')', expecting =>
+  app/views/users/edit.html.erb:21: syntax error, unexpected ')', expecting =>
+  app/views/users/edit.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/edit.html.erb:47: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.8ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:01:16 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:20: syntax error, unexpected ')', expecting =>
+... class: 'form-control', 'Male');@output_buffer.safe_append='...
+...                               ^
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:21: syntax error, unexpected ')', expecting =>
+...lass: 'form-control', 'Female');@output_buffer.safe_append='...
+...                               ^
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end 
+                       ^
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:47: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/edit.html.erb:20: syntax error, unexpected ')', expecting =>
+  app/views/users/edit.html.erb:21: syntax error, unexpected ')', expecting =>
+  app/views/users/edit.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/edit.html.erb:45: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/edit.html.erb:47: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.1ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:01:20 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 11:01:20 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:24:06 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 11:24:06 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:31:18 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f8f9bc54540>:0x007f8f9d61be88>):
+    40:         <p><strong>Current Index or Handicap: </strong><%= %></p>
+    41:     </div>
+    42:     <div class="form-group">
+    43:       <%= f.submit "Edit My Info", class: 'btn btn-success' %>
+    44:     </div>
+    45:   </div>
+    46: </div>
+  app/views/users/edit.html.erb:43:in `_app_views_users_edit_html_erb___3443030301807227728_70127398737340'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:31:35 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (wrong number of arguments (0 for 1)):
+    40:         <p><strong>Current Index or Handicap: </strong><%= %></p>
+    41:     </div>
+    42:     <div class="form-group">
+    43:       <%= u.submit "Edit My Info", class: 'btn btn-success' %>
+    44:     </div>
+    45:   </div>
+    46: </div>
+  app/views/users/edit.html.erb:43:in `_app_views_users_edit_html_erb___3443030301807227728_70127433940220'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.7ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:32:24 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 11:32:24 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:40:20 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 11:40:20 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 11:42:45 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 11:42:45 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 13:28:29 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f8f9bc54540>:0x007f8fa1de4d00>):
+    38:           <p><strong>Average Practices per Month: </strong><%= %></p>
+    39:           <p><strong>Current Index or Handicap: </strong><%= %></p>
+    40:       </div>
+    41:       <%= f.submit %>
+    42:     <% end %>
+    43:   </div>
+    44: </div>
+  app/views/users/edit.html.erb:41:in `block in _app_views_users_edit_html_erb___3443030301807227728_70127436373180'
+  app/views/users/edit.html.erb:8:in `_app_views_users_edit_html_erb___3443030301807227728_70127436373180'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.6ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 13:28:36 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 13:28:36 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 13:30:03 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 13:30:03 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:30:20 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:30:20 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:30:47 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:30:47 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:31:23 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:31:23 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:31:23 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:31:23 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:31:23 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:31:24 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:31:24 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:31:24 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:31:24 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:31:24 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:31:41 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:31:41 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:32:02 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:32:02 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:33:55 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:8: syntax error, unexpected tLABEL
+...append=  form_for @user, (html: {class: 'form-horizontal'}) ...
+...                               ^):
+  app/views/users/edit.html.erb:8: syntax error, unexpected tLABEL
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:34:16 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:34:16 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:34:26 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:34:26 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:34:55 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:34:55 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:37:03 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:36: syntax error, unexpected ')', expecting keyword_end
+... {}, {class: "form-control"}) );@output_buffer.safe_append='
+...                               ^):
+  app/views/users/edit.html.erb:36: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:37:36 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:36: syntax error, unexpected ',', expecting ')'
+...ffer.append=( u.select (:sport, options_for_select([['None',...
+...                               ^
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:36: syntax error, unexpected ',', expecting ')'
+...g'],['Other Sport', 'other']]), {}, {class: "form-control"})...
+...                               ^
+/Users/elizabethbayardelle/Dropbox/Code/GG/app/views/users/edit.html.erb:36: syntax error, unexpected ')', expecting keyword_end
+... {}, {class: "form-control"}) );@output_buffer.safe_append='
+...                               ^):
+  app/views/users/edit.html.erb:36: syntax error, unexpected ',', expecting ')'
+  app/views/users/edit.html.erb:36: syntax error, unexpected ',', expecting ')'
+  app/views/users/edit.html.erb:36: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.9ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:37:46 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:37:46 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:41:09 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:41:09 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:41:33 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:41:33 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:42:01 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:42:01 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:42:30 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:42:31 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:45:27 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:45:27 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:46:52 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `Number of Years Golfing' for #<User:0x007f8f9c76df80>):
+    40:       <div class="col-sm-6">
+    41:         <div class="form-group">
+    42:           <%= u.label :g_years %>
+    43:           <%= u.text_field "Number of Years Golfing", class: 'form-control', placeholder: "Please type a number" %>
+    44:         </div>
+    45:         <div class="form-group">
+    46:           <%= u.label :g_score %>
+  app/views/users/edit.html.erb:43:in `block in _app_views_users_edit_html_erb___3443030301807227728_70127391040340'
+  app/views/users/edit.html.erb:8:in `_app_views_users_edit_html_erb___3443030301807227728_70127391040340'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.7ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:48:57 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:48:57 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:51:17 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `g_practiceb' for #<User:0x007f8f9c707eb0>):
+    52:         </div>
+    53:         <div class="form-group">
+    54:           <%= u.label "Average Number of Golf Practices" %>
+    55:           <%= u.text_field :g_practiceb, class: 'form-control', placeholder: "Please type a number" %>
+    56:         </div>
+    57:         <div class="form-group">
+    58:           <%= u.label "Currrent Index or Handicap" %>
+  app/views/users/edit.html.erb:55:in `block in _app_views_users_edit_html_erb___3443030301807227728_70127390831240'
+  app/views/users/edit.html.erb:8:in `_app_views_users_edit_html_erb___3443030301807227728_70127390831240'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.1ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:51:31 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:51:31 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:51:31 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:51:31 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:51:31 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:51:31 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:51:31 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:51:31 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:51:31 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:51:32 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:51:48 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 46ms (Views: 45.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:51:48 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:53:33 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:53:33 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 14:54:27 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 14:54:27 -0700
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 14:54:58 -0700
+
+ActionController::RoutingError (No route matches [PATCH] "/users/1"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.3ms)
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 15:01:49 -0700
+
+ActionController::RoutingError (No route matches [PATCH] "/users/1"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/elizabethbayardelle/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (71.9ms)
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 15:06:24 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iomwXyK3L2kTz6nibIdyp+Ik5lZy3VY+ZOmJe0DaUUbZAcLhg78/W2K2/JWUpICjEYcrZmbzVxLmgIqaYTRAfA==", "user"=>{"email"=>"lizbayardelle@gmail.com", "birthday"=>"1988-08-30", "gender"=>"Female", "dom_hand"=>"Right", "sport"=>"volleyball", "g_years"=>"0", "g_score"=>"", "g_rounds"=>"", "g_practice"=>"", "handicap"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('lizbayardelle@gmail.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "users" SET "gender" = ?, "birthday" = ?, "dom_hand" = ?, "sport" = ?, "g_years" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["gender", "Female"], ["birthday", "1988-08-30"], ["dom_hand", "Right"], ["sport", "volleyball"], ["g_years", 0], ["updated_at", "2016-04-24 22:06:24.146128"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 33ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:06:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:06:24 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:08:12 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:08:12 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 15:08:17 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 15:08:31 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nUujwwS92n7y2TRJgDv3WkIlMo6asyj9BVtLiutaNLDOw9F9pbXKTIOgYT54GAVesYb/vo6dKdGHMkhryrQlig==", "user"=>{"email"=>"lizbayardelle@gmail.com", "birthday"=>"1988-08-30", "gender"=>"Female", "dom_hand"=>"Right", "sport"=>"Volleyball", "g_years"=>"0", "g_score"=>"", "g_rounds"=>"0", "g_practice"=>"0", "handicap"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('lizbayardelle@gmail.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "sport" = ?, "g_rounds" = ?, "g_practice" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sport", "Volleyball"], ["g_rounds", 0], ["g_practice", 0], ["updated_at", "2016-04-24 22:08:31.659265"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:08:31 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 15:11:26 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/body" for ::1 at 2016-04-24 15:12:16 -0700
+Processing by WelcomeController#body as HTML
+  Rendered welcome/body.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/welcome/personality" for ::1 at 2016-04-24 15:12:20 -0700
+Processing by WelcomeController#personality as HTML
+  Rendered welcome/personality.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-04-24 15:12:21 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-04-24 15:12:28 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:12:38 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:16:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:16:03 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:16:21 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:16:21 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:16:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:16:24 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:18:48 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:18:48 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:19:27 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:19:27 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:20:09 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-ab1fb31688ccc7a470e06f855aadb6cf420d297ac5d922389d4d27a1fa9f9c7a.css?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:20:09 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:23:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1791ms (Views: 1790.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-cc182b0b0428298340e857853fea20e82c7cc05c098938d18d9d76e4f6e2dc62.css?body=1" for ::1 at 2016-04-24 15:23:12 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:23:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:23:13 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:23:13 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:23:13 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:13 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:13 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:13 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:23:13 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:23:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-cc182b0b0428298340e857853fea20e82c7cc05c098938d18d9d76e4f6e2dc62.css?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:23:51 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:23:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-cc182b0b0428298340e857853fea20e82c7cc05c098938d18d9d76e4f6e2dc62.css?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:23:59 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:24:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/assets/application.self-cc182b0b0428298340e857853fea20e82c7cc05c098938d18d9d76e4f6e2dc62.css?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:24:50 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 15:26:41 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 15:28:13 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (6.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1635ms (Views: 1634.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-8356fbe3c4d89497e8afd6ee4ed45e91c3a307ea86629d01f1194523e02d2d2f.css?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:28:15 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 15:28:25 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1813ms (Views: 1811.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/assets/application.self-8c97f2920903701fa1749d436db86c9c73446a53bb9a0792712ee0b2a40028a9.css?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:28:27 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 15:29:11 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1809ms (Views: 1808.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-6406db564727ec1d7ab21720fb3b3f90ae50b20e708a68df54452df08fd36e36.css?body=1" for ::1 at 2016-04-24 15:29:12 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 15:29:12 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 15:29:12 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 15:29:12 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 15:29:12 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:29:12 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:29:12 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 15:29:12 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 15:29:13 -0700
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 15:29:53 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qnl85X/s4sRN2Qz5mHne/eujWNokHXqU7gVHsug0i3oR8Q5b3uTy9jygWY5gWiz5GACV6jAze7hsbERTydqaQA==", "user"=>{"email"=>"lizbayardelle@gmail.com", "birthday"=>"1988-08-30", "gender"=>"Female", "dom_hand"=>"Right", "sport"=>"None", "g_years"=>"0", "g_score"=>"", "g_rounds"=>"0", "g_practice"=>"0", "handicap"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('lizbayardelle@gmail.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "sport" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sport", "None"], ["updated_at", "2016-04-24 22:29:53.341087"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:29:53 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1746ms (Views: 1745.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-1b28c9d99355d20f3bc8cb43b57e1345173c1f9679b0848446111ec2ac37ee07.css?body=1" for ::1 at 2016-04-24 15:29:55 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 15:29:58 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 15:30:00 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wvEMKIUBER2dejs/M9PRwK3G0fmOVrtZv09OeHOsEqSReX6WJAkBL+wDbkjL8CPEXmUcyZp4unU9Jk2ZUkIDng==", "user"=>{"email"=>"lizbayardelle@gmail.com", "birthday"=>"1988-08-30", "gender"=>"Female", "dom_hand"=>"Right", "sport"=>"None", "g_years"=>"0", "g_score"=>"", "g_rounds"=>"0", "g_practice"=>"0", "handicap"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('lizbayardelle@gmail.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:30:00 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 15:30:03 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 15:30:08 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T1vWB1NNSAIbfkmraXpfxjZBVeWy/Lx5W+S95jYYj+oc06S58kVYMGoHHNyRWa3CxeKY1abSvVXZjb4HF/ae0A==", "user"=>{"email"=>"lizbayardelle@gmail.com", "birthday"=>"1988-08-30", "gender"=>"Female", "dom_hand"=>"Right", "sport"=>"Volleyball", "g_years"=>"0", "g_score"=>"", "g_rounds"=>"0", "g_practice"=>"0", "handicap"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('lizbayardelle@gmail.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "sport" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["sport", "Volleyball"], ["updated_at", "2016-04-24 22:30:08.991693"], ["id", 1]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 11ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 15:30:09 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 16:01:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1736ms (Views: 1734.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-01eddbcf676b653e8370e9f8ca1c707196edbba884064f0153df0232c29e3c81.css?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/application.self-01eddbcf676b653e8370e9f8ca1c707196edbba884064f0153df0232c29e3c81.css?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:01:57 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 16:02:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1822ms (Views: 1821.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-952d1aaa38c47cd1a8ed06521d4ef295314587af433fd4ec692bf7a865e383d9.css?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/application.self-952d1aaa38c47cd1a8ed06521d4ef295314587af433fd4ec692bf7a865e383d9.css?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:02:13 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 16:02:21 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1734ms (Views: 1732.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-8ff20be8140dd5cb9340c23dd4fc37bf2dbe783bd9bc15afec6e2558d61d17cf.css?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/application.self-8ff20be8140dd5cb9340c23dd4fc37bf2dbe783bd9bc15afec6e2558d61d17cf.css?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:02:23 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 16:03:03 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 16:03:09 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-8ff20be8140dd5cb9340c23dd4fc37bf2dbe783bd9bc15afec6e2558d61d17cf.css?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:03:09 -0700
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 16:06:07 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9EdFZKfF3+oZjzPR53AkUjgHZmcooScfjyASSW7nb7anzzfaBs3P2Gj2ZqYfU9ZWy6SrVzyPJjMNSRGoTwl+jA==", "user"=>{"email"=>"lizbayardelle@gmail.com", "birthday"=>"1988-08-30", "gender"=>"Female", "dom_hand"=>"Right", "sport"=>"Volleyball", "g_years"=>"0", "g_score"=>"", "g_rounds"=>"0", "g_practice"=>"0", "handicap"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('lizbayardelle@gmail.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 16:06:07 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 16:07:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-8ff20be8140dd5cb9340c23dd4fc37bf2dbe783bd9bc15afec6e2558d61d17cf.css?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:07:56 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 16:10:43 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 16:16:21 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1769ms (Views: 1768.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-96e1e65adcd3d5d0a03903cd268a3d5a5b815613a7160a8ba7f4750911c6ab3c.css?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/application.self-96e1e65adcd3d5d0a03903cd268a3d5a5b815613a7160a8ba7f4750911c6ab3c.css?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:16:23 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 16:16:34 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1787ms (Views: 1785.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-51f6ad16c781c43f5ed23ba4c49fa4700bc52912175f5405487c5262dcccaf73.css?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/application.self-51f6ad16c781c43f5ed23ba4c49fa4700bc52912175f5405487c5262dcccaf73.css?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:16:36 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:37 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:37 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:16:37 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:16:37 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 16:17:56 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (5.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1696ms (Views: 1694.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-2efd579dcb49d0744b4381df9c8640c89242b76d59c07da1168280107ad551aa.css?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/application.self-2efd579dcb49d0744b4381df9c8640c89242b76d59c07da1168280107ad551aa.css?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:17:58 -0700
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-24 16:18:13 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-2efd579dcb49d0744b4381df9c8640c89242b76d59c07da1168280107ad551aa.css?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-24 16:18:13 -0700
+
+
+Started PATCH "/users/1" for ::1 at 2016-04-24 16:18:26 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rOsvtHLvAOTZfOcG6OzRMhSUZ0PaSa8Z6oEqaJn28Rv/Y10K0+cQ1qgFsnEQzyM25zeqc85nrjVo6CmJuBjgIQ==", "user"=>{"email"=>"lizbayardelle@gmail.com", "birthday"=>"1988-08-30", "gender"=>"Female", "dom_hand"=>"Right", "sport"=>"Volleyball", "g_years"=>"0", "g_score"=>"", "g_rounds"=>"0", "g_practice"=>"0", "handicap"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('lizbayardelle@gmail.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-04-24 16:18:26 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.3ms)

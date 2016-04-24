@@ -5,6 +5,21 @@
 	padding-top: 10px;
 }
 
+.buffer-25 {
+	display: block;
+	height: 25px;
+	width: 100%;
+}
+
+.buffer-50 {
+	display: block;
+	height: 50px;
+	width: 100%;
+}
+.left-padding-30 {
+	padding-left: 30px;
+}
+
 body {
 	font-family: 'Muli', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	font-weight: 100;
@@ -20,6 +35,10 @@ a {
 
 a:hover {
   color: #000000;
+}
+
+.spacer-15 {
+	margin-top: 15px
 }
 
 
@@ -60,7 +79,7 @@ body {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -60px;
+  margin: 0 auto -40px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
 }

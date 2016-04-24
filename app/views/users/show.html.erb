@@ -1,0 +1,52 @@
+<div class="container">
+  <div id="locker_header" class="text-center">
+    <h1><%= @user.name %>'s Locker</h1>
+    <h2><small>Genetic Golf ID Code: <%= %></small></h2>
+  </div>
+
+  <div id="CTA_locker">
+  </div>
+
+  <div id="your_gg_codes" class="text-center">
+    <h3>Your Genetic Golf Codes</h3>
+    <div class="col-sm-6 col-lg-3"><div id="body_structure" class="well">
+      <h4>Body Structure</h4>
+      <h3><%= @user.q_bs_code %></h3>
+    </div></div>
+    <div class="col-sm-6 col-lg-3"><div id="flexibility" class="well">
+      <h4>Flexibility</h4>
+      <h3><%= @user.q_fl_code %></h3>
+    </div></div>
+    <div class="col-sm-6 col-lg-3"><div id="body_balance" class="well">
+      <h4>Balance</h4>
+      <h3><%= @user.q_bb_code %></h3>
+    </div></div>
+    <div class="col-sm-6 col-lg-3"><div id="motor_dominance" class="well">
+      <h4>Motor Dominance</h4>
+      <h3><%= @user.q_md_code %></h3>
+    </div></div>
+  </div>
+
+  <div id="your_information" class="spacer-15">
+      <div class="text-center">
+        <h3>Your Information</h3>
+        <%= link_to "Edit Your Information", edit_user_path(@user), class: 'btn btn-secondary' %>
+      </div>
+      <div class="col-xs-6"><div id="personal_information" class="well">
+        <h4 class="text-center">Personal Stats</h4>
+        <p><strong>Email: </strong><%= @user.email %></p>
+        <p><strong>Gender: </strong><%= @user.gender %></p>
+        <p><strong>Birthday: </strong><%= @user.birthday %></p>
+        <p><strong>Dominant Hand: </strong><%= @user.dom_hand %></p>
+        <p><strong>Best Other Sport: </strong><%= @user.sport %></p>
+      </div></div>
+      <div class="col-xs-6"><div id="golf_information" class="well">
+        <h4 class="text-center">Golf Stats</h4>
+        <p><strong>Years Golfing: </strong><%= @user.g_years %></p>
+        <p><strong>Average Golf Score: </strong><%= @user.g_score %></p>
+        <p><strong>Average Rounds per Month: </strong><%= @user.g_rounds %></p>
+        <p><strong>Average Practices per Month: </strong><%= @user.g_practice %></p>
+        <p><strong>Current Index or Handicap: </strong><%= @user.handicap %></p>
+      </div></div>
+  </div>
+</div>

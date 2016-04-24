@@ -1,0 +1,73 @@
+<div class="container">
+  <div id="locker_edit" class="text-center">
+    <h1><%= @user.name %>'s Locker<br>
+    <small>Edit My Information</small></h1>
+  </div>
+
+
+  <%= form_for @user do |u| %>
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= u.label :email %>
+            <%= u.text_field :email, class: 'form-control', placeholder: "Email" %>
+          </div>
+          <div class="form-group">
+            <%= u.label :birthday %>
+            <%= u.date_field :birthday %>
+          </div>
+          <div class="form-group">
+            <%= u.label :gender %><br>
+            <div class="radio left-padding-30">
+              <%= u.radio_button :gender, 'Male'%><label>Male</label><br>
+              <%= u.radio_button :gender, 'Female'%><label>Female</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= u.label "Dominant Hand" %><br>
+            <div class="radio left-padding-30">
+              <%= u.radio_button :dom_hand, 'Right'%><label>Right Handed</label><br>
+              <%= u.radio_button :dom_hand, 'Left'%><label>Left Handed</label><br>
+              <%= u.radio_button :dom_hand, 'Ambidextrous'%><label>Ambidextrous</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= u.label :sport %>
+            <%= u.select :sport, options_for_select([['None', 'None'],['Baseball', 'Baseball'],['Basketball', 'Basketball'],['Football', 'Football'],['Soccer', 'Soccer'],['Hockey', 'Hockey'],['Tennis', 'Tennis'],['Lacrosse', 'Lacrosse'],['Volleyball', 'Volleyball'],['Cricket', 'Cricket'],['Track and Field', 'Track and Field'],['Water Sports', 'Water Sports'],['Snow Sports', 'Snow Sports'],['Dance', 'Dance'],['Auto Racing', 'Auto Racing'],['Other Sport', 'Other']]), {}, {class: "form-control"} %>
+          </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= u.label "Number of Years Golfing" %>
+          <%= u.text_field :g_years, class: 'form-control', placeholder: "Please type a number" %>
+        </div>
+        <div class="form-group">
+          <%= u.label "Average Golf Score" %>
+          <%= u.text_field :g_score, class: 'form-control', placeholder: "Please type a number" %>
+        </div>
+        <div class="form-group">
+          <%= u.label "Average Number of Golf Rounds per Month" %>
+          <%= u.text_field :g_rounds, class: 'form-control', placeholder: "Please type a number" %>
+        </div>
+        <div class="form-group">
+          <%= u.label "Average Number of Golf Practices" %>
+          <%= u.text_field :g_practice, class: 'form-control', placeholder: "Please type a number" %>
+        </div>
+        <div class="form-group">
+          <%= u.label "Currrent Index or Handicap" %>
+          <%= u.text_field :handicap, class: 'form-control', placeholder: "Please type a number" %>
+        </div>
+      </div>
+
+      <div class="buffer-25"></div>
+
+    <div class="row">
+      <div class="col-xs-12 center-block">
+          <div class="center-block"><%= u.submit %></div>
+        </div>
+    </div>
+
+  <% end %>
+</div>
+<div class="buffer-50"></div>

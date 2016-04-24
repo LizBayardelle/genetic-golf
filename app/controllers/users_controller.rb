@@ -19,4 +19,37 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.email = params[:user][:email]
+    @user.q_bs_code = params[:user][:q_bs_code]
+    @user.q_fl_code = params[:user][:q_fl_code]
+    @user.q_bb_code = params[:user][:q_bb_code]
+    @user.q_md_code = params[:user][:q_md_code]
+    @user.gender = params[:user][:gender]
+    @user.birthday = params[:user][:birthday]
+    @user.dom_hand = params[:user][:dom_hand]
+    @user.sport = params[:user][:sport]
+    @user.g_years = params[:user][:g_years]
+    @user.g_rounds = params[:user][:g_rounds]
+    @user.g_practice = params[:user][:g_practice]
+    @user.handicap = params[:user][:handicap]
+
+    if @user.save
+      flash[:notice] = "Your information was successfully updated."
+      redirect_to @user
+    else
+      flash.now[:alert] = "There was an error saving your information. Please try again."
+      render :edit
+    end
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
 end
