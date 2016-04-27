@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'welcome/index'
 
   get 'welcome/personality'
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
 
 resources :users
 resources :sessions, only: [:new, :create, :destroy]
-
+resources :quiz_bs
 
 
 
