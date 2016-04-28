@@ -49,12 +49,12 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav nav-tabs">
+    <div id="MainNav" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul id="navlist" class="nav nav-tabs">
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Know Your Personality</a>
-          <ul class="dropdown-menu">
+          <ul id="subnavlist" class="dropdown-menu">
             <li><a href="#">Sample Link 1</a></li>
             <li><a href="#">Sample Link 2</a></li>
             <li><a href="#">Something else here</a></li>
@@ -63,7 +63,7 @@
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Improve Your Game</a>
-          <ul class="dropdown-menu">
+          <ul id="subnavlist" class="dropdown-menu">
             <li><a href="#">Sample Link 1</a></li>
             <li><a href="#">Sample Link 2</a></li>
             <li><a href="#">Something else here</a></li>
@@ -72,16 +72,22 @@
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Understand Your Body</a>
-          <ul class="dropdown-menu">
-            <li></li>
+          <ul id="subnavlist" class="dropdown-menu">
+            <li>
+              <% if current_user.quiz_bs.nil? %>
+                 <%= link_to "Body Structure Quiz", quiz_bs_path %>
+              <% else %>
+                 <%= link_to "Body Structure Quiz ✓", edit_quiz_b_path(current_user.quiz_bs) %>
+              <% end %>
+            </li>
             <li><a href="#">Sample Link 2</a></li>
             <li><a href="#">Something else here</a></li>
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
-          <ul class="dropdown-menu">
+          <a href="#" class="dropdown-toggle OneLine" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
+          <ul id="subnavlist" class="dropdown-menu">
             <li><a href="#">Sample Link 1</a></li>
             <li><a href="#">Sample Link 2</a></li>
             <li><a href="#">Something else here</a></li>
@@ -89,8 +95,8 @@
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
-          <ul class="dropdown-menu">
+          <a href="#" class="dropdown-toggle OneLine" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+          <ul id="subnavlist" class="dropdown-menu">
             <li><a href="#">Sample Link 1</a></li>
             <li><a href="#">Sample Link 2</a></li>
             <li><a href="#">Something else here</a></li>

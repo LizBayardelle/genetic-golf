@@ -30,8 +30,12 @@ class QuizBsController < ApplicationController
     end
   end
 
+  def edit
+    @quiz_bs = QuizBs.find(params[:id])
+  end
+
   def update
-    @quiz_bs = QuizBs.find(params[:quiz_bs])
+    @quiz_bs = QuizBs.find(params[:id])
 
     @quiz_bs.assign_attributes(quiz_bs_params)
 

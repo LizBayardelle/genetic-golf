@@ -11,7 +11,12 @@
     <h3>Your Genetic Golf Codes</h3>
     <div class="col-sm-6 col-lg-3"><div id="body_structure" class="well">
       <h4>Body Structure</h4>
-      <h3><%= @user.quiz_bs.bscode %></h3>
+      <% if @user.quiz_bs == nil %>
+        <p><%= link_to "Test Your Body Structure", new_quiz_b_path %></p>
+      <% else %>
+        <h3><%= @user.quiz_bs.bscode %></h3>
+        <p><%= link_to "Retest Results", edit_quiz_b_path(@user.quiz_bs) %></p>
+      <% end %>
     </div></div>
     <div class="col-sm-6 col-lg-3"><div id="flexibility" class="well">
       <h4>Flexibility</h4>
