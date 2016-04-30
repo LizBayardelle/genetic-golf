@@ -1,0 +1,2 @@
+module BodQuizzesHelper
+end

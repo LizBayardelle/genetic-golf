@@ -1,0 +1,65 @@
+<%= form_for @bod_quiz do |f| %>
+  <div class="row">
+      <div class="col-sm-12">
+
+        <div class="form-group">
+          <h3>Q1: Body Type</h3>
+          <p>Please select the number that represents the body type that most closely resembles your own.</p>
+          <%= image_tag "Body Structure Guide.png" %>
+          <div class="radio left-padding-30">
+            <%= f.radio_button :bod_type, '1'%><label>1 </label>
+            <%= f.radio_button :bod_type, '2'%><label>2 </label>
+            <%= f.radio_button :bod_type, '3'%><label>3 </label>
+            <%= f.radio_button :bod_type, '4'%><label>4 </label>
+            <%= f.radio_button :bod_type, '5'%><label>5 </label>
+            <%= f.radio_button :bod_type, '6'%><label>6 </label>
+            <%= f.radio_button :bod_type, '7'%><label>7 </label>
+            <%= f.radio_button :bod_type, '8'%><label>8 </label>
+            <%= f.radio_button :bod_type, '9'%><label>9 </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Q2: Height</h3>
+            <%= f.select :height, options_for_select([['4 ft, 0 in', '48'],['4 ft, 1 in', '49'],['4 ft, 2 in', '50'],['4 ft, 3 in', '51'],['4 ft, 4 in', '52'],['4 ft, 5 in', '53'],['4 ft, 6 in', '54'],['4 ft, 7 in', '55'],['4 ft, 8 in', '56'],['4 ft, 9 in', '57'],['4 ft, 10 in', '58'],['4 ft, 11 in', '59'],['5 ft, 0 in', '60'],['5 ft, 1 in', '61'],['5 ft, 2 in', '62'],['5 ft, 3 in', '63'],['5 ft, 4 in', '64'],['5 ft, 5 in', '65'],['5 ft, 6 in', '66'],['5 ft, 7 in', '67'],['5 ft, 8 in', '68'],['5 ft, 9 in', '69'],['5 ft, 10 in', '70'],['5 ft, 11 in', '71'],['6 ft, 0 in', '72'],['6 ft, 1 in', '73'],['6 ft, 2 in', '74'],['6 ft, 3 in', '75'],['6 ft, 4 in', '76'],['6 ft, 5 in', '77'],['6 ft, 6 in', '78'],['6 ft, 7 in', '79'],['6 ft, 8 in', '80'],['6 ft, 9 in', '81'],['6 ft, 10 in', '82']]), {}, {class: "form-control"} %>
+        </div>
+
+        <div class="form-group">
+          <h3>Q3: Weight</h3>
+          <%= f.text_field :weight, class: 'form-control', placeholder: "Weight in Pounds" %>
+        </div>
+
+        <div class="form-group">
+          <h3>Q4: Age</h3>
+          <%= f.text_field :age, class: 'form-control', placeholder: "Age in Years" %>
+        </div>
+
+        <div class="form-group">
+          <h3>Q5: Distance from Wrist to Floor</h3>
+          <p>While standing, please measure the length from the crease of your wrist to the floor.</p>
+          <%= f.text_field :wrist_floor, class: 'form-control', placeholder: "Distance in Inches" %>
+        </div>
+
+        <div class="form-group">
+          <h3>Q6: Hand Length</h3>
+          <p>Please measure the distance from the tip of your longest finger to the crease of your wrist.</p>
+          <%= f.text_field :hand_length, class: 'form-control', placeholder: "Length in Inches" %>
+        </div>
+
+        <div class="form-group">
+          <h3>Q7: Longest Finger Length</h3>
+          <%= f.text_field :longest_finger, class: 'form-control', placeholder: "Weight in Pounds" %>
+        </div>
+
+    </div> <!-- column end -->
+  </div> <!-- row end -->
+
+    <div class="buffer-25"></div>
+
+  <div class="row">
+    <div class="col-xs-12 center-block">
+        <div class="center-block"><%= f.submit "Submit Answers" %></div>
+      </div> <!-- column end -->
+  </div> <!-- row end -->
+
+<% end %>

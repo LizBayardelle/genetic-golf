@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="app/assets/images/Logo Favicon.ico">
+  <%= favicon_link_tag '/favicon.ico' %>
   <link href="https://fonts.googleapis.com/css?family=Muli|Josefin+Sans|Cinzel" rel="stylesheet" type="text/css">
 
 </head>
@@ -30,10 +30,15 @@
 </div>
 
 <div class="container">
+  <div class="center-block col-xs-3 col-sm-2">
+    <%= image_tag "V3   Genetic Golf   Array-02.png", alt: "Genetic Golf main logo", style:"width: 100%"%>
+  </div>
   <h1 class="text-center">Welcome to Genetic Golf</h1>
   <p class="text-center">Golf is a personal game. Your golf game has to fit you.<br>
     We don’t guess, we test to find what works best for you.</p>
 </div>
+
+<div class="buffer-25"></div>
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -74,20 +79,26 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Understand Your Body</a>
           <ul id="subnavlist" class="dropdown-menu">
             <li>
-              <% if current_user.quiz_bs.nil? %>
-                 <%= link_to "Body Structure Quiz", quiz_bs_path %>
+              <% if current_user.bal_quiz.nil? %>
+                 <%= link_to "Balance Quiz", new_bal_quiz_path %>
               <% else %>
-                 <%= link_to "Body Structure Quiz ✓", edit_quiz_b_path(current_user.quiz_bs) %>
+                 <%= link_to "Balance Quiz ✓", edit_bal_quiz_path(current_user.bal_quiz) %>
               <% end %>
             </li>
             <li>
               <% if current_user.flex_quiz.nil? %>
-                 <%= link_to "Body Flexibility Quiz", new_flex_quiz_path %>
+                 <%= link_to "Flexibility Quiz", new_flex_quiz_path %>
               <% else %>
-                 <%= link_to "Body Flexibility Quiz ✓", edit_flex_quiz_path(current_user.flex_quiz) %>
+                 <%= link_to "Flexibility Quiz ✓", edit_flex_quiz_path(current_user.flex_quiz) %>
               <% end %>
             </li>
-            <li><a href="#">Something else here</a></li>
+            <li>
+              <% if current_user.bod_quiz.nil? %>
+                 <%= link_to "Body Structure Quiz", new_bod_quiz_path %>
+              <% else %>
+                 <%= link_to "Body Structure Quiz ✓", edit_bod_quiz_path(current_user.bod_quiz) %>
+              <% end %>
+            </li>
           </ul>
         </li>
 

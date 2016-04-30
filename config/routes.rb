@@ -16,8 +16,9 @@ Rails.application.routes.draw do
 
 resources :users
 resources :sessions, only: [:new, :create, :destroy]
-resources :quiz_bs
+resources :bal_quizzes
 resources :flex_quizzes
+resources :bod_quizzes
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

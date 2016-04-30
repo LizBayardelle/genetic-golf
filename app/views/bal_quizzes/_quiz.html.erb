@@ -1,0 +1,146 @@
+<%= form_for @bal_quiz do |f| %>
+  <div class="row">
+      <div class="col-sm-12">
+
+        <div class="form-group">
+          <h3>Q1: Forward Foot Balance</h3>
+          <p><strong>How to Perform Stand on Forward Leg</strong>
+            <ol>
+              <li>Look straight ahead. Keep your hands on your hips.</li>
+              <li>Check the second hand on your watch as you lift your back leg off of the ground without touching or resting your raised leg upon your other standing leg. </li>
+              <li>Stay standing on one leg as long as you can, looking straight ahead.</li>
+              <li>When you lose balance, check how many seconds passed.</li>
+            </ol>
+          </p>
+          <div class="radio left-padding-30">
+            <%= f.radio_button :bal01, '7'%><label>0 - 5 Seconds</label><br>
+            <%= f.radio_button :bal01, '6'%><label>6 - 9 Seconds</label><br>
+            <%= f.radio_button :bal01, '5'%><label>10 - 15 Seconds</label><br>
+            <%= f.radio_button :bal01, '4'%><label>16 - 20 Seconds</label><br>
+            <%= f.radio_button :bal01, '3'%><label>21 - 25 Seconds</label><br>
+            <%= f.radio_button :bal01, '2'%><label>26 - 30 Seconds</label><br>
+            <%= f.radio_button :bal01, '1'%><label>31 Seconds or More</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Q2: Forward Foot Balance, Motion</h3>
+          <p>
+            <ol>
+              <li>Take your golf posture with arms in front.</li>
+              <li>Lift your back leg off of the ground without touching or resting your raised leg upon your other standing leg.</li>
+              <li>Check the second hand on your watch once your leg is raised.</li>
+              <li>Now slowly turn your forward arm in and let your hips turn, then slowly return back to your original position</li>
+              <li>Do this several times stay standing on one leg as long as you can, looking straight ahead.</li>
+              <li>When you lose balance, check how many seconds have passed.</li>
+            </ol>
+          </p>
+          <div class="radio left-padding-30">
+            <%= f.radio_button :bal02, '7'%><label>0 - 5 Seconds</label><br>
+            <%= f.radio_button :bal02, '6'%><label>6 - 9 Seconds</label><br>
+            <%= f.radio_button :bal02, '5'%><label>10 - 15 Seconds</label><br>
+            <%= f.radio_button :bal02, '4'%><label>16 - 20 Seconds</label><br>
+            <%= f.radio_button :bal02, '3'%><label>21 - 25 Seconds</label><br>
+            <%= f.radio_button :bal02, '2'%><label>26 - 30 Seconds</label><br>
+            <%= f.radio_button :bal02, '1'%><label>31 Seconds or More</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Q3: Forward Foot Balance, Eyes Closed</h3>
+          <p>
+            <ol>
+              <li>Stand tall with your arms down by you side, but not touching their sides</li>
+              <li>Elevate back leg until the thigh is parallel with the ground.</li>
+              <li>Once stable look at the second hand on your watch, then close your eyes and see how long you can maintain balance. Any re-positioning of the foot is considered a loss of balance.</li>
+              <li>When you lose balance, open your eyes and see how many seconds passed.</li>
+            </ol>
+          </p>
+          <div class="radio left-padding-30">
+            <%= f.radio_button :bal03, '7'%><label>0 - 5 Seconds</label><br>
+            <%= f.radio_button :bal03, '6'%><label>6 - 9 Seconds</label><br>
+            <%= f.radio_button :bal03, '5'%><label>10 - 15 Seconds</label><br>
+            <%= f.radio_button :bal03, '4'%><label>16 - 20 Seconds</label><br>
+            <%= f.radio_button :bal03, '3'%><label>21 - 25 Seconds</label><br>
+            <%= f.radio_button :bal03, '2'%><label>26 - 30 Seconds</label><br>
+            <%= f.radio_button :bal03, '1'%><label>31 Seconds or More</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Q4: Back Foot Balance</h3>
+          <p><strong>How to Perform Stand on Back Leg</strong>
+            <ol>
+              <li>Look straight ahead. Keep your hands on your hips.</li>
+              <li>Check the second hand on your watch and lift your forward leg off of the ground.  Do not touch or rest your raised leg upon your other standing leg.</li>
+              <li>Stay standing on one leg as long as you can. Look straight ahead.</li>
+              <li>When you lose balance, check how many seconds passed.</li>
+            </ol>
+          </p>
+          <div class="radio left-padding-30">
+            <%= f.radio_button :bal04, '7'%><label>0 - 5 Seconds</label><br>
+            <%= f.radio_button :bal04, '6'%><label>6 - 9 Seconds</label><br>
+            <%= f.radio_button :bal04, '5'%><label>10 - 15 Seconds</label><br>
+            <%= f.radio_button :bal04, '4'%><label>16 - 20 Seconds</label><br>
+            <%= f.radio_button :bal04, '3'%><label>21 - 25 Seconds</label><br>
+            <%= f.radio_button :bal04, '2'%><label>26 - 30 Seconds</label><br>
+            <%= f.radio_button :bal04, '1'%><label>31 Seconds or More</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Q5: Back Foot Balance, Motion</h3>
+          <p><strong>How to Perform Stand on Back Leg with Movement</strong>
+            <ol>
+              <li>Take your golf posture with arms in front.</li>
+              <li>Lift your forward leg off of the ground without touching or resting your raised leg upon your other standing leg.</li>
+              <li>Once you have lifted your leg, check the second hand on your watch.</li>
+              <li>Now slowly turn your forward arm in and let your hips turn, then slowly return  back to your original position</li>
+              <li>Do this several times stay standing on one leg as long as you can. Look straight ahead.</li>
+              <li>When you lose balance, check how many seconds passed after you add movement.</li>
+            </ol>
+          </p>
+          <div class="radio left-padding-30">
+            <%= f.radio_button :bal05, '7'%><label>0 - 5 Seconds</label><br>
+            <%= f.radio_button :bal05, '6'%><label>6 - 9 Seconds</label><br>
+            <%= f.radio_button :bal05, '5'%><label>10 - 15 Seconds</label><br>
+            <%= f.radio_button :bal05, '4'%><label>16 - 20 Seconds</label><br>
+            <%= f.radio_button :bal05, '3'%><label>21 - 25 Seconds</label><br>
+            <%= f.radio_button :bal05, '2'%><label>26 - 30 Seconds</label><br>
+            <%= f.radio_button :bal05, '1'%><label>31 Seconds or More</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Q6: Back Foot Balance, Eyes Closed</h3>
+          <p><strong>How to Perform the Single Leg Balance Test, Eyes Closed</strong>
+            <ol>
+              <li>Stand tall with arms down by (but not touching) your sides.</li>
+              <li>Elevate your forward leg until the thigh is parallel with the ground.</li>
+              <li>Once stable, look at the second hand on your watch, then close your eyes and see how long you can maintain balance.</li>
+              <li>Any re-positioning of the foot is considered a loss of balance. When you lose your balance, open your eyes and see how many seconds passed.</li>
+            </ol>
+          </p>
+          <div class="radio left-padding-30">
+            <%= f.radio_button :bal06, '7'%><label>0 - 5 Seconds</label><br>
+            <%= f.radio_button :bal06, '6'%><label>6 - 9 Seconds</label><br>
+            <%= f.radio_button :bal06, '5'%><label>10 - 15 Seconds</label><br>
+            <%= f.radio_button :bal06, '4'%><label>16 - 20 Seconds</label><br>
+            <%= f.radio_button :bal06, '3'%><label>21 - 25 Seconds</label><br>
+            <%= f.radio_button :bal06, '2'%><label>26 - 30 Seconds</label><br>
+            <%= f.radio_button :bal06, '1'%><label>31 Seconds or More</label>
+          </div>
+        </div>
+
+    </div> <!-- column end -->
+  </div> <!-- row end -->
+
+    <div class="buffer-25"></div>
+
+  <div class="row">
+    <div class="col-xs-12 center-block">
+        <div class="center-block"><%= f.submit "Submit Answers" %></div>
+      </div> <!-- column end -->
+  </div> <!-- row end -->
+
+<% end %>

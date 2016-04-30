@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430004433) do
+ActiveRecord::Schema.define(version: 20160430215534) do
+
+  create_table "bal_quizzes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "bal01"
+    t.integer  "bal02"
+    t.integer  "bal03"
+    t.integer  "bal04"
+    t.integer  "bal05"
+    t.integer  "bal06"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "bal_code"
+  end
+
+  add_index "bal_quizzes", ["user_id"], name: "index_bal_quizzes_on_user_id"
+
+  create_table "bod_quizzes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "bod_type"
+    t.integer  "height"
+    t.integer  "weight"
+    t.integer  "age"
+    t.integer  "wrist_floor"
+    t.integer  "hand_length"
+    t.integer  "longest_finger"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "bod_quizzes", ["user_id"], name: "index_bod_quizzes_on_user_id"
 
   create_table "flex_quizzes", force: :cascade do |t|
     t.integer  "user_id"
@@ -32,28 +62,12 @@ ActiveRecord::Schema.define(version: 20160430004433) do
 
   add_index "flex_quizzes", ["user_id"], name: "index_flex_quizzes_on_user_id"
 
-  create_table "quiz_bs", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "bs01"
-    t.integer  "bs02"
-    t.integer  "bs03"
-    t.integer  "bs04"
-    t.integer  "bs05"
-    t.integer  "bs06"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "bscode"
-  end
-
-  add_index "quiz_bs", ["user_id"], name: "index_quiz_bs_on_user_id"
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "q_fl_code"
     t.string   "gender"
     t.date     "birthday"
     t.string   "dom_hand"
