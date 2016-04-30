@@ -27,10 +27,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.email = params[:user][:email]
-    @user.q_bs_code = params[:user][:q_bs_code]
-    @user.q_fl_code = params[:user][:q_fl_code]
-    @user.q_bb_code = params[:user][:q_bb_code]
-    @user.q_md_code = params[:user][:q_md_code]
     @user.gender = params[:user][:gender]
     @user.birthday = params[:user][:birthday]
     @user.dom_hand = params[:user][:dom_hand]

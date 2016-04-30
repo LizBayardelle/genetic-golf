@@ -9,32 +9,41 @@
 
   <div id="your_gg_codes" class="text-center">
     <h3>Your Genetic Golf Codes</h3>
-    <div class="col-sm-6 col-lg-3"><div id="body_structure" class="well">
-      <h4>Body Structure</h4>
+    <div class="col-sm-4"><div id="body_balance" class="well">
+      <h4>Body Balance</h4>
       <% if @user.quiz_bs == nil %>
-        <p><%= link_to "Test Your Body Structure", new_quiz_b_path %></p>
+        <h3>???-???</h3>
+        <p><%= link_to "Test Your Body Balance", new_quiz_b_path %></p>
       <% else %>
         <h3><%= @user.quiz_bs.bscode %></h3>
         <p><%= link_to "Retest Results", edit_quiz_b_path(@user.quiz_bs) %></p>
       <% end %>
     </div></div>
-    <div class="col-sm-6 col-lg-3"><div id="flexibility" class="well">
+    <div class="col-sm-4"><div id="flexibility" class="well">
       <h4>Flexibility</h4>
-      <h3><%=  %></h3>
+      <% if @user.flex_quiz == nil %>
+        <h3>???-???-????</h3>
+        <p><%= link_to "Test Your Body Flexibility", new_flex_quiz_path %></p>
+      <% else %>
+        <h3><%= @user.flex_quiz.flex_code %></h3>
+        <p><%= link_to "Retest Results", edit_flex_quiz_path(@user.flex_quiz) %></p>
+      <% end %>
     </div></div>
-    <div class="col-sm-6 col-lg-3"><div id="body_balance" class="well">
-      <h4>Balance</h4>
-      <h3><%=  %></h3>
-    </div></div>
-    <div class="col-sm-6 col-lg-3"><div id="motor_dominance" class="well">
+    <div class="col-sm-4"><div id="motor_dominance" class="well">
       <h4>Motor Dominance</h4>
-      <h3><%=  %></h3>
+      <h3><%=  %> </h3>
+    </div></div>
+    <div class="col-xs-12"><div id="body_balance" class="well">
+      <h4>Body Structure</h4>
+      <h3><%=  %> </h3>
     </div></div>
   </div>
 
-  <div id="your_information" class="spacer-15">
+  <div class="spacer-15 col-xs-12">
+
+  <div id="your_information">
       <div class="text-center">
-        <h3>Your Information</h3>
+        <h3>About <%= @user.name %></h3>
         <%= link_to "Edit Your Information", edit_user_path(@user), class: 'btn btn-secondary' %>
       </div>
       <div class="col-xs-6"><div id="personal_information" class="well">

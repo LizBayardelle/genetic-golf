@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427194326) do
+ActiveRecord::Schema.define(version: 20160430004433) do
+
+  create_table "flex_quizzes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "flex01"
+    t.integer  "flex02"
+    t.integer  "flex03"
+    t.integer  "flex04"
+    t.integer  "flex05"
+    t.integer  "flex06"
+    t.integer  "flex07"
+    t.integer  "flex08"
+    t.integer  "flex09"
+    t.integer  "flex10"
+    t.string   "flex_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "flex_quizzes", ["user_id"], name: "index_flex_quizzes_on_user_id"
 
   create_table "quiz_bs", force: :cascade do |t|
     t.integer  "user_id"
@@ -34,10 +53,7 @@ ActiveRecord::Schema.define(version: 20160427194326) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "q_bs_code"
     t.string   "q_fl_code"
-    t.string   "q_bb_code"
-    t.string   "q_md_code"
     t.string   "gender"
     t.date     "birthday"
     t.string   "dom_hand"

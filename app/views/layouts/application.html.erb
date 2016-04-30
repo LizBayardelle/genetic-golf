@@ -80,7 +80,13 @@
                  <%= link_to "Body Structure Quiz ✓", edit_quiz_b_path(current_user.quiz_bs) %>
               <% end %>
             </li>
-            <li><a href="#">Sample Link 2</a></li>
+            <li>
+              <% if current_user.flex_quiz.nil? %>
+                 <%= link_to "Body Flexibility Quiz", new_flex_quiz_path %>
+              <% else %>
+                 <%= link_to "Body Flexibility Quiz ✓", edit_flex_quiz_path(current_user.flex_quiz) %>
+              <% end %>
+            </li>
             <li><a href="#">Something else here</a></li>
           </ul>
         </li>

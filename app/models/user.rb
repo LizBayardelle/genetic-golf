@@ -12,5 +12,6 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_one :quiz_bs
+  has_one :flex_quiz
 
 end
