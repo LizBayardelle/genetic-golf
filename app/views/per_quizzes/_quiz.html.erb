@@ -1,0 +1,36 @@
+<%= form_for @per_quiz do |f| %>
+  <div class="row">
+      <div class="col-sm-12">
+
+        <div class="form-group">
+          <a href="http://www.ipersonic.com/test.html" target="_blank"><h3 class="text-center">Take the iPersonic Personality Test</h3>
+          <%= image_tag "Logo (iPersonic).png", class: "personality-logo" %></a>
+          <p class="text-center">Select Your Result:</p>
+          <div class="radio left-padding-30">
+            <%= f.select :iper_code, options_for_select([['Analytical Thinker', 'Analytical Thinker'], ['Determined Realist', 'Determined Realist'], ['Dreamy Idealist', 'Dreamy Idealist'], ['Dynamic Thinker', 'Dynamic Thinker'], ['Energetic Doer', 'Energetic Doer'], ['Engaged Idealist', 'Engaged Idealist'], ['Good-Natured Realist', 'Good-Natured Realist'], ['Groundbreaking Thinker', 'Groundbreaking Thinker'], ['Harmony-Seeking Idealist', 'Harmony-Seeking Idealist'], ['Independent Thinker', 'Independent Thinker'], ['Individualistic Doer', 'Individualistic Doer'], ['Laid-Back Doer', 'Laid-Back Doer'], ['Reliable Realist', 'Reliable Realist'], ['Sensitive Doer', 'Sensitive Doer'], ['Social Realist', 'Social Realist'], ['Spontaneous Idealist', 'Spontaneous Idealist']]), {}, {class: "form-control"} %>
+          </div>
+        </div>
+
+        <div class="buffer-50"></div>
+
+        <div class="form-group">
+          <a href="http://www.my-personality-test.com/personality-type/" target="_blank"><h3 class="text-center">Take the iPersonic Personality Test</h3>
+          <%= image_tag "Logo (My-Personality).png", class: "personality-logo" %></a>
+          <p class="text-center">Select Your Result:</p>
+          <div class="radio left-padding-30">
+            <%= f.select :myper_code, options_for_select([['ISTJ', 'ISTJ'], ['ISTP', 'ISTP'], ['ESTP', 'ESTP'], ['ESTJ', 'ESTJ'], ['ISFJ', 'ISFJ'], ['ISFP', 'ISFP'], ['ESFP', 'ESFP'], ['ESFJ', 'ESFJ'], ['INFJ', 'INFJ'], ['INFP', 'INFP'], ['ENFP', 'ENFP'], ['ENFJ', 'ENFJ'], ['INTJ', 'INTJ'], ['INTP', 'INTP'], ['ENTP', 'ENTP'], ['ENTJ', 'ENTJ']]), {}, {class: "form-control"} %>
+          </div>
+        </div>
+
+    </div> <!-- column end -->
+  </div> <!-- row end -->
+
+    <div class="buffer-25"></div>
+
+  <div class="row">
+    <div class="col-xs-12 center-block">
+        <div class="text-center"><%= f.submit "Submit Your Results" %></div>
+      </div> <!-- column end -->
+  </div> <!-- row end -->
+
+<% end %>

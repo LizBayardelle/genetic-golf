@@ -1,0 +1,22 @@
+<%= form_for @swing_book do |f| %>
+
+    <h1 class="text-center">
+    <%= f.text_field :swing01, class: 'form-control input-1' %>
+    <%= f.text_field :swing02, class: 'form-control input-1' %>
+    <%= f.text_field :swing03, class: 'form-control input-1' %>
+    -
+    <%= f.text_field :swing04, class: 'form-control input-1' %>
+    <%= f.text_field :swing05, class: 'form-control input-1' %>
+    <%= f.text_field :swing06, class: 'form-control input-1' %>
+    -
+    <%= f.text_field :swing07, class: 'form-control input-1' %>
+    <%= f.text_field :swing08, class: 'form-control input-1' %>
+    <%= f.text_field :swing09, class: 'form-control input-1' %>
+    <%= f.text_field :swing10, class: 'form-control input-1' %>
+    </h1>
+
+  <div class="form-group text-center">
+    <%= f.submit "Submit Swing Code", class: 'btn btn-success' %>
+  </div>
+
+<% end %>

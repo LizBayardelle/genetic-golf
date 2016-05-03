@@ -45,10 +45,10 @@ class FlexQuizzesController < ApplicationController
         @flex_quiz.assign_attributes(flex_quiz_params)
 
         if @flex_quiz.save
-          flash[:notice] = "Post was updated successfully."
+          flash[:notice] = "Results were updated successfully."
           redirect_to user_path(current_user)
         else
-          flash.now[:alert] = "There was an error saving the post. Please try again."
+          flash.now[:alert] = "There was an error saving your results. Please try again."
           redirect_to welcome_index_path
         end
       end

@@ -1,15 +1,48 @@
 <div class="container">
   <div id="locker_header" class="text-center">
     <h1><%= @user.name %>'s Locker</h1>
-    <h3>Genetic Golf ID Code: <%= %></h3>
+
+    <div class="buffer-15"></div>
+
+    <% if @user.swing_book == nil %>
+      <h3>Genetic Golf ID Code: ???-???-????<%= %></h3>
+      <p><%= link_to "Get Your Genetic Golf ID Code Now!", new_swing_book_path %></p>
+    <% else %>
+      <h3>Genetic Golf ID Code:
+        <%= @user.swing_book.swing01 %>
+        <%= @user.swing_book.swing02 %>
+        <%= @user.swing_book.swing03 %>
+        -
+        <%= @user.swing_book.swing04 %>
+        <%= @user.swing_book.swing05 %>
+        <%= @user.swing_book.swing06 %>
+        -
+        <%= @user.swing_book.swing07 %>
+        <%= @user.swing_book.swing08 %>
+        <%= @user.swing_book.swing09 %>
+        <%= @user.swing_book.swing10 %></h3>
+      <p><%= link_to "Update Your Code", edit_swing_book_path(@user.swing_book) %></p>
+    <% end %>
   </div>
 
-  <div class="buffer-25"></div>
+  <div class="buffer-50"></div>
 
   <div id="CTA_locker">
   </div>
 
   <div id="your_gg_codes" class="text-center">
+    <div class="col-xs-12"><div id="personality" class="well">
+      <h4><strong>Personality</strong></h4>
+      <% if @user.per_quiz == nil %>
+        <h3>????</h3>
+        <p><%= link_to "Test Your Personality", new_per_quiz_path %></p>
+      <% else %>
+        <h3><%= @user.per_quiz.per_code %></h3>
+        <!-- if bought newsletter statement/links -->
+        <p><%= link_to "Retest Results", edit_per_quiz_path(@user.per_quiz) %></p>
+      <% end %>
+    </div></div>
+
     <div class="col-sm-4"><div id="balance" class="well">
       <h4><strong>Balance</strong></h4>
       <% if @user.bal_quiz == nil %>

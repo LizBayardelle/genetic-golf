@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430215534) do
+ActiveRecord::Schema.define(version: 20160503044912) do
 
   create_table "bal_quizzes", force: :cascade do |t|
     t.integer  "user_id"
@@ -61,6 +61,36 @@ ActiveRecord::Schema.define(version: 20160430215534) do
   end
 
   add_index "flex_quizzes", ["user_id"], name: "index_flex_quizzes_on_user_id"
+
+  create_table "per_quizzes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "iper_code"
+    t.string   "myper_code"
+    t.string   "per_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "per_quizzes", ["user_id"], name: "index_per_quizzes_on_user_id"
+
+  create_table "swing_books", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "swing_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "swing01"
+    t.integer  "swing02"
+    t.integer  "swing03"
+    t.integer  "swing04"
+    t.integer  "swing05"
+    t.integer  "swing06"
+    t.integer  "swing07"
+    t.integer  "swing08"
+    t.integer  "swing09"
+    t.integer  "swing10"
+  end
+
+  add_index "swing_books", ["user_id"], name: "index_swing_books_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

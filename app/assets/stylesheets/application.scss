@@ -3,6 +3,13 @@
 
 .very-top {
 	padding-top: 10px;
+	padding-right: 15px;
+}
+
+.buffer-15 {
+	display: block;
+	height: 15px;
+	width: 100%;
 }
 
 .buffer-25 {
@@ -40,6 +47,55 @@ a:hover {
 .spacer-15 {
 	margin-top: 15px
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HEADER */
+#header-detail img {
+	max-width: 100px;
+}
+
+
+/* Mini Screens Only */
+@media screen and (max-width: 550px) {
+	#header-detail img {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	#header-detail h1 {
+		font-size: 18px;
+	}
+
+	#header-detail p {
+		font-size: 10px;
+	}
+}
+
+#header-detail img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -147,11 +203,38 @@ a.OneLine {
 
 
 
+/* CONTENT */
+.content-text h4 {
+	margin-top: 30px;
+}
+
+
+
+
+
+
+
 /* QUIZZES */
 .radio input[type="radio"] {
 	margin-left: 5px;
 }
 
+.personality-logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 33%;
+	margin-bottom: 20px;
+}
+
+.input-1 {
+	display: inline-block;
+	width: 6%;
+	height: 50px;
+	font-size: 18px;
+	font-weight: bolder;
+	text-align: center;
+}
 
 
 
@@ -166,6 +249,9 @@ a.OneLine {
 
 
 /* FOOTER */
+* {
+	margin: 0;
+}
 
 html,
 body {
@@ -173,26 +259,141 @@ body {
 }
 
 /* Wrapper for page content to push down footer */
-#wrap {
+.wrapper {
   min-height: 100%;
-  height: auto;
+  height: auto !important;
   /* Negative indent footer by its height */
-  margin: 0 auto -40px;
-  /* Pad bottom by footer height */
-  padding: 0 0 60px;
+  margin: 0 auto -450px;
 }
 
 /* Set the fixed height of the footer here */
-#footer {
-  height: 60px;
+.footer, .push {
+  height: 450px;
+}
+
+
+
+/*  STICKY FOOTER */
+
+.footer {
   background-color: #f5f5f5;
+	padding-top: 10px;
 }
 
-.footer-text {
-  line-height: 60px;
+.sf-checkbox {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	height: 20px;
+}
+
+.sm-icon {
+		display: inline-block;
+		height: 20px;
+		margin-left: 10px;
+		margin-right: 10px;
+}
+
+.sm-unit {
+	line-height: 20px;
+}
+
+.sf-step {
+	text-align: center;
 }
 
 
+/* Mini Screens Only */
+@media screen and (max-width: 550px) {
+	.sf-checkbox {
+		display: inline-block;
+		height: 20px;
+	}
+
+	.sf-step {
+		text-align: left;
+		line-height: 1;
+	}
+
+	.sm-none {
+		display: none;
+	}
+
+	.sm-unit {
+		display: inline-block;
+	}
+
+	#sf-philosophy p {
+		font-size: 12px;
+	}
+
+	.wrapper {
+	  margin: 0 auto -650px;
+	}
+
+	.footer, .push {
+	  height: 650px;
+	}
+
+	.fixed-footer p {
+		font-size: 12px;
+	}
+
+	.f-footer-logo {
+		height:15px;
+	}
+}
+
+/* Small Screens Only */
+@media screen and (min-width: 551px) and (max-width: 768px) {
+	.sm-none {
+		display: none;
+	}
+
+	.sf-checkbox {
+		display: inline-block;
+	}
+
+	.sm-unit {
+		display: inline-block;
+	}
+
+	.wrapper {
+		margin: 0 auto -620px;
+	}
+
+	.footer, .push {
+		height: 620px;
+	}
+}
+
+
+.fixed-footer {
+	position: fixed;
+	text-align: center;
+	padding-top: 10px;
+	height: 80px;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(300,300,300,0.8);
+}
+
+.f-footer-logo {
+	height: 30px;
+}
+
+/* FIXED FOOTER for Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+	.fixed-footer {
+		text-align: left;
+		line-height: 70px;
+	}
+
+	.f-footer-logo {
+		height: 40px;
+	}
+}
 
 
 

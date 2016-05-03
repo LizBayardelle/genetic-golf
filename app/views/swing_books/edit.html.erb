@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div id="swing_book_new" class="text-center">
+    <h1>Need to Edit Your Full Swing Code?</h1>
+    <h2><small>Sometimes things change.
+      <br>Let your golf tips change with you.</small></h2>
+  </div>
+
+  <div id="enter_swing_code" class="enter_book_code text-center">
+    <h2>Enter your new and improved swing code here:</h2>
+    <%= render partial: "quiz", locals: { url: edit_swing_book_path(@swing_book), method: :put } %>
+  </div>
+
+</div>
+
+<div class="buffer-50"></div>

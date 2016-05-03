@@ -41,10 +41,10 @@ class BodQuizzesController < ApplicationController
     @bod_quiz.assign_attributes(bod_quiz_params)
 
     if @bod_quiz.save
-      flash[:notice] = "Post was updated successfully."
+      flash[:notice] = "Results were updated successfully."
       redirect_to user_path(current_user)
     else
-      flash.now[:alert] = "There was an error saving the post. Please try again."
+      flash.now[:alert] = "There was an error saving your results. Please try again."
       redirect_to welcome_index_path
     end
   end

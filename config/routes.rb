@@ -19,6 +19,8 @@ resources :sessions, only: [:new, :create, :destroy]
 resources :bal_quizzes
 resources :flex_quizzes
 resources :bod_quizzes
+resources :per_quizzes
+resources :swing_books
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
