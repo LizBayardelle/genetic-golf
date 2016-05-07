@@ -1,0 +1,34 @@
+<div class="container">
+
+  <div class="text-center page-title-bar">
+    <h1>Full Swing Club Fitting</h1>
+    <%= image_tag 'PingClubFullSwing.jpg', alt: "Ping Full Swing Club", class: "fitting-hero" %>
+    <h4 class="image-description"><small>Fitted clubs have proven to generate more distance, optimize one’s ball flights and consistency you need to shoot lower scores.</small></h4>
+  </div>
+
+  <div class="content-text">
+    <p>If you're going to buy golf clubs you need to buy clubs that properly fit you and your body. For the same money why not get clubs that truly fit you and benefit your golf game!
+      <br><br>The process is not hard, it's actually quite informative, and it benefits beginners to higher handicappers, to low handicappers, to tour professionals. Most important, it will make golf less frustrating, because fitted clubs promote a more efficient swing.
+      <br><br>Yes, it's possible to hit the ball straight with poorly fitted clubs, but usually only by introducing compensations that rob the swing of power and make it hard to repeat consistently. Club fitting should match one's body structure, swing speed, and swing style. This will determine one’s club length, lie angel, shaft flex, grip size, and club face design. If your going to buy golf clubs, buy ones that truly fit you, having the right equipment truly matters!
+    </p>
+
+    <h4 class="cta">Go to <a href="http://www.ping.com/fitting/nflightweb.aspx" target="_blank">PING.com</a> to get an initial fit of what fits you best.</h4>
+
+    <%= image_tag 'PING_nFlightWeb_Final.png', alt: "Ping nFlight Web Logo", class: "ping-logo" %>
+  </div>
+
+  <div class="bottom-arrows">
+    <div class="col-xs-6 text-left">
+      <h4><%= link_to fitting_putter_path do %>
+        <%= image_tag 'LogoLeftArrow.jpg', alt: "Left Arrow", class: "fitting-arrow" %>
+        Putter Fitting
+      </h4><% end %>    </div>
+    <div class="col-xs-6 text-right">
+      <h4><%= link_to fitting_wedge_path do %>
+        Wedge Fitting
+        <%= image_tag 'LogoRightArrow.jpg', alt: "Right Arrow", class: "fitting-arrow" %>
+      </h4><% end %>
+    </div>
+  </div>
+
+</div> <!-- container end -->

@@ -23,6 +23,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'mail_form'
 
 # Used for encrypting User passwords
 gem 'bcrypt'

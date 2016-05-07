@@ -1,2 +1,49 @@
-<h1>Welcome#personality</h1>
-<p>Find me in app/views/welcome/personality.html.erb</p>
+<div class="buffer-25"></div>
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".teaser-well").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".teaser-well").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>
+
+<% if current_user.per_quiz.nil? %>
+   <%= link_to (new_per_quiz_path) do %>
+   <div class="container bs-component text-center">
+     <div class="container col-sm-6"><div class="well bs-component teaser-well">
+       <h1>Test Your Personality</h1>
+       <p>Most golf websites and golf newsletters provide generic golf tips that are designed to fit everyone.
+         <br><br><strong>That's crazy when it comes to golf.</strong>
+         <br><br>Your personality has a direct effect on how you learn best, your mental process, how you perform best, and how you can play your best golf.
+         <br><br>The first step to a better golf game is to identify your personality.</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+<% else %>
+   <%= link_to (edit_per_quiz_path(current_user.per_quiz)) do %>
+   <div class="container bs-component text-center">
+     <div class="container col-sm-6"><div class="well bs-component teaser-well">
+       <h1>Test Your Personality</h1>
+       <p>Most golf websites and golf newsletters provide generic golf tips that are designed to fit everyone.
+         <br><br><strong>That's crazy when it comes to golf.</strong>
+         <br><br>Your personality has a direct effect on how you learn best, your mental process, how you perform best, and how you can play your best golf.
+         <br><br>The first step to a better golf game is to identify your personality.</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+<% end %>
+
+<%= link_to (welcome_newsletter_path) do %>
+  <div class="container col-sm-6"><div class="well bs-component teaser-well">
+    <h1>Golf Tips for Your Personality</h1>
+    <p>Your improvement is dependent on evaluating your body, knowing what skills you need help on, and matching your swing to your body and your personality.
+      <br><br>So why would you apply a generic golf tip to your game if it doesn’t fit you or you’re body or your genetic golf model?
+      <br><br>The newsletter you receive from us truly fits you and your body.</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+</div> <!-- container bs-component -->

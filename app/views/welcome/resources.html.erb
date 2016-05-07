@@ -1,2 +1,63 @@
-<h1>Welcome#resources</h1>
-<p>Find me in app/views/welcome/resources.html.erb</p>
+<script>
+$( document ).ready(function() {
+    var heights = $(".well-triple").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".well-triple").height(maxHeight);
+
+    var heights = $(".well-double").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".well-double").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>
+
+<div class="container bs-component text-center">
+  <%= link_to (fitting_full_path) do %>
+  <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
+    <h1>Full Swing Club Fitting</h1>
+    <p>If you're going to buy golf clubs you need to buy clubs that properly fit you and your body. For the same money why not get clubs that truly fit you and benefit your golf game!</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to (fitting_wedge_path) do %>
+  <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
+    <h1>Wedge Fitting</h1>
+    <p>Most amateur golfers only hit 6 greens or less in a round, if they are having a good day. So on the majority of holes, you are going to be using a wedge of some type. Find the wedge that fits you!</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to (fitting_putter_path) do %>
+  <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
+    <h1>Putter Fitting</h1>
+    <p>There’s no question that you will be using your putter more than any other club in your bag, so take the time to get a putter that’s fit for you.</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to (resources_aids_path) do %>
+  <div class="container col-sm-12"><div class="well well-double bs-component teaser-well">
+    <h1>Training Aids</h1>
+    <p>Serious about making progress in your golf game?  Then you need the right tools.  Here are some hand-picked training aids that will help you work on each individual part of your game.</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to (resources_fitness_path) do %>
+  <div class="container col-sm-6"><div class="well well-double bs-component teaser-well">
+    <h1>Your Fitness Plan</h1>
+    <p>More information coming soon!</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to (resources_fitness_path) do %>
+  <div class="container col-sm-6"><div class="well well-double bs-component teaser-well">
+    <h1>Fitness Equipment</h1>
+    <p>More information coming soon!</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+
+</div> <!-- container bs-component -->

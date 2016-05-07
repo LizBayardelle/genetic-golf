@@ -4,8 +4,10 @@
 
      <div class="form-group">
        <h3>Q1: How to Perform Toe Touch Test</h3>
-       <p><strong>Body Part Being Tested:</strong> Hamstring Flexibility<br>
-       <br>Begin by standing with feet hip width apart and toes pointing forward.  Bend from the hips forward and try to touch the ends of the fingers to the tips of the toes or lower, without bending the knees.</p>
+       <p><strong>Body Part Being Tested:</strong> Hamstring Flexibility
+       <br><br>Begin by standing with feet hip width apart and toes pointing forward. Bend from the hips forward and see how far your finger tips can go down, without bending your knees.
+       <br><br>Select which one you are:
+      </p>
        <div class="radio left-padding-30">
          <%= f.radio_button :flex01, '1'%><label>Palms touch ground</label><br>
          <%= f.radio_button :flex01, '2'%><label>Fingers touch ground</label><br>
@@ -17,7 +19,8 @@
 
      <div class="form-group">
        <h3>Q2: How to Perform the Overhead Deep Squat Test</h3>
-       <p><strong>Body Part Being Tested:</strong> Overall flexibility<br>
+       <p><strong>Body Part Being Tested:</strong> Overall flexibility
+         <br><br>If you have had hip or knee surgery and still recovering skip this test.
          <ol>
              <li>Begin by standing with your feet shoulder width apart and your toes pointing forward.</li>
              <li>Place your hands on back of your head with elbows out to side.</li>
@@ -25,13 +28,13 @@
              <li>To be considered a complete squat you must see the following at the bottom of the squat:</li>
                  <ul class="ContentUL">
                      <li>Upper torso is vertical</li>
-                     <li>Thigh/Femur is below horizontal</li>
+                     <li>Thigh/femur is below horizontal</li>
                      <li>Knees are aligned over feet</li>
                      <li>Feet are pointing forward (not flared out)</li>
                      <li>Elbows have not tilted sideways or come forward</li>
                  </ul>
          </ol>
-         <strong><em><u><br>Stop the test immediately if any of the following conditions are seen or felt:</u>
+         <strong><em><u>Stop the test immediately if any of the following conditions are seen or felt:</u>
          <br>Pain or discomfort, heels coming off the ground, face starts falling forward towards the ground, loss of balance.</em></strong></p>
        <div class="radio left-padding-30">
          <%= f.radio_button :flex02, '1'%><label>Heels on ground, thighs below horizontal, no tilt in torso and elbows</label><br>
@@ -50,89 +53,101 @@
        <h3>Q3: How to Perform the Pelvic Tilt Test</h3>
        <p>
          <ol>
-           <li>Begin taking a normal 7 iron golf set-up with arms hanging down and hands on hips.</li>
-           <li>Evaluate starting posture. Notice if the lower back has an accentuated arch (S-posture), if it is flat (N-posture), or if it is rounded into a slouched position (C-posture). You want to start from a flat  ( N -posture ).</li>
-           <li>Once starting position has been established, tilt the pelvis forward/in several inches to golf ball, thus increasing the arch in the lumbar spine. </li>
-           <li>Then return lower back and pelvis to flat/neutral position.</li>
-           <li>Once this move is accomplished tilt the pelvis backward/out and up several inches.</li>
-           <li>Then return lower back and pelvis to flat/neutral position.</li>
+           <li>Stand upright in your normal posture.  If you have rounded shoulders that's okay. </li>
+           <li>Then tilt forward into your normal 7 iron golf set-up.</li>
+           <li>Begin with your arms hanging down, then place your hands on your hips to feel hip movement. </li>
+           <li>Next, evaluate your starting posture. Notice if the lower back has an accentuated arch (S-posture), if it is neutral (N-posture), or if the middle of your back is rounded into a slouched position (C-posture). Ideally, you want to start from a neutral position (N-posture ). </li>
+           <li>Once starting position has been established, tilt your pelvis out and up several inches away from golf ball then return lower back and pelvis to neutral position. </li>
+           <li>Once this move is accomplished tilt the pelvis to the golf ball, flattening your hips by several inches, then return your hips and pelvis to a neutral position. </li>
          </ol>
-         <br>Proper execution of this test will yield a forward and backward tilting of the pelvis with no pain or discomfort, minimal leg/knee movement, and limited upper body forward and backward movement.  All the options will be in a normal golf posture.</p>
+         Proper execution of this test will yield a forward and backward tilting of the pelvis with no pain or discomfort, minimal knee/foot movement, and limited upper body forward and backward movement.</p>
        <div class="radio left-padding-30">
-         <%= f.radio_button :flex03, '1'%><label>Hips swivel down and not up freely several inches both ways</label><br>
-         <%= f.radio_button :flex03, '2'%><label>Hips swivel down and up slightly but slight restriction</label><br>
-         <%= f.radio_button :flex03, '3'%><label>Hips swivel in to ball and not up</label><br>
-         <%= f.radio_button :flex03, '4'%><label>Hips swivel out/up and not in to ball</label><br>
-         <%= f.radio_button :flex03, '5'%><label>Hips not able to swivel in or out without knees or upper body movement</label>
+         <%= f.radio_button :flex03, '1'%><label>Hips swivel out and up, then flatten to the ball, moving freely several inches both ways</label><br>
+         <%= f.radio_button :flex03, '2'%><label>Hips can flatten easily to the ball, but there is a slight restriction when moving out and up</label><br>
+         <%= f.radio_button :flex03, '3'%><label>Hips can move out and up freely, but there is a slight restriction when trying to flatten to the ball</label><br>
+         <%= f.radio_button :flex03, '4'%><label>Hips swivel to the ball and flatten, but cannot move out and up</label><br>
+         <%= f.radio_button :flex03, '5'%><label>Hips swivel out and up, but not in toward the ball</label><br>
+         <%= f.radio_button :flex03, '5'%><label>Hips are not able to swivel to the ball or move out and up without knee, feet, or upper body movement</label>
        </div>
      </div>
 
+
      <div class="form-group">
-       <h3>Q4: How to Perform the Pelvic Rotation Test to Back Hip</h3>
-       <p><strong>Body Part Being Tested:</strong> Back/trial hip backswing turn (right hip if you are a right handed golfer, and left hip if you are a left handed golfer)
-       <br><br>Begin by having the player assume a normal 7 iron posture, with their arms crossed over the shoulders. Feet should be approximately shoulder width apart and their hands should be resting on the front of each shoulder. Once in position, you are not to move upper body and try to rotate the lower body (belt and below) back  (back swing of trail hip) and return to original position. No movement of the shoulders or excessive lateral motion of the pelvis versus rotation. A proper Pelvic Rotation Test will yield limited motion above the waist line with only the pelvis rotating. It is acceptable for the legs and knees to be moving with the pelvis. However, the knees are not moving the pelvis, they may respond to pelvis. Any excessive knee bending and straightening should be corrected.<br><br>If you are having difficulty performing this action, try to differentiate between a stability or mobility problem. Have another person hold your upper body stable, and then try to rotate pelvic. If you still can’t separate, you have a mobility issue, if you can separate it is a stability issue.</p>
+       <h3>Q10: How to Perform the Neck Cervical Rotation Test</h3>
+       <p><strong>Body Part Being Tested:</strong> Neck
+         <br><br>The mouth remains closed in this test. Do not allow scapular elevation and protraction (don’t move your shoulders).
+         <ol>
+           <li>Standing erect with your feet together and toes pointing forward, slowly rotate your head to target or past it as far as possible. </li>
+           <li>Next flex the neck down, tilting your chin down to touch mid-collar bone. </li>
+           <li>Repeat turning head back away from the target.</li>
+         </ol>
+         Stop at any point if this creates pain.</p>
        <div class="radio left-padding-30">
-         <%= f.radio_button :flex04, '1'%><label>Back hip turns more than 45 degree, belt buckle past big toe</label><br>
-         <%= f.radio_button :flex04, '2'%><label>Back hip turns 45 degree, belt buckle at big toe</label><br>
-         <%= f.radio_button :flex04, '3'%><label>Back hip turns less than 45 degree, belt buckle just short of big toe</label><br>
-         <%= f.radio_button :flex04, '4'%><label>Back hip barely turns, belt buckle slight movement</label><br>
-         <%= f.radio_button :flex04, '5'%><label>Back hip barely turns and slides, belt buckle shows slight movement</label><br>
-         <%= f.radio_button :flex04, '6'%><label>Back hip does not turn, just slides, belt buckle shows slight movement</label><br>
-         <%= f.radio_button :flex04, '7'%><label>Back hip does not turn, belt buckle shows no movement</label>
+         <%= f.radio_button :flex04, '1'%><label>Head can turn freely both ways and touch both collar bones freely</label><br>
+         <%= f.radio_button :flex04, '2'%><label>Head can turn both ways and touch both collar bones with slight stress</label><br>
+         <%= f.radio_button :flex04, '3'%><label>Head can turn both ways, but can only touch forward collar bones with stress</label><br>
+         <%= f.radio_button :flex04, '4'%><label>Head can not turn forward over collar bone but can turn forward over collar bone</label><br>
+         <%= f.radio_button :flex04, '5'%><label>Head turns but has limited turning motion both ways (cannot touch either collar bone)</label><br>
+         <%= f.radio_button :flex04, '6'%><label>Head turns but has limited motion both ways and you can hear noise in your neck</label><br>
+         <%= f.radio_button :flex04, '7'%><label>Turning head any direction is difficult at this time</label>
        </div>
      </div>
 
+
      <div class="form-group">
-       <h3>Q5: How to Perform the Pelvic Rotation Test to Forward Hip</h3>
-       <p><strong>Body Part Being Tested:</strong> Target/forward hip forward turn (this will be your left hip if you are a right handed golfer and your right hip if you are a left handed golfer).<br><br>Begin by having the player assume a normal 7 iron posture, with their arms crossed over the shoulders. Feet should be approximately shoulder width apart ad their hands should be resting on the front of each shoulder. Once in position, you are not to move the upper body and try to rotate the lower body (belt and below) forward (forward swing) and return to original position. No movement of the shoulders or excessive lateral motion of the pelvis versus rotation. A proper Pelvic Rotation Test will yield limited motion above the waist line with only the pelvis rotating. It is acceptable for the legs and knees to be moving with the pelvis. However, the knees are not moving the pelvis, they may respond to pelvis. Any excessive knee bending and straightening should be corrected.<br><br>If you are having difficulty performing this action, try to differentiate between a stability or mobility problem. Have another person hold your upper body stable, and then try to rotate pelvic. If you still can’t separate, you have a mobility issue, if you can separate it is a stability issue.</p>
+       <h3>Q5: How to Perform the Pelvic Rotation Test, Back Hip</h3>
+       <p><strong>Body Part Being Tested:</strong> Test is for the back/trial hip and backswing turn.  This will be your right hip if you are a right handed golfer and your left hip if you are a left handed golfer.
+         <ol>
+           <li>Begin in a normal 7 iron posture, then move your hands to the opposite shoulders, with your arms crossed over each other.</li>
+           <li>Your feet should be approximately shoulder width apart with your hands resting on the front of each shoulder in a W position.</li>
+           <li>Once in position try to rotate your back/trail hip in a backswing motion. This should be done without moving your shoulders and while keeping your weight on the top or inside of your back foot.</li>
+           <li>A proper pelvic rotation will yield some motion above the waist line, but the rotation is coming from the pelvis rotating. It is acceptable for the legs and knees to be moving with the hips/pelvis. However, the knees are not moving the pelvis, they are also responding to the movement of the hips/pelvis.</li>
+           <li>If you are having difficulty performing this action, try having another person hold your shoulders stable, and then try to rotate hips/pelvis.</li>
+      </p>
        <div class="radio left-padding-30">
-         <%= f.radio_button :flex05, '1'%><label>Forward hip turns more than 45 degree, belt buckle past big toe</label><br>
-         <%= f.radio_button :flex05, '2'%><label>Forward hip turns 45 degree, belt buckle at big toe</label><br>
-         <%= f.radio_button :flex05, '3'%><label>Forward hip turns less than 45 degree, belt buckle just short of big toe</label><br>
-         <%= f.radio_button :flex05, '4'%><label>Forward hip barely turns, belt buckle slight movement</label><br>
-         <%= f.radio_button :flex05, '5'%><label>Forward hip barely turns and slides, slight belt buckle movement</label><br>
-         <%= f.radio_button :flex05, '6'%><label>Forward hip does not turn, just slides, slight belt buckle movement</label><br>
-         <%= f.radio_button :flex05, '7'%><label>Forward hip no turns, no belt buckle movement</label>
+         <%= f.radio_button :flex05, '1'%><label>Back hip turns more than 45 degrees, belt buckle past big toe</label><br>
+         <%= f.radio_button :flex05, '2'%><label>Back hip turns 45 degrees, belt buckle at big toe</label><br>
+         <%= f.radio_button :flex05, '3'%><label>Back hip turns less than 45 degrees, belt buckle just short of big toe</label><br>
+         <%= f.radio_button :flex05, '4'%><label>Back hip barely turns, belt buckle shows slight movement</label><br>
+         <%= f.radio_button :flex05, '5'%><label>Back hip barely turns and slides, belt buckle shows slight movement</label><br>
+         <%= f.radio_button :flex05, '6'%><label>Back hip does not turn, just slides, belt buckle shows slight movement</label><br>
+         <%= f.radio_button :flex05, '7'%><label>Back hip does not turn, belt buckle shows no movement</label>
        </div>
      </div>
 
-     <div class="form-group">
-       <h3>Q6: How to Perform Back Shoulder Trunk Rotation Test</h3>
-       <p><strong>Body Part Being Tested:</strong> Back Shoulder turns back, back to target (right shoulder for a right handed golfer, left shoulder for a left handed golfer)
-       <br><br>Use two clubs or teaching rods on the ground to make two 45 degree angles off your target line to measure your rotation.  Get into a seated position with hips on front edge of chair, knees and feet together, body in an upright and erect posture and arms extended out in the “W” position supporting a golf club across the shoulders. Now rotate the shoulder, back to the target as far as possible with out any spine change. Shoulder blades locked against club and remain straight to get a real picture of your shoulder and spinal mobility</p>
-       <div class="radio left-padding-30">
-         <%= f.radio_button :flex06, '1'%><label>Back shoulder turns more than 45 degrees</label><br>
-         <%= f.radio_button :flex06, '2'%><label>Back shoulder turns 45 degrees</label><br>
-         <%= f.radio_button :flex06, '3'%><label>Back shoulder turns just less than 45 degrees</label><br>
-         <%= f.radio_button :flex06, '4'%><label>Back shoulder turns roughly 15-30 degrees</label><br>
-         <%= f.radio_button :flex06, '5'%><label>Back shoulder barely turns</label><br>
-         <%= f.radio_button :flex06, '6'%><label>Back shoulder barely turns and slides up</label><br>
-         <%= f.radio_button :flex06, '7'%><label>Back shoulder barely turns and slides down</label><br>
-         <%= f.radio_button :flex06, '8'%><label>Back shoulder does not turn, but slides up</label><br>
-         <%= f.radio_button :flex06, '9'%><label>Back shoulder does not turn, but slides down</label>
-       </div>
-     </div>
 
-     <div class="form-group">
-       <h3>Q7: How to Perform Forward Shoulder Trunk Rotation Test</h3>
-       <p><strong>Body Part Being Tested:</strong> Forward Shoulder turns back, front to target (left shoulder for a right handed golfer, right shoulder for a left handed golfer)<br><br>Use two clubs or teaching rods on the ground to make two 45 degree angles off your target line to measure your rotation.  Get into a seated position with hips on front edge of chair, knees and feet together, body in an upright and erect posture and arms extended out in the “W” position supporting a golf club across the shoulders. Now rotate the shoulder,  forward to the target as far as possible with out any spine change. Shoulder blades locked against club and remain straight to get a real picture of your shoulder and spinal mobility. </p>
-       <div class="radio left-padding-30">
-         <%= f.radio_button :flex07, '1'%><label>Forward shoulder turns more than 45 degrees</label><br>
-         <%= f.radio_button :flex07, '2'%><label>Forward shoulder turns 45 degrees</label><br>
-         <%= f.radio_button :flex07, '3'%><label>Forward shoulder turns just less than 45 degrees</label><br>
-         <%= f.radio_button :flex07, '4'%><label>Forward shoulder turns roughly 15-30 degrees</label><br>
-         <%= f.radio_button :flex07, '5'%><label>Forward shoulder barely turns</label><br>
-         <%= f.radio_button :flex07, '6'%><label>Forward shoulder barely turns and slides up</label><br>
-         <%= f.radio_button :flex07, '7'%><label>Forward shoulder barely turns and slides down</label><br>
-         <%= f.radio_button :flex07, '8'%><label>Forward shoulder does not turn, but slides up</label><br>
-         <%= f.radio_button :flex07, '9'%><label>Forward shoulder does not turn, but slides down</label>
-       </div>
-     </div>
+      <div class="form-group">
+        <h3>Q6: How to Perform Seated Trunk Rotation Test for Back Shoulder</h3>
+        <p><strong>Body Part Being Tested:</strong> Back Shoulder turns back, back to target (right shoulder for a right handed golfer, left shoulder for a left handed golfer)
+          <ol>
+           <li>Use two clubs or teaching rods on the ground to make a 45 degree angles off your target line to measure your rotation, as shown in picture below.</li>
+           <li>Get into a seated position with your hips on front edge of a chair, keeping your knees and feet together, body in an upright and erect posture, and arms extended out in the W position supporting a golf club across the shoulders.</li>
+           <li>Now rotate the shoulder like a backswing, back to the target as far as possible with out any spine change. Shoulder blades should be locked against club and remain straight to get a real picture of your shoulder and spinal mobility. </li>
+           <li>Now compare your golf shaft across shoulders to 45 degree angle on ground.</li>
+        </ol></p>
+        <div class="radio left-padding-30">
+          <%= f.radio_button :flex06, '1'%><label>Back shoulder turns more than 45 degrees</label><br>
+          <%= f.radio_button :flex06, '2'%><label>Back shoulder turns 45 degrees</label><br>
+          <%= f.radio_button :flex06, '3'%><label>Back shoulder turns just less than 45 degrees</label><br>
+          <%= f.radio_button :flex06, '4'%><label>Back shoulder turns roughly 15-30 degrees</label><br>
+          <%= f.radio_button :flex06, '5'%><label>Back shoulder barely turns</label><br>
+          <%= f.radio_button :flex06, '6'%><label>Back shoulder barely turns and slides up</label><br>
+          <%= f.radio_button :flex06, '7'%><label>Back shoulder barely turns and slides down</label><br>
+          <%= f.radio_button :flex06, '8'%><label>Back shoulder does not turn, but slides up</label><br>
+          <%= f.radio_button :flex06, '9'%><label>Back shoulder does not turn, but slides down</label>
+        </div>
+      </div>
+
 
      <div class="form-group">
        <h3>Q8: How to Perform Back Forearm 90/90</h3>
        <p><strong>Body Part Being Tested:</strong> Back forearm (right forearm for right handed golfer, left forearm for left handed golfer)
-       <br><br>Stand tall and hold back golf arm out to the side with 90 degrees of flexion in their elbow and 90 degrees of side abduction at the shoulder joint. Now, without bend the thorax backward, try to externally rotate the hand / forearm up as far as possible. Only continue rotating as far as the body will allow with no compromises in the posture, no arching of the back. Never perform this test to the point of pain or discomfort.   Once in a fully externally rotated position, it is time to grade the degrees of rotation.</p>
+         <ol>
+           <li>Stand tall and hold back/trail arm out to the side with 90 degrees of flexion in their elbow and 90 degrees of side abduction at the shoulder joint.</li>
+           <li>Now, without bend the thorax backward, try to externally rotate the hand/forearm up as far as possible.</li>
+           <li>Only continue rotating as far as the body will allow with no compromises in the posture, no arching of the back. Never perform this test to the point of pain or discomfort.</li>
+           <li>Once in a fully externally rotated position, it is time to grade the degrees of rotation.</li>
+       </ol></p>
        <div class="radio left-padding-30">
          <%= f.radio_button :flex08, '1'%><label>Less than Spine Angle - forearm does not externally rotate past the angle of their spine angle (usually less than 90 degrees)</label><br>
          <%= f.radio_button :flex08, '2'%><label>Equal to Spine Angle - forearm is parallel to their spine angle (usually 90 degrees)</label><br>
@@ -141,33 +156,81 @@
        </div>
      </div>
 
+
+
+
      <div class="form-group">
-       <h3>Q9: How to Perform Forward Forearm 90/90 Test</h3>
-       <p><strong>Body Part Being Tested:</strong> Forward  Forearm (left forearm for a right handed golfer, right forearm for a left handed golfer)
-       <br><br>Stand tall and hold forward golf arm out to the side with 90 degrees of flexion in their elbow and 90 degrees of side abduction at the shoulder joint. Now, without bend the thorax backward, try to externally rotate the hand/forearm up as far as possible. Only continue rotating as far as the body will allow with no compromises in the posture, no arching of the back. Never perform this test to the point of pain or discomfort.   Once in a fully externally rotated position, it is time to grade the degrees of rotation.</p>
+       <h3>Q8: How to Perform the Pelvic Rotation Test to Forward Hip</h3>
+       <p><strong>Body Part Being Tested:</strong> Target/forward hip forward turn (this will be your left hip if you are a right handed golfer and your right hip if you are a left handed golfer).
+         <ol>
+           <li>Begin by having the player assume a normal 7 iron posture, then move hands to opposite shoulders, with arms are crossed over each other.</li>
+           <li>Feet should be approximately shoulder width apart and hands should be resting on the front of each shoulder in a W position.</li>
+           <li>Once in position, try to rotate your forward/target hip in a forward swing motion without moving your shoulders.</li>
+           <li>Your front foot should stay in the same position it is during a normal golf swing.</li>
+           <li>A proper pelvic rotation will yield some motion above the waist line, but the rotation is coming from the pelvis rotating. It is acceptable for the legs and knees to be moving with the hips/pelvis, but the knees are not moving the pelvis, they are also responding to hips/pelvis.</li>
+           <li>If you are having difficulty performing this action, try having another person hold your shoulders stable, and then try to rotate hips/pelvis.</li>
+        </ol></p>
        <div class="radio left-padding-30">
-         <%= f.radio_button :flex09, '1'%><label>Less than Spine Angle: Forearm does not externally rotate past the angle of their spine angle (usually less than 90 degrees)</label><br>
-         <%= f.radio_button :flex09, '2'%><label>Equal to Spine Angle: Forearm is parallel to their spine angle (usually 90 degrees)</label><br>
-         <%= f.radio_button :flex09, '3'%><label>Slightly More than Spine Angle: Forearm externally rotates past their spine angle (usually greater than 90 degrees)</label><br>
-         <%= f.radio_button :flex09, '4'%><label>Easily More than Spine Angle: Forearm externally rotates past their spine angle (usually greater than 90 degrees)</label>
+         <%= f.radio_button :flex08, '1'%><label>Forward hip turns more than 45 degrees, belt buckle past big toe</label><br>
+         <%= f.radio_button :flex08, '2'%><label>Forward hip turns 45 degrees, belt buckle at big toe</label><br>
+         <%= f.radio_button :flex08, '3'%><label>Forward hip turns less than 45 degrees, belt buckle just short of big toe</label><br>
+         <%= f.radio_button :flex08, '4'%><label>Forward hip barely turns, belt buckle slight movement</label><br>
+         <%= f.radio_button :flex08, '5'%><label>Forward hip barely turns and slides, slight belt buckle movement</label><br>
+         <%= f.radio_button :flex08, '6'%><label>Forward hip does not turn, just slides, slight belt buckle movement</label><br>
+         <%= f.radio_button :flex08, '7'%><label>Forward hip does not turn, no belt buckle movement</label>
        </div>
      </div>
 
+
+
+
+
+
+    <div class="form-group">
+      <h3>Q9: How to Perform Forward Shoulder Trunk Rotation Test</h3>
+      <p><strong>Body Part Being Tested:</strong> Forward Shoulder turns back, front to target (left shoulder for a right handed golfer, right shoulder for a left handed golfer)
+        <ol>
+           <li>Use two clubs or teaching rods on the ground to make a 45 degree angles off your target line to measure your rotation as shown in picture below.</li>
+           <li>Get into a seated position with your hips on front edge of a chair and your knees and feet together.  Keep your body in an upright and erect posture with your arms extended out in the W position supporting a golf club across the shoulders.</li>
+           <li>Now rotate your shoulders like a forward swing, turning your shoulders to the target as far as possible without any spinal change.</li>
+           <li>Shoulder blades should remain locked against club and remain straight to get a real picture of your shoulder and spinal mobility. </li>
+           <li>Now compare your golf shaft across shoulders to 45 degree angle on ground.</li>
+      </ol></p>
+      <div class="radio left-padding-30">
+        <%= f.radio_button :flex09, '1'%><label>Forward shoulder turns more than 45 degrees</label><br>
+        <%= f.radio_button :flex09, '2'%><label>Forward shoulder turns 45 degrees</label><br>
+        <%= f.radio_button :flex09, '3'%><label>Forward shoulder turns just less than 45 degrees</label><br>
+        <%= f.radio_button :flex09, '4'%><label>Forward shoulder turns roughly 15-30 degrees</label><br>
+        <%= f.radio_button :flex09, '5'%><label>Forward shoulder barely turns</label><br>
+        <%= f.radio_button :flex09, '6'%><label>Forward shoulder barely turns and slides up</label><br>
+        <%= f.radio_button :flex09, '7'%><label>Forward shoulder barely turns and slides down</label><br>
+        <%= f.radio_button :flex09, '8'%><label>Forward shoulder does not turn, just slides up or down</label>
+      </div>
+    </div>
+
+
+
+
+
+
      <div class="form-group">
-       <h3>Q10: How to Perform the Neck Cervical Rotation Test</h3>
-       <p><strong>Body Part Being Tested:</strong> Neck (back turn is head turning away from target, forward turn is head turning towards the target)<br><br>Standing erect with feet together and toes pointing forward, now rotate the head back turning away from target as far as possible. Next flex the neck down, chin tilts down to touch mid-collar bone. The mouth remains closed in this test, also do not allow scapular elevation and protraction. Repeat turning head towards the target.<br><br>Stop at any point if this creates pain.
+       <h3>Q10: How to Perform Forward Forearm 90/90 Test</h3>
+       <p><strong>Body Part Being Tested:</strong> Forward  Forearm (left forearm for a right handed golfer, right forearm for a left handed golfer)
+         <ol>
+           <li>Stand tall and hold forward/target arm out to the side with 90 degrees of flexion in their elbow and 90 degrees of side abduction at the shoulder joint.</li>
+           <li>Now, without bend the thorax backward, trying to externally rotate the hand/forearm up as far as possible.</li>
+           <li>Only continue rotating as far as the body will allow with no compromises in the posture, no arching of the back. Never perform this test to the point of pain or discomfort.</li>
+           <li>Once in a fully externally rotated position, it is time to grade the degrees of rotation.</li>
+     </ol></p>
        <div class="radio left-padding-30">
-         <%= f.radio_button :flex10, '1'%><label>Head can turn freely both ways and touch both collar bones freely</label><br>
-         <%= f.radio_button :flex10, '2'%><label>Head can turn both ways and touch both collar bones with stress</label><br>
-         <%= f.radio_button :flex10, '3'%><label>Head can turn both ways and only touch back collar bones with stress</label><br>
-         <%= f.radio_button :flex10, '4'%><label>Head can turn both ways and only touch forward collar bones with stress</label><br>
-         <%= f.radio_button :flex10, '5'%><label>Head can not turn back over collar bone buck can turn forward over collar bone</label><br>
-         <%= f.radio_button :flex10, '6'%><label>Head can not turn forward over collar bone buck can turn back over collar bone</label><br>
-         <%= f.radio_button :flex10, '7'%><label>Head turns but has limited turning motion both ways</label><br>
-         <%= f.radio_button :flex10, '8'%><label>Head turns but has limited motion both ways and your hear noise in neck</label><br>
-         <%= f.radio_button :flex10, '9'%><label>Turning head any direction is difficult at this time</label>
+         <%= f.radio_button :flex10, '1'%><label>Less than Spine Angle: Forearm does not externally rotate past the angle of their spine angle (usually less than 90 degrees)</label><br>
+         <%= f.radio_button :flex10, '2'%><label>Equal to Spine Angle: Forearm is parallel to their spine angle (usually 90 degrees)</label><br>
+         <%= f.radio_button :flex10, '3'%><label>Slightly More than Spine Angle: Forearm externally rotates past their spine angle (usually greater than 90 degrees)</label><br>
+         <%= f.radio_button :flex10, '4'%><label>Easily More than Spine Angle: Forearm externally rotates past their spine angle (usually greater than 90 degrees)</label>
        </div>
      </div>
+
+
 
  </div> <!-- column end -->
 </div> <!-- row end -->

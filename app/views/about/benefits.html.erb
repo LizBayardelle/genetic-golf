@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="text-center page-title-bar">
+    <h1>Why Genetic Golf Benefits You</h1>
+    <h2><small>Our Teaching Philosophy</small></h2>
+  </div>
+
+  <div class="content-text">
+        <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons. Instead of telling everyone the same thing or guessing at the best way for you to swing, we personally test you to find your best swing or putting stroke.
+          <br><br>
+          <% if current_user.swing_book.nil? %>
+             <%= link_to "Find your code and find your game!", new_swing_book_path %>
+          <% else %>
+             <%= link_to "Find your code and find your game!", edit_swing_book_path(current_user.swing_book) %>
+          <% end %>
+          <br><br>Genetic Golf helps you learn your best swing.
+          <br><br>With Genetic Golf you will:
+          <ul>
+            <li>Improve faster</li>
+            <li>Hit more solid shots</li>
+            <li>Have greater consistency</li>
+            <li>Produce lower scores!</li>
+          </ul>
+        We find your best neurokinetic and Genetic Golf motion and then match them up to your golf game. Now you have a golf game that matches you and you can start to repeat it with success.
+        <br><br>Traditional instruction focuses on the perfect golf swing, paying little attention to one's best genetic motion, body, and personality. That’s why the majority of golfers find the perfect golf swing so difficult to achieve and repeat. So if you struggle or are new to golf, you need to take the Genetic Golf test to create your own personal swing code that fundamentally matches you and your body up to a solid golf game.
+        <br><br>Here’s why: The club doesn’t move itself, your body and your mind move it!
+        <br><br>If you don’t test which way your body and mind work best, odds are your fighting against a motion that doesn’t match your body. With Genetic Golf, you will understand how your body moves best to create rotary forces with levers and power angles that match you and your body.
+        <br><br>Once you blend your Genetic ID in the correct sequence with your body, mind, and your personality, that’s when the magic starts to happen! You now have a golf swing that fits you and your body, now golf gets fun.
+        <br><br>My students keep telling me "I can do this and I didn’t have to work hard to hit great shots! My body can repeat this motion!”
+      </p>
+
+    <%= link_to welcome_game_path do %>
+      <h4 class="cta">Find your personalized Genetic Golf swing today!</h4>
+    <% end %>
+  </div>
+
+
+</div> <!-- container end -->

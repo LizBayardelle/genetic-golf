@@ -1,16 +1,30 @@
 Rails.application.routes.draw do
 
+  get 'coming_soon/putting_book'
+  get 'coming_soon/short_book'
+
+  get 'about/benefits'
+  get 'about/principles'
+  get 'about/staff'
+
+  get 'resources/aids'
+  get 'resources/fitness'
+
+  get 'fitting/full'
+  get 'fitting/wedge'
+  get 'fitting/putter'
+
+  get 'game/instruction'
+  get 'game/programs'
+
   get 'welcome/index'
-
   get 'welcome/personality'
-
+  get 'welcome/newsletter'
   get 'welcome/game'
-
   get 'welcome/body'
-
   get 'welcome/resources'
-
   get 'welcome/about'
+  get 'welcome/contact'
 
   root 'welcome#index'
 
@@ -21,6 +35,10 @@ resources :flex_quizzes
 resources :bod_quizzes
 resources :per_quizzes
 resources :swing_books
+
+
+match '/send_mail', to: 'contact#send_mail', via: 'post'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

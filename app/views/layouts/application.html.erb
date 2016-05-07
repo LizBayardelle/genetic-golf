@@ -9,6 +9,20 @@
   <%= favicon_link_tag '/app/assets/images/favicon.ico' %>
   <link href="https://fonts.googleapis.com/css?family=Muli|Josefin+Sans|Cinzel" rel="stylesheet" type="text/css">
 
+  <!-- bootstrap material design -->
+  <!-- Material Design fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- Bootstrap Material Design -->
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-material-design.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/ripples.min.css">
+
+
+
 </head>
 <body>
 
@@ -18,40 +32,44 @@
   <div class="pull-right user-info text-right">
   <% if current_user %>
     <%= link_to current_user.name, user_path(current_user) %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
-    <% if @user.swing_book != nil %>
+    <% if current_user.swing_book != nil %>
       <p>ID Code:
-        <%= @user.swing_book.swing01 %>
-        <%= @user.swing_book.swing02 %>
-        <%= @user.swing_book.swing03 %>
+        <%= current_user.swing_book.swing01 %>
+        <%= current_user.swing_book.swing02 %>
+        <%= current_user.swing_book.swing03 %>
         -
-        <%= @user.swing_book.swing04 %>
-        <%= @user.swing_book.swing05 %>
-        <%= @user.swing_book.swing06 %>
+        <%= current_user.swing_book.swing04 %>
+        <%= current_user.swing_book.swing05 %>
+        <%= current_user.swing_book.swing06 %>
         -
-        <%= @user.swing_book.swing07 %>
-        <%= @user.swing_book.swing08 %>
-        <%= @user.swing_book.swing09 %>
-        <%= @user.swing_book.swing10 %></p>
+        <%= current_user.swing_book.swing07 %>
+        <%= current_user.swing_book.swing08 %>
+        <%= current_user.swing_book.swing09 %>
+        <%= current_user.swing_book.swing10 %></p>
     <% end %>
   <% else %>
     <%= link_to "Sign In", new_session_path %> or
     <%= link_to "Sign Up", new_user_path %>
   <% end %>
-  </div>
-</div>
+  </div> <!-- user info -->
+</div><!-- very-top -->
 
 <div class="container" id="header-detail">
   <div class="col-xs-12">
     <a href="/">
       <%= image_tag "V3   Genetic Golf   Array-02.png", alt: "Genetic Golf main logo", style:"width: 100%"%>
     </a>
-  </div>
+  </div> <!-- GG Logo -->
   <h1 class="text-center">Welcome to Genetic Golf</h1>
   <p class="text-center text-muted">Golf is a personal game. Your golf game has to fit you.<br>
     We don’t guess, we test to find what works best for you.</p>
-</div>
+</div>  <!-- header-detail -->
 
 <div class="buffer-25"></div>
+
+
+
+
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -64,60 +82,64 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "Genetic Golf", welcome_index_path, :class => 'navbar-brand' %>
-    </div>
+    </div> <!-- navbar-header -->
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div id="MainNav" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul id="navlist" class="nav nav-tabs">
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Know Your Personality</a>
+            <%= link_to "Know Your<br />Personality".html_safe, welcome_personality_path, class: "dropdown-toggle", role: "button" %>
           <ul id="subnavlist" class="dropdown-menu">
             <li>
-              <% if current_user.per_quiz.nil? %>
+              <% if current_user.nil? || current_user.per_quiz.nil? %>
                  <%= link_to "Get Your Personality Profile ID", new_per_quiz_path %>
               <% else %>
                  <%= link_to "Personality Profile ID ✓", edit_per_quiz_path(current_user.per_quiz) %>
               <% end %>
             </li>
-            <li><a href="#">Sample Link 2</a></li>
+            <li>
+              <%= link_to "Personalized Golf Tips Newsletter", welcome_newsletter_path %>
+            </li>
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Improve Your Game</a>
+          <%= link_to "Improve<br />Your Game".html_safe, welcome_game_path, class: "dropdown-toggle", role: "button" %>
           <ul id="subnavlist" class="dropdown-menu">
             <li>
-              <% if current_user.swing_book.nil? %>
+              <% if current_user.nil? || current_user.swing_book.nil? %>
                  <%= link_to "Your Genetic Golf Swing", new_swing_book_path %>
               <% else %>
                  <%= link_to "Full Swing ID ✓", edit_swing_book_path(current_user.swing_book) %>
               <% end %>
             </li>
-            <li><a href="#">Sample Link 2</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%= link_to "Your Genetic Short Game", coming_soon_short_book_path %></li>
+            <li><%= link_to "Your Genetic Putting Game", coming_soon_putting_book_path %></li>
+            <li><%= link_to "Genetic Golf Private Instruction", game_instruction_path %></li>
+            <li><%= link_to "Golf School and Custom Programs", game_programs_path %></li>
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Understand Your Body</a>
+          <%= link_to "Understand<br />Your Body".html_safe, welcome_body_path, class: "dropdown-toggle", role: "button" %>
           <ul id="subnavlist" class="dropdown-menu">
             <li>
-              <% if current_user.bal_quiz.nil? %>
+              <% if current_user.nil? || current_user.bal_quiz.nil? %>
                  <%= link_to "Balance Quiz", new_bal_quiz_path %>
               <% else %>
                  <%= link_to "Balance Quiz ✓", edit_bal_quiz_path(current_user.bal_quiz) %>
               <% end %>
             </li>
             <li>
-              <% if current_user.flex_quiz.nil? %>
+              <% if current_user.nil? || current_user.flex_quiz.nil? %>
                  <%= link_to "Flexibility Quiz", new_flex_quiz_path %>
               <% else %>
                  <%= link_to "Flexibility Quiz ✓", edit_flex_quiz_path(current_user.flex_quiz) %>
               <% end %>
             </li>
             <li>
-              <% if current_user.bod_quiz.nil? %>
+              <% if current_user.nil? || current_user.bod_quiz.nil? %>
                  <%= link_to "Body Structure Quiz", new_bod_quiz_path %>
               <% else %>
                  <%= link_to "Body Structure Quiz ✓", edit_bod_quiz_path(current_user.bod_quiz) %>
@@ -127,20 +149,23 @@
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle OneLine" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
+          <%= link_to "Your<br />Resources".html_safe, welcome_resources_path, class: "dropdown-toggle", role: "button" %>
           <ul id="subnavlist" class="dropdown-menu">
-            <li><a href="#">Sample Link 1</a></li>
-            <li><a href="#">Sample Link 2</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%= link_to "Full Swing Club Fitting", fitting_full_path %></li>
+            <li><%= link_to "Wedge Fitting", fitting_wedge_path %></li>
+            <li><%= link_to "Putter Fitting", fitting_putter_path %></li>
+            <li><%= link_to "Training Aids", resources_aids_path %></li>
+            <li><%= link_to "Your Fitness Plan", resources_fitness_path %></li>
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle OneLine" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+          <%= link_to "About<br />Us".html_safe, welcome_about_path, class: "dropdown-toggle", role: "button" %>
           <ul id="subnavlist" class="dropdown-menu">
-            <li><a href="#">Sample Link 1</a></li>
-            <li><a href="#">Sample Link 2</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%= link_to "Benefits of Genetic Golf", about_benefits_path %></li>
+            <li><%= link_to "Genetic Golf Principles", about_principles_path %></li>
+            <li><%= link_to "Golf Staff and Awards", about_staff_path %></li>
+            <li><%= link_to "Contact Us", welcome_contact_path %></li>
           </ul>
         </li>
 
@@ -150,11 +175,11 @@
 </nav>
 
 
-<div class="container">
+
   <%= yield %>
 <div class="buffer-25"></div>
 <div class="push"></div>
-</div> <!-- page content container end -->
+
 
 
 </div> <!-- wrapper div end -->
@@ -163,7 +188,7 @@
   <div class="col-sm-10 col-sm-offset-1" id="sf-steps">
     <h4 class="text-center">Build Your Profile</h4>
     <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-1">
-      <% if current_user.gender.nil? %>
+      <% if current_user.nil? || current_user.gender.nil? %>
          <a href=""><h5><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
         Step 1: <br class="sm-none"></strong>Create Your Profile</h5></a>
       <% else %>
@@ -172,7 +197,7 @@
       <% end %>
     </div> <!-- step 1 -->
     <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-2">
-      <% if current_user.gender.nil? %>
+      <% if current_user.nil? || current_user.gender.nil? %>
          <a href=""><h5><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
          Step 2: <br class="sm-none"></strong>Test Your Personality</h5></a>
       <% else %>
@@ -181,7 +206,7 @@
       <% end %>
     </div> <!-- step 2 -->
     <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-3">
-      <% if current_user.gender.nil? %>
+      <% if current_user.nil? || current_user.gender.nil? %>
          <a href=""><h5><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
          Step 3: <br class="sm-none"></strong>Test Your Swing</h5></a>
       <% else %>
@@ -190,7 +215,7 @@
       <% end %>
     </div> <!-- step 3 -->
     <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-4">
-      <% if current_user.bal_quiz.nil? || current_user.flex_quiz.nil? %>
+      <% if current_user.nil? || current_user.bal_quiz.nil? || current_user.flex_quiz.nil? %>
          <a href="app/views/users/show.html.erb"><h5><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
          Step 4: <br class="sm-none"></strong>Finish Your Profile</h5></a>
       <% else %>
@@ -201,7 +226,8 @@
     <div class="buffer-15"> </div>
   </div> <!-- steps end -->
 
-  <div class="row container">
+
+
 
   <div class="col-xs-12 col-sm-3" id="sf-sm">
     <h4 class="text-center">Connect with Us</h4>
@@ -227,15 +253,28 @@
     </div> <!-- facebook end -->
   </div> <!-- sm end -->
 
+
+
+
   <div class="container col-xs-12 col-sm-9" id="sf-philosophy">
     <h4 class="text-center">Genetic Golf Philosophy</h4>
     <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons! We don’t guess, we test. Instead of telling everyone to make the exact same swing or guessing at what might benefit you, we test your body and your mind. As a result we find your body’s best genetic and neurokinetic motion and match that up to you and your golf game and you can start to repeat it with success.
     <br><small>© Copyright 2014 by Genetic Golf. All Rights Reserved.</small></p>
   </div> <!-- end philosophy -->
 
-</div> <!-- row end -->
 
 </div> <!-- sticky footer end -->
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="fixed-footer">
   <div id="ff-text-container" class="container col-md-5">

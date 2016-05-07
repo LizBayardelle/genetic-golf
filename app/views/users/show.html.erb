@@ -31,7 +31,7 @@
   </div>
 
   <div id="your_gg_codes" class="text-center">
-    <div class="col-xs-12"><div id="personality" class="well">
+    <div class="col-xs-12"><div id="personality" class="well bs-component">
       <h4><strong>Personality</strong></h4>
       <% if @user.per_quiz == nil %>
         <h3>????</h3>
@@ -43,7 +43,7 @@
       <% end %>
     </div></div>
 
-    <div class="col-sm-4"><div id="balance" class="well">
+    <div class="col-sm-4"><div id="balance" class="well bs-component">
       <h4><strong>Balance</strong></h4>
       <% if @user.bal_quiz == nil %>
         <h3>???-???</h3>
@@ -53,7 +53,8 @@
         <p><%= link_to "Retest Results", edit_bal_quiz_path(@user.bal_quiz) %></p>
       <% end %>
     </div></div>
-    <div class="col-sm-4"><div id="flexibility" class="well">
+
+    <div class="col-sm-4"><div id="flexibility" class="well bs-component">
       <h4><strong>Flexibility</strong></h4>
       <% if @user.flex_quiz == nil %>
         <h3>???-???-????</h3>
@@ -63,12 +64,14 @@
         <p><%= link_to "Retest Results", edit_flex_quiz_path(@user.flex_quiz) %></p>
       <% end %>
     </div></div>
-    <div class="col-sm-4"><div id="motor_dominance" class="well">
+
+    <div class="col-sm-4"><div id="motor_dominance" class="well bs-component">
       <h4><strong>Motor Dominance</strong></h4>
       <h3><%=  %>???-???</h3>
       <p>Check Back Soon</p>
     </div></div>
-    <div class="col-xs-12 text-left"><div id="body_balance" class="well">
+
+    <div class="col-xs-12 text-left"><div id="body_balance" class="well bs-component">
       <h4 class="text-center"><strong>Body Structure</strong></h4>
         <% if @user.bod_quiz == nil %>
           <p><%= link_to "Test Your Body Structure", new_bod_quiz_path %></p>
@@ -121,7 +124,7 @@
   </div>
 
   <div id="your_information">
-      <div class="col-sm-6"><div id="personal_information" class="well">
+      <div class="col-sm-6"><div id="personal_information" class="well bs-component">
         <h4 class="text-center"><strong>Personal Stats</strong></h4>
         <p><strong>Email: </strong><%= @user.email %></p>
         <p><strong>Gender: </strong><%= @user.gender %></p>
@@ -132,7 +135,8 @@
           <%= link_to "Edit Your Information", edit_user_path(@user), class: 'btn btn-secondary' %>
         </div>
       </div></div>
-      <div class="col-sm-6"><div id="golf_information" class="well">
+
+      <div class="col-sm-6"><div id="golf_information" class="well bs-component">
         <h4 class="text-center"><strong>Golf Stats</strong></h4>
         <p><strong>Years Golfing: </strong><%= @user.g_years %></p>
         <p><strong>Average Golf Score: </strong><%= @user.g_score %></p>
@@ -143,4 +147,5 @@
           <%= link_to "Edit Your Information", edit_user_path(@user), class: 'btn btn-secondary' %>
         </div>
       </div></div>
+
 </div>

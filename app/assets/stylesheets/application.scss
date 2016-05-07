@@ -28,16 +28,16 @@
 }
 
 body {
-	font-family: 'Muli', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-family: 'Muli', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
 	font-weight: 100;
 }
 
 h1 {
-	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif;
+	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;;
 }
 
 a {
-  color: #567E3A;
+  color: #567E3A !important;
 }
 
 a:hover {
@@ -46,6 +46,19 @@ a:hover {
 
 .spacer-15 {
 	margin-top: 15px
+}
+
+.full-width {
+    padding: 0;
+		width: 100%;
+}
+
+.bottom-pad-15 {
+	padding-bottom: 15px;
+}
+
+.red-text {
+	text: red;
 }
 
 
@@ -103,10 +116,12 @@ a:hover {
 .nav {
 	background-color: #f5f5f5;
 	height: 60px;
+	width: 100%;
 }
 
 .nav > li {
-	width: 16%;
+	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;;
+	width: 16.9%;
 	text-align: center;
 	height: 60px
 }
@@ -124,27 +139,15 @@ a:hover {
     margin-top: 0; // remove the gap so it doesn't close
  }
 
+
 /* OLD NAV CSS */
-#MainNav ul#navlist  {
-	line-height: 1.3;
-	height: 60px;
-}
-
-a.OneLine {
-	height: 60px;
-}
-
-.OneLine li {
-	line-height: 60px;
-}
-
 #MainNav ul#navlist li:hover {
 	background-color: #E5E5E5;
 }
 
 #MainNav ul#subnavlist {
 	display: none;
-	background-color: rgba(300,300,300,0.7);
+	background-color: rgba(230,230,230,0.7);
 }
 
 #MainNav ul#subnavlist li {
@@ -203,10 +206,147 @@ a.OneLine {
 
 
 
+
+
+
+
+
+
+
+
 /* CONTENT */
+.page-title-bar h1 {
+	margin-bottom: -20px !important;
+}
+
+.page-title-bar h2 {
+	margin-bottom: 30px;
+}
+
 .content-text h4 {
 	margin-top: 30px;
+	font: #567e3a;
+	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;
 }
+
+.cta {
+	font-weight: bolder;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+	font-size: 24px;
+}
+
+a.black-text {
+	font: #000000;
+}
+
+.teaser-well {
+	background-color: #FFFFFF;
+	border: thin;
+}
+
+.teaser-well:hover {
+	background-color: #eeeeee;
+}
+
+.teaser-well h1 {
+	font-size: 24px;
+}
+
+.teaser-well h2 {
+	font: #567e3a;
+	font-size: 20px;
+	line-height: 1.8;
+}
+
+.product-listing {
+	padding-bottom: 30px;
+	border-bottom: solid thin #000000;
+	margin-bottom: 30px;
+	display: block;
+	border-top: none;
+}
+
+.product-image {
+	max-width: 100%;
+	max-height: 250px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.product-image-div {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.product-text {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Extra small Screens Only */
+@media screen and (max-width: 768px) {
+	.product-listing h4 {
+		text-align: center;
+	}
+
+	.product-listing button {
+		display: block;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.product-image-div {
+		width: 100%;
+	}
+}
+
+.image-description {
+	text-align: center;
+	width: 70%;
+	margin-left: 15%;
+}
+
+.fitting-hero {
+	display: block;
+	width: 50%;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	border-top: solid thin #f5f5f5;
+	border-bottom: solid thin #f5f5f5;
+}
+
+.ping-logo {
+	display: block;
+	width: 15%;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bottom-arrows {
+	margin-top: -40px;
+}
+
+.bottom-arrows h4 {
+	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;
+	margin: 20px;
+}
+
+.fitting-arrow {
+	width: 20%;
+	max-width: 300px;
+}
+
+.field {
+	margin-bottom: 40px;
+}
+
 
 
 
@@ -228,15 +368,19 @@ a.OneLine {
 }
 
 .input-1 {
-	display: inline-block;
-	width: 6%;
+	display: inline-block !important;
+	width: 35px !important;
 	height: 50px;
 	font-size: 18px;
 	font-weight: bolder;
 	text-align: center;
+	margin-bottom: 50px;
 }
 
-
+.quiz-page h2 {
+	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;
+	font-size: 24px;
+}
 
 
 
@@ -303,6 +447,10 @@ body {
 	text-align: center;
 }
 
+#sf-steps {
+	margin-bottom: 20px !important;
+}
+
 
 /* Mini Screens Only */
 @media screen and (max-width: 550px) {
@@ -367,6 +515,7 @@ body {
 		height: 620px;
 	}
 }
+
 
 
 .fixed-footer {

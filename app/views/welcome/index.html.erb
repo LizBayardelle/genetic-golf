@@ -1,2 +1,52 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="full-width">
+  <%= image_tag "Background 1.jpg", style: "width: 100%" %>
+</div> <!-- padding-0 -->
+
+<div class="buffer-50"></div>
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".teaser-well").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".teaser-well").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>
+
+<div class="container bs-component text-center">
+  <%= link_to welcome_personality_path do %>
+  <div class="container col-sm-4"><div class="well bs-component teaser-well">
+    <h1>Test Your Personality</h1>
+    <h2 class="homepage-subheading">Your ID</h2>
+    <p>Most golf websites and golf newsletters provide generic golf tips that are designed to fit everyone.
+      <br><br>At Genetic Golf everything is based on your Genetic Golf Personal ID code so we can provide you with golf tips that actually benefit you because they are based on your individual test results and truly fit you.
+      <br><br>Your personality has a direct effect on how you learn best, your mental process, how you perform best, and how you can play your best golf.</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to welcome_game_path do %>
+  <div class="container col-sm-4"><div class="well bs-component teaser-well">
+    <h1>Test Your Golf Swing</h1>
+    <h2 class="homepage-subheading">Your Code</h2>
+    <p>The Genetic Golf ID system is personalized to benefit you and your golf game. We run personalized tests, we don’t guess. No one else does this!
+      <br><br>How can one tell you how to set up and swing the club before they even know your genetic makeup? We all have different minds, body structures, strengths, and skills, along with various weaknesses.
+      <br><br>Identify your true golf genetics now and start playing your best golf!</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to welcome_body_path do %>
+  <div class="container col-sm-4"><div class="well bs-component teaser-well">
+    <h1>Understand Your Body</h1>
+    <h2 class="homepage-subheading">Dynamics</h2>
+    <p>There are many factors that affect your golf game.  Until you understand your body, how will you know which golf tips fit you?
+      <br><br>There is not one swing that works for everyone.   We don't teach everyone the same golf swing. To find your game, we run genetic tests for answers to help you discover a swing that personally fits you best.
+      <br><br>If you don't run your Genetic ID test, it's just a guess!</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+
+</div> <!-- container bs-component -->
