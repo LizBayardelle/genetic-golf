@@ -12,18 +12,7 @@ class SwingBooksController < ApplicationController
     def create
       @swing_book = SwingBook.new
 
-      @swing_book.swing_code = params[:swing_book][:swing01]
-      @swing_book.swing_code = params[:swing_book][:swing02]
-      @swing_book.swing_code = params[:swing_book][:swing03]
-      @swing_book.swing_code = params[:swing_book][:swing04]
-      @swing_book.swing_code = params[:swing_book][:swing05]
-      @swing_book.swing_code = params[:swing_book][:swing06]
-      @swing_book.swing_code = params[:swing_book][:swing07]
-      @swing_book.swing_code = params[:swing_book][:swing08]
-      @swing_book.swing_code = params[:swing_book][:swing09]
-      @swing_book.swing_code = params[:swing_book][:swing10]
-      @swing_book.swing_code = params[:swing_book][:swing_code]
-
+      @swing_book.assign_attributes(swing_book_params)
       @swing_book.user = current_user
 
       if @swing_book.save
