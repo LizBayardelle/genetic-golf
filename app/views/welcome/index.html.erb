@@ -19,7 +19,7 @@ $( document ).ready(function() {
 </script>
 
 <div class="container bs-component text-center">
-  <%= link_to welcome_personality_path do %>
+  <%= link_to welcome_personality_path, class: "no-color" do %>
   <div class="container col-sm-4"><div class="well bs-component teaser-well">
     <h1>Test Your Personality</h1>
     <h2 class="homepage-subheading">Your ID</h2>
@@ -29,7 +29,7 @@ $( document ).ready(function() {
   </div></div> <!-- well/container -->
   <% end %>
 
-  <%= link_to welcome_game_path do %>
+  <%= link_to welcome_game_path, class: "no-color" do %>
   <div class="container col-sm-4"><div class="well bs-component teaser-well">
     <h1>Test Your Golf Swing</h1>
     <h2 class="homepage-subheading">Your Code</h2>
@@ -39,7 +39,7 @@ $( document ).ready(function() {
   </div></div> <!-- well/container -->
   <% end %>
 
-  <%= link_to welcome_body_path do %>
+  <%= link_to welcome_body_path, class: "no-color" do %>
   <div class="container col-sm-4"><div class="well bs-component teaser-well">
     <h1>Understand Your Body</h1>
     <h2 class="homepage-subheading">Dynamics</h2>

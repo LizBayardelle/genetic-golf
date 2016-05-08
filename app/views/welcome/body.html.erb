@@ -1,5 +1,3 @@
-<div class="buffer-25"></div>
-
 <script>
 $( document ).ready(function() {
     var heights = $(".teaser-well").map(function() {
@@ -15,9 +13,16 @@ $( document ).ready(function() {
 </script>
 
 <div class="container bs-component text-center">
-
-  <% if current_user.bod_quiz.nil? %>
-     <%= link_to (new_bod_quiz_path) do %>
+  <% if current_user.nil? %>
+    <%= link_to (new_session_path), class: "no-color" do %>
+    <div class="container col-sm-4"><div class="well bs-component teaser-well">
+      <h1>Body Structure Quiz</h1>
+      <p>Your body structure will affect your style of swing and the clubs you should be using!
+      <br><br>Test your body structure now!</p>
+    </div></div> <!-- well/container -->
+    <% end %>
+  <% elsif current_user.bod_quiz.nil? %>
+     <%= link_to (new_bod_quiz_path), class: "no-color" do %>
      <div class="container col-sm-4"><div class="well bs-component teaser-well">
        <h1>Body Structure Quiz</h1>
        <p>Your body structure will affect your style of swing and the clubs you should be using!
@@ -25,7 +30,7 @@ $( document ).ready(function() {
      </div></div> <!-- well/container -->
      <% end %>
   <% else %>
-     <%= link_to (edit_bod_quiz_path(current_user.bod_quiz)) do %>
+     <%= link_to (edit_bod_quiz_path(current_user.bod_quiz)), class: "no-color" do %>
      <div class="container col-sm-4"><div class="well bs-component teaser-well">
        <h1>Body Structure Quiz</h1>
        <p>Your body structure will affect your style of swing and the clubs you should be using!
@@ -34,8 +39,17 @@ $( document ).ready(function() {
     <% end %>
   <% end %>
 
-  <% if current_user.flex_quiz.nil? %>
-     <%= link_to (new_flex_quiz_path) do %>
+  <% if current_user.nil? %>
+    <%= link_to (new_session_path), class: "no-color" do %>
+    <div class="container col-sm-4"><div class="well bs-component teaser-well">
+      <h1>Flexibility Quiz</h1>
+      <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
+      <br><br>Your stability, strength, and flexibility play a major role in finding your best swing.
+      <br><br>Test your flexibility today!</p>
+    </div></div> <!-- well/container -->
+    <% end %>
+  <% elsif current_user.flex_quiz.nil? %>
+     <%= link_to (new_flex_quiz_path), class: "no-color" do %>
     <div class="container col-sm-4"><div class="well bs-component teaser-well">
       <h1>Flexibility Quiz</h1>
       <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
@@ -44,7 +58,7 @@ $( document ).ready(function() {
     </div></div> <!-- well/container -->
     <% end %>
  <% else %>
-    <%= link_to (edit_flex_quiz_path(current_user.flex_quiz)) do %>
+    <%= link_to (edit_flex_quiz_path(current_user.flex_quiz)), class: "no-color" do %>
     <div class="container col-sm-4"><div class="well bs-component teaser-well">
       <h1>Flexibility Quiz</h1>
       <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
@@ -54,8 +68,17 @@ $( document ).ready(function() {
     <% end %>
   <% end %>
 
-  <% if current_user.bal_quiz.nil? %>
-     <%= link_to (new_bal_quiz_path) do %>
+  <% if current_user.nil? %>
+    <%= link_to (new_session_path), class: "no-color" do %>
+    <div class="container col-sm-4"><div class="well bs-component teaser-well">
+      <h1>Balance Quiz</h1>
+      <p>Your balance can affect every aspect of your game.
+      <br><br>Evaluate your balance skills and find out the best way for you to swing in balance.
+      <br><br>Test your balance now!</p>
+    </div></div> <!-- well/container -->
+    <% end %>
+  <% elsif current_user.bal_quiz.nil? %>
+     <%= link_to (new_bal_quiz_path), class: "no-color" do %>
       <div class="container col-sm-4"><div class="well bs-component teaser-well">
         <h1>Balance Quiz</h1>
         <p>Your balance can affect every aspect of your game.
@@ -64,7 +87,7 @@ $( document ).ready(function() {
       </div></div> <!-- well/container -->
       <% end %>
    <% else %>
-      <%= link_to (edit_bal_quiz_path(current_user.bal_quiz)) do %>
+      <%= link_to (edit_bal_quiz_path(current_user.bal_quiz)), class: "no-color" do %>
       <div class="container col-sm-4"><div class="well bs-component teaser-well">
         <h1>Balance Quiz</h1>
         <p>Your balance can affect every aspect of your game.

@@ -17,8 +17,17 @@ $( document ).ready(function() {
 </script>
 
 <div class="container bs-component text-center">
-  <% if current_user.swing_book.nil? %>
-     <%= link_to new_swing_book_path do %>
+  <% if current_user.nil? %>
+    <%= link_to (new_session_path), class: "no-color" do %>
+    <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
+      <h1>Your Genetic Full Swing</h1>
+      <p>How can you know your best set up and swing without knowing your Genetic Golf ID code?
+      <br><br>You can't.
+      <br><br>Find your best swing now.</p>
+    </div></div> <!-- well/container -->
+    <% end %>
+  <% elsif current_user.swing_book.nil? %>
+     <%= link_to new_swing_book_path, class: "no-color" do %>
      <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
        <h1>Your Genetic Full Swing</h1>
        <p>How can you know your best set up and swing without knowing your Genetic Golf ID code?
@@ -27,7 +36,7 @@ $( document ).ready(function() {
      </div></div> <!-- well/container -->
      <% end %>
   <% else %>
-     <%= link_to edit_swing_book_path(current_user.swing_book) do %>
+     <%= link_to edit_swing_book_path(current_user.swing_book), class: "no-color" do %>
      <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
        <h1>Your Genetic Full Swing</h1>
        <p>How can you know your best set up and swing without knowing your Genetic Golf ID code?
@@ -37,7 +46,7 @@ $( document ).ready(function() {
      <% end %>
   <% end %>
 
-<%= link_to coming_soon_short_book_path do %>
+<%= link_to coming_soon_short_book_path, class: "no-color" do %>
   <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
     <h1>Your Genetic Short Game</h1>
     <p>Putting and short game make up 64% of your game.
@@ -45,7 +54,7 @@ $( document ).ready(function() {
   </div></div> <!-- well/container -->
   <% end %>
 
-<%= link_to coming_soon_putting_book_path do %>
+<%= link_to coming_soon_putting_book_path, class: "no-color" do %>
   <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
     <h1>Your Genetic Putting Game</h1>
     <p>It's critical to be great on the green if you want lower scores.
@@ -53,7 +62,7 @@ $( document ).ready(function() {
   </div></div> <!-- well/container -->
   <% end %>
 
-<%= link_to game_instruction_path do %>
+<%= link_to game_instruction_path, class: "no-color" do %>
   <div class="container col-sm-6"><div class="well well-double bs-component teaser-well">
     <h1>Genetic Golf Private Instruction</h1>
     <p>We are currently certifying instructors that will be able to conduct evaluations and work with you to improve all aspects of your game.
@@ -61,7 +70,7 @@ $( document ).ready(function() {
   </div></div> <!-- well/container -->
 <% end %>
 
-<%= link_to game_programs_path do %>
+<%= link_to game_programs_path, class: "no-color" do %>
   <div class="container col-sm-6"><div class="well well-double bs-component teaser-well">
     <h1>Golf School and Custom Programs</h1>
     <p>At Genetic Golf schools we focus on you!

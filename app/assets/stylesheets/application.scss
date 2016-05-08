@@ -40,6 +40,10 @@ a {
   color: #567E3A !important;
 }
 
+.no-color {
+	color: #000000 !important;
+}
+
 a:hover {
   color: #000000;
 }
@@ -201,7 +205,30 @@ a:hover {
 }
 
 
+/* HAMBURGER NAVMENU */
+@media screen and (max-width: 768px) {
+	.nav > li {
+		width: 100%;
+		text-align: center;
+		height: 40px
+	}
 
+	ul#navlist {
+		height: 40px;
+	}
+
+	.dropdown br {
+		display: none;
+	}
+
+	.dropdown:hover .dropdown-menu {
+			display: none !important;
+	 }
+
+	.dropdown:hover #ulsubnavlist {
+	    display: none !important;
+	 }
+}
 
 
 
@@ -347,7 +374,15 @@ a.black-text {
 	margin-bottom: 40px;
 }
 
-
+.content-image-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	width: 66%;
+	border-top: solid thin #f5f5f5;
+	border-bottom: solid thin #f5f5f5;
+}
 
 
 

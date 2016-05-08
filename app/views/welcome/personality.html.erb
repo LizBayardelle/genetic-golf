@@ -14,8 +14,19 @@ $( document ).ready(function() {
 });
 </script>
 
-<% if current_user.per_quiz.nil? %>
-   <%= link_to (new_per_quiz_path) do %>
+<% if current_user.nil? %>
+  <%= link_to (new_session_path), class: "no-color" do %>
+  <div class="container bs-component text-center">
+    <div class="container col-sm-6"><div class="well bs-component teaser-well">
+      <h1>Test Your Personality</h1>
+      <p>Most golf websites and golf newsletters provide generic golf tips that are designed to fit everyone.
+        <br><br><strong>That's crazy when it comes to golf.</strong>
+        <br><br>Your personality has a direct effect on how you learn best, your mental process, how you perform best, and how you can play your best golf.
+        <br><br>The first step to a better golf game is to identify your personality.</p>
+  </div></div> <!-- well/container -->
+  <% end %>
+<% elsif current_user.per_quiz.nil? %>
+   <%= link_to (new_per_quiz_path), class: "no-color" do %>
    <div class="container bs-component text-center">
      <div class="container col-sm-6"><div class="well bs-component teaser-well">
        <h1>Test Your Personality</h1>
@@ -26,7 +37,7 @@ $( document ).ready(function() {
   </div></div> <!-- well/container -->
   <% end %>
 <% else %>
-   <%= link_to (edit_per_quiz_path(current_user.per_quiz)) do %>
+   <%= link_to (edit_per_quiz_path(current_user.per_quiz)), class: "no-color" do %>
    <div class="container bs-component text-center">
      <div class="container col-sm-6"><div class="well bs-component teaser-well">
        <h1>Test Your Personality</h1>
@@ -38,7 +49,7 @@ $( document ).ready(function() {
   <% end %>
 <% end %>
 
-<%= link_to (welcome_newsletter_path) do %>
+<%= link_to (welcome_newsletter_path), class: "no-color" do %>
   <div class="container col-sm-6"><div class="well bs-component teaser-well">
     <h1>Golf Tips for Your Personality</h1>
     <p>Your improvement is dependent on evaluating your body, knowing what skills you need help on, and matching your swing to your body and your personality.
