@@ -1,6 +1,11 @@
 <div class="container">
 <h1 class="text-center">Sign in</h1>
-<h3 class="text-center"><small>Don't have an account? Create one <%= link_to "here", new_user_path %>.</small></h3>
+<div class="row text-center">
+  <%= link_to new_user_path do %>
+    <%= image_tag "ball_signin.jpg", alt: "Genetic Golf ball", style:"max-height: 200px"%>
+    <h3 class="text-center"><small>Don't have an account? Create one here.</small></h3>
+  <% end %>
+</div> <!-- row -->
 
   <div class="row">
     <div class="col-md-8">

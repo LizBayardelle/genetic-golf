@@ -8,10 +8,12 @@
   <div class="content-text">
         <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons. Instead of telling everyone the same thing or guessing at the best way for you to swing, we personally test you to find your best swing or putting stroke.
           <br><br>
-          <% if current_user.swing_book.nil? %>
+          <% if current_user && current_user.swing_book.nil? %>
              <%= link_to "Find your code and find your game!", new_swing_book_path %>
-          <% else %>
+          <% elsif current_user %>
              <%= link_to "Find your code and find your game!", edit_swing_book_path(current_user.swing_book) %>
+          <% else %>
+            <%= link_to "Find your code and find your game!", new_user_path %>
           <% end %>
           <br><br>Genetic Golf helps you learn your best swing.
           <br><br>With Genetic Golf you will:
