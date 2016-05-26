@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503044912) do
+ActiveRecord::Schema.define(version: 20160524233319) do
 
   create_table "bal_quizzes", force: :cascade do |t|
     t.integer  "user_id"
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(version: 20160503044912) do
   end
 
   add_index "bod_quizzes", ["user_id"], name: "index_bod_quizzes_on_user_id"
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "flex_quizzes", force: :cascade do |t|
     t.integer  "user_id"

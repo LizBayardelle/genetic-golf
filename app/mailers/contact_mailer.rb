@@ -1,11 +1,8 @@
-class ContactMailer < ActionMailer::Base
-    default to: 'lizbayardelle@gmail.com'
+class ContactMailer < ApplicationMailer
+  default from: "geneticgolf@gmail.com"
 
-    def contact_email(name, email, body)
-        @name = name
-        @email = email
-        @body = body
-
-        mail(from: email, subject: 'Contact Request')
-    end
+  def new_contact(contact)
+   @contact = contact
+   mail(to: "geneticgolf@gmail.com", subject: "New Contact Us Submission from #{@contact.name}")
+  end
 end

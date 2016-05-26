@@ -26,6 +26,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'mail_form'
 gem 'google-analytics-rails', '1.1.0'
+gem 'figaro', '1.0'
 
 # Used for encrypting User passwords
 gem 'bcrypt'
