@@ -29,7 +29,7 @@
 
 <div class="wrapper">
 
-<div class="very-top">
+<div class="very-top row">
   <div class="pull-right user-info text-right">
   <% if current_user %>
     <%= link_to current_user.name, user_path(current_user) %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
@@ -53,14 +53,15 @@
     <%= link_to "Sign Up", new_user_path %>
   <% end %>
   </div> <!-- user info -->
+
+  <div class="pull-left">
+    <a href="/">
+      <%= image_tag "V3   Genetic Golf   Array-02.png", alt: "Genetic Golf main logo" %>
+    </a>
+  </div> <!-- GG Logo -->
 </div><!-- very-top -->
 
 <div class="container" id="header-detail">
-  <div class="row"><div class="col-xs-12">
-    <a href="/">
-      <%= image_tag "V3   Genetic Golf   Array-02.png", alt: "Genetic Golf main logo", style:"width: 100%"%>
-    </a>
-  </div> <!-- GG Logo --></div>
   <div class="row">
     <h1 class="text-center">Welcome to Genetic Golf</h1>
     <p class="text-center text-muted">Be yourself! Your game must match you and your body!
@@ -281,22 +282,16 @@
 
   <div class="col-xs-12 col-sm-3" id="sf-sm">
     <h4 class="text-center">Connect with Us</h4>
-    <div class="container sm-unit" id="facebook">
+    <a href="https://www.facebook.com/geneticgolf"><div class="container sm-unit" id="facebook">
       <p><%= image_tag "Social Media/Logos   Facebook.png", class: "sm-icon", alt: "facebook" %>
       Facebook</p>
-    </div> <!-- facebook end -->
-    <div class="container sm-unit" id="twitter">
-      <p><%= image_tag "Social Media/Logos   Twitter.png", class: "sm-icon", alt: "twitter" %>
-      Twitter</p>
-    </div> <!-- facebook end -->
-    <div class="container sm-unit" id="youtube">
+    </div> <!-- facebook end --></a>
+
+    <a href="https://www.youtube.com/channel/UCSfSibYItM_c2vHrJk9LyZA"><div class="container sm-unit" id="youtube">
       <p><%= image_tag "Social Media/Logos   Youtube.png", class: "sm-icon", alt: "youtube" %>
       YouTube</p>
-    </div> <!-- facebook end -->
-    <div class="container sm-unit" id="google">
-      <p><%= image_tag "Social Media/Logos   Google.png", class: "sm-icon", alt: "google" %>
-      Google+</p>
-    </div> <!-- facebook end -->
+    </div> <!-- facebook end --></a>
+
     <div class="container sm-unit" id="linkedin">
       <p><%= image_tag "Social Media/Logos   LinkedIn.png", class: "sm-icon", alt: "linkedin" %>
       LinkedIn</p>
