@@ -1,7 +1,8 @@
 <%= form_for @bod_quiz do |f| %>
   <div class="row">
-      <div class="col-sm-12">
+        <div class="buffer-25"></div>
 
+        <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q1: Body Type</h3>
           <p>Please select the number that represents the body type that most closely resembles your own.</p>
@@ -18,48 +19,58 @@
             <%= f.radio_button :bod_type, '9'%><label>9 </label>
           </div>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q2: Height</h3>
             <%= f.select :height, options_for_select([['4 ft, 0 in', '48'],['4 ft, 1 in', '49'],['4 ft, 2 in', '50'],['4 ft, 3 in', '51'],['4 ft, 4 in', '52'],['4 ft, 5 in', '53'],['4 ft, 6 in', '54'],['4 ft, 7 in', '55'],['4 ft, 8 in', '56'],['4 ft, 9 in', '57'],['4 ft, 10 in', '58'],['4 ft, 11 in', '59'],['5 ft, 0 in', '60'],['5 ft, 1 in', '61'],['5 ft, 2 in', '62'],['5 ft, 3 in', '63'],['5 ft, 4 in', '64'],['5 ft, 5 in', '65'],['5 ft, 6 in', '66'],['5 ft, 7 in', '67'],['5 ft, 8 in', '68'],['5 ft, 9 in', '69'],['5 ft, 10 in', '70'],['5 ft, 11 in', '71'],['6 ft, 0 in', '72'],['6 ft, 1 in', '73'],['6 ft, 2 in', '74'],['6 ft, 3 in', '75'],['6 ft, 4 in', '76'],['6 ft, 5 in', '77'],['6 ft, 6 in', '78'],['6 ft, 7 in', '79'],['6 ft, 8 in', '80'],['6 ft, 9 in', '81'],['6 ft, 10 in', '82']]), {}, {class: "form-control"} %>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q3: Weight</h3>
           <%= f.text_field :weight, class: 'form-control', placeholder: "Weight in Pounds" %>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q4: Age</h3>
           <%= f.text_field :age, class: 'form-control', placeholder: "Age in Years" %>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q5: Distance from Wrist to Floor</h3>
           <p>While standing, please measure the length from the crease of your wrist to the floor.</p>
           <%= f.select :wrist_floor, options_for_select([['20.0 Inches', '20.0'],['20.5 Inches', '20.5'],['21.0 Inches', '21.0'],['21.5 Inches', '21.5'],['22.0 Inches', '22.0'],['22.5 Inches', '22.5'],['23.0 Inches', '23.0'],['23.5 Inches', '23.5'],['24.0 Inches', '24.0'],['24.5 Inches', '24.5'],['25.0 Inches', '25.0'],['25.5 Inches', '25.5'],['26.0 Inches', '26.0'],['26.5 Inches', '26.5'],['27.0 Inches', '27.0'],['27.5 Inches', '27.5'],['28.0 Inches', '28.0'],['28.5 Inches', '28.5'],['29.0 Inches', '29.0'],['29.5 Inches', '29.5'],['30.0 Inches', '30.0'],['30.5 Inches', '30.5'],['31.0 Inches', '31.0'],['31.5 Inches', '31.5'],['32.0 Inches', '32.0'],['32.5 Inches', '32.5'],['33.0 Inches', '33.0'],['33.5 Inches', '33.5'],['34.0 Inches', '34.0'],['34.5 Inches', '34.5'],['35.0 Inches', '35.0'],['35.5 Inches', '35.5'],['36.0 Inches', '36.0'],['36.5 Inches', '36.5'],['37.0 Inches', '37.0'],['37.5 Inches', '37.5'],['38.0 Inches', '38.0'],['38.5 Inches', '38.5'],['39.0 Inches', '39.0'],['39.5 Inches', '39.5'],['40.0 Inches', '40.0'],['40.5 Inches', '40.5'],['41.0 Inches', '41.0'],['41.5 Inches', '41.5'],['42.0 Inches', '42.0'],['42.5 Inches', '42.5'],['43.0 Inches', '43.0'],['43.5 Inches', '43.5'],['44.0 Inches', '44.0'],['44.5 Inches', '44.5'],['45.0 Inches', '45.0'],['45.5 Inches', '45.5'],['46.0 Inches', '46.0'],['46.5 Inches', '46.5'],['47.0 Inches', '47.0'],['47.5 Inches', '47.5'],['48.0 Inches', '48.0'],['48.5 Inches', '48.5'],['49.0 Inches', '49.0'],['49.5 Inches', '49.5'],['50.0 Inches', '50.0']]), {}, {class: "form-control"} %>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q6: Hand Length</h3>
           <p>Please measure the distance from the tip of your longest finger to the crease of your wrist.</p>
           <%= f.text_field :hand_length, class: 'form-control', placeholder: "Length in Inches" %>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q7: Longest Finger Length</h3>
           <%= f.text_field :longest_finger, class: 'form-control', placeholder: "Length in Inches" %>
         </div>
-
+      </div> <!-- opaque container -->
     </div> <!-- column end -->
   </div> <!-- row end -->
 
-    <div class="buffer-25"></div>
-
-  <div class="row">
-    <div class="col-xs-12 center-block">
-        <div class="center-block"><%= f.submit "Submit Answers" %></div>
-      </div> <!-- column end -->
+  <div class="row text-center">
+    <%= f.submit "Submit Answers" %>
   </div> <!-- row end -->
+
+  <div class="buffer-25"></div>
 
 <% end %>

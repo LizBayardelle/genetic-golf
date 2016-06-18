@@ -5,68 +5,88 @@
     <h2><small>Find your best golf game and have more fun!</small></h2>
   </div>
 
-  <div i class="content-text">
-      <p>Genetic Golf is all about testing what motions and thoughts work best for you and your body. The Genetic Golf code allows each student to find their best motion and unlock the code to a more consistent golf game that matches the individual.  At Genetic Golf we want you to be yourself, your game must match you and your body.
-      <br><br>Quit spending time working on a golf swing or putting stroke that doesn’t match you!
-      </p>
-
-
-  <div class="row" style="height: 30px"></div>
-
-      <script>
-      $( document ).ready(function() {
-          var heights = $(".teaser-well").map(function() {
-              return $(this).height();
-          }).get(),
-
-          maxHeight = Math.max.apply(null, heights);
-
-          $(".teaser-well").height(maxHeight);
-
-          window.onresize = function(){ location.reload(); }
-      });
-      </script>
-
-        <%= link_to (about_benefits_path), class: "no-color" do %>
-            <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
-              <h1>Benefits of Genetic Golf</h1>
-              <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons. Instead of telling everyone the same thing or guessing at the best way for you to swing, we personally test you to find your best swing or putting stroke.
-              <br><br>Find your code and find your game!</p>
-          </div></div></div> <!-- well/container -->
-        <% end %>
-
-        <%= link_to (about_principles_path), class: "no-color" do %>
-            <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
-              <h1>Genetic Golf Principles</h1>
-              <p>Genetic Golf’s new dynamic learning style will change the future of golf lessons.
-              <br><br>It is a paradigm shift in which we test each person to find your best genetic golf motion.
-              <br><br>Without Genetic Golf testing, you are just guessing and you won't get the best results for you.</p>
-          </div></div> <!-- well/container -->
-        <% end %>
-
-        <%= link_to (about_staff_path), class: "no-color" do %>
-            <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
-              <h1>Staff and Awards</h1>
-              <p>To get the best results, shouldn't you have the best instructors?
-              <br><br>Glenn Deck, Director of Instruction for Pelican Hill Golf Club and Oak Creek Golf Club, is founder of Genetic Golf. He has been in the golf business for over twenty-five years.
-              <br><br>Read more about the Genetic Golf team!</p>
-          </div></div> <!-- well/container -->
-        <% end %>
-
-        <%= link_to (new_contact_path), class: "no-color" do %>
-            <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
-              <h1>Contact Us</h1>
-              <p>Questions?  Comments?  Thoughts?
-              <br><br>Whatever you need, drop us a line and we'll get back to you shortly.
-              <br><br>We're always here to help you find your best game!</p>
-          </div></div> <!-- well/container -->
-        <% end %>
-
-
-    <%= link_to welcome_game_path do %>
-      <h4 class="cta">Find your personalized Genetic Golf swing today!</h4>
-    <% end %>
+  <div class="content-text">
+    <p>Genetic Golf is all about testing what motions and thoughts work best for you and your body. The Genetic Golf code allows each student to find their best motion and unlock the code to a more consistent golf game that matches the individual.  At Genetic Golf we want you to be yourself, your game must match you and your body.
+    <br><br>Quit spending time working on a golf swing or putting stroke that doesn’t match you!
+    </p>
   </div>
 
+  <%= link_to welcome_game_path do %>
+    <h4 class="text-center" style="padding-top: 30px; padding-bottom: 30px">Find your personalized Genetic Golf swing today!</h4>
+  <% end %>
+
+</div> <!-- container -->
+
+<div class="buffer-50"></div>
+<div class="buffer-50"></div>
+<div class="buffer-25"></div>
+
+
+<div class="content-text">
+  <div class="tall-hero-image-row">
+    <div class="tall-hero-image-outer text-center">
+      <div class="tall-hero-image-inner text-center">
+        <%= image_tag 'Background 8.jpg', class: "tall-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+      </div> <!-- hero-image-inner -->
+    </div> <!-- hero-image-inner -->
+  </div> <!-- row -->
+
+<div class="container">
+  <div class="overlap-tall-hero-image">
+
+  <div class="buffer-50"></div>
+
+  <%= link_to (about_benefits_path), class: "no-color" do %>
+      <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
+        <h1>Benefits of Genetic Golf</h1>
+        <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons. Instead of telling everyone the same thing or guessing at the best way for you to swing, we personally test you to find your best swing or putting stroke.
+        <br><br>Find your code and find your game!</p>
+    </div></div>
+  <% end %>
+
+  <%= link_to (about_principles_path), class: "no-color" do %>
+      <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
+        <h1>Genetic Golf Principles</h1>
+        <p>Genetic Golf’s new dynamic learning style will change the future of golf lessons.
+        <br><br>It is a paradigm shift in which we test each person to find your best genetic golf motion.
+        <br><br>Without Genetic Golf testing, you are just guessing and you won't get the best results for you.</p>
+    </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to (about_staff_path), class: "no-color" do %>
+      <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
+        <h1>Staff and Awards</h1>
+        <p>To get the best results, shouldn't you have the best instructors?
+        <br><br>Glenn Deck, Director of Instruction for Pelican Hill Golf Club and Oak Creek Golf Club, is founder of Genetic Golf. He has been in the golf business for over twenty-five years.
+        <br><br>Read more about the Genetic Golf team!</p>
+    </div></div> <!-- well/container -->
+  <% end %>
+
+  <%= link_to (new_contact_path), class: "no-color" do %>
+      <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
+        <h1>Contact Us</h1>
+        <p>Questions?  Comments?  Thoughts?
+        <br><br>Whatever you need, drop us a line and we'll get back to you shortly.
+        <br><br>We're always here to help you find your best game!</p>
+    </div></div> <!-- well/container -->
+  <% end %>
+
+</div> <!-- container -->
+</div> <!-- content-text -->
 
 </div> <!-- container end -->
+
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".teaser-well").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".teaser-well").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>

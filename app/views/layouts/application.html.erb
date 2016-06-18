@@ -31,10 +31,10 @@
 
 <div class="very-top row">
   <div class="pull-right user-info text-right">
-  <% if current_user %>
-    <%= link_to current_user.name, user_path(current_user) %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+  <p><% if current_user %>
+    <%= link_to current_user.name, user_path(current_user) %> -
     <% if current_user.swing_book != nil %>
-      <p>ID Code:
+      ID Code:
         <%= current_user.swing_book.swing01 %>
         <%= current_user.swing_book.swing02 %>
         <%= current_user.swing_book.swing03 %>
@@ -46,15 +46,15 @@
         <%= current_user.swing_book.swing07 %>
         <%= current_user.swing_book.swing08 %>
         <%= current_user.swing_book.swing09 %>
-        <%= current_user.swing_book.swing10 %></p>
+        <%= current_user.swing_book.swing10 %>
     <% end %>
   <% else %>
     <%= link_to "Sign In", new_session_path %> or
     <%= link_to "Sign Up", new_user_path %>
-  <% end %>
+  <% end %></p>
   </div> <!-- user info -->
 
-  <div class="pull-left">
+  <div class="col-xs-2">
     <a href="/">
       <%= image_tag "V3   Genetic Golf   Array-02.png", alt: "Genetic Golf main logo" %>
     </a>
@@ -63,10 +63,12 @@
 
 <div class="container" id="header-detail">
   <div class="row">
-    <h1 class="text-center">Welcome to Genetic Golf</h1>
-    <p class="text-center text-muted">Be yourself! Your game must match you and your body!
-    <br>We don't guess, we test to find what works best for you.
-    <br>Find your game and have more fun!</p>
+    <div class="col-xs-10">
+      <h1 class="text-center" style="color: #567e3a">Welcome to Genetic Golf</h1>
+      <p class="text-center text-muted">Be yourself! Your game must match you and your body!
+      <br>We don't guess, we test to find what works best for you.
+      <br>Find your game and have more fun!</p>
+    </div>
   </div> <!-- row -->
 </div>  <!-- header-detail -->
 
@@ -328,7 +330,7 @@
   <div id="ff-image-container" class="container col-md-7 col-md-offset-0 pull-right-md">
     <div class="row">
       <div class="col-xs-2"><%= image_tag "V3   Genetic Golf   Array-01.png", class: "f-footer-logo", alt: "Genetic Golf Logo" %></div>
-      <div class="col-xs-2"><%= image_tag "Featured Bar Icons/PGA logo.jpg", class: "f-footer-logo", alt: "PGA Certified Logo" %></div>
+      <div class="col-xs-2"><%= image_tag "Featured Bar Icons/PGA Logo NB.png", class: "f-footer-logo", alt: "PGA Certified Logo" %></div>
       <div class="col-xs-2"><%= image_tag "Featured Bar Icons/Golf Magazine Top 100 Logo.png", class: "f-footer-logo", alt: "Golf Magazine Top 100 Logo" %></div>
       <div class="col-xs-2"><%= image_tag "Featured Bar Icons/Golf Tips Top 25 Teachers Logo NB.png", class: "f-footer-logo", alt: "Golf Tips Top 25 Teachers Logo" %></div>
       <div class="col-xs-2"><%= image_tag "Featured Bar Icons/TPI Certified Logo NB.png", class: "f-footer-logo", alt: "TPI Certified Logo" %></div>

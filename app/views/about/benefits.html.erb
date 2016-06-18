@@ -1,21 +1,40 @@
-<div class="container">
+<div class="hero-image-row">
+  <div class="hero-image-outer text-center">
+    <div class="hero-image-inner text-center">
+      <%= image_tag 'Background 9.jpg', class: "hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-  <div class="text-center page-title-bar">
-    <h1>Why Genetic Golf Benefits You</h1>
-    <h2><small>Our Teaching Philosophy</small></h2>
-  </div>
+<div class="overlap-hero-image">
 
-  <div class="content-text">
-        <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons. Instead of telling everyone the same thing or guessing at the best way for you to swing, we personally test you to find your best swing or putting stroke.
-          <br><br>
-          <% if current_user && current_user.swing_book.nil? %>
-             <%= link_to "Find your code and find your game!", new_swing_book_path %>
-          <% elsif current_user %>
-             <%= link_to "Find your code and find your game!", edit_swing_book_path(current_user.swing_book) %>
-          <% else %>
-            <%= link_to "Find your code and find your game!", new_user_path %>
-          <% end %>
-          <br><br>Genetic Golf helps you learn your best swing.
+  <div class="buffer-50"></div>
+
+  <div class="container">
+    <div class="text-center page-title-bar">
+      <h1>Why Genetic Golf Benefits You</h1>
+      <h2>Our Teaching Philosophy</h2>
+    </div>
+  </div> <!-- container -->
+</div> <!-- overlap-hero-image -->
+
+<div class="container" style="margin-top: 30px">
+  <div class="content-text container">
+    <div class="row text-center">
+      <p class="col-sm-8 col-sm-push-2">Genetic Golf’s new personal dynamic learning style will change the future of golf lessons. Instead of telling everyone the same thing or guessing at the best way for you to swing, we personally test you to find your best swing or putting stroke.</p>
+    </div> <!-- row -->
+    <div class="row text-center" style="margin-bottom: 30px; margin-top: -15px">
+      <h4 class="cta"><% if current_user && current_user.swing_book.nil? %>
+         <%= link_to "Find your code and find your game!", new_swing_book_path %>
+      <% elsif current_user %>
+         <%= link_to "Find your code and find your game!", edit_swing_book_path(current_user.swing_book) %>
+      <% else %>
+        <%= link_to "Find your code and find your game!", new_user_path %>
+      <% end %></h4>
+    </div> <!-- row -->
+
+    <div class="row">
+          <p>Genetic Golf helps you learn your best swing.
           <br><br>With Genetic Golf you will:
           <ul>
             <li>Improve faster</li>
@@ -31,10 +50,9 @@
         <br><br>My students keep telling me "I can do this and I didn’t have to work hard to hit great shots! My body can repeat this motion!”
       </p>
 
-    <%= link_to welcome_game_path do %>
-      <h4 class="cta">Find your personalized Genetic Golf swing today!</h4>
-    <% end %>
-  </div>
-
-
+      <%= link_to welcome_game_path do %>
+        <h4 class="cta">Find your personalized Genetic Golf swing today!</h4>
+      <% end %>
+    </div> <!-- row -->
+  </div> <!-- content-text -->
 </div> <!-- container end -->

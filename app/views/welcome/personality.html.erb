@@ -1,18 +1,14 @@
-<div class="buffer-25"></div>
+<div class="hero-image-row">
+  <div class="hero-image-outer text-center">
+    <div class="hero-image-inner text-center">
+      <%= image_tag 'Background 2.jpg', class: "hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-<script>
-$( document ).ready(function() {
-    var heights = $(".teaser-well").map(function() {
-        return $(this).height();
-    }).get(),
+<div class="overlap-hero-image">
 
-    maxHeight = Math.max.apply(null, heights);
-
-    $(".teaser-well").height(maxHeight);
-
-    window.onresize = function(){ location.reload(); }
-});
-</script>
+  <div class="buffer-50"></div>
 
 <% if current_user.nil? %>
   <%= link_to (new_session_path), class: "no-color" do %>
@@ -58,3 +54,19 @@ $( document ).ready(function() {
   </div></div> <!-- well/container -->
   <% end %>
 </div> <!-- container bs-component -->
+
+</div>
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".teaser-well").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".teaser-well").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>

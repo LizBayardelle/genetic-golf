@@ -1,31 +1,49 @@
-<div class="container">
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 14.jpg', class: "tall-hero-image",alt: "View of Golf Course Green with Many Sandtraps" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-  <div class="text-center page-title-bar">
-    <h1>Staff and Awards</h1>
-  </div>
+<div class="overlap-tall-hero-image">
+  <div class="buffer-15"></div>
+  <h1 class="text-center" style="color: black">Staff and Awards</h1>
+  <div class="buffer-15"></div>
+  <div class="container col-xs-10 col-xs-push-1" style="background-color: rgba(235, 235, 235, 0.7) !important">
+    <div class="container col-xs-12">
+      <h2 style="margin-top: 20px; color: black">Glenn Deck</h2>
+      <h4 style="margin-top: 20px; color: black">Director of Instruction, Pelican Hill and Oak Creek Golf Club</h4>
+      <div class="content-text">
+        <div class="row text-center">
+          <%= image_tag 'Featured Bar Icons/PGA Logo NB.png', class: "awards_img", alt: "PGA Logo" %>
+          <%= image_tag 'Featured Bar Icons/Golf Magazine Top 100 Logo.jpg', class: "awards_img", alt: "Golf Magazine" %>
+          <%= image_tag 'Featured Bar Icons/golf_tips_logo.png', class: "awards_img", alt: "Golf Tip Magazine" %>
+          <%= image_tag 'Featured Bar Icons/TPI Certified Logo NB.png', class: "awards_img", alt: "TPI Certified Golf Fitness Instructor" %>
+        </div> <!-- icon row -->
+        <div class="buffer-15"></div>
+        <div class="text-center">
+          <p style="line-height: 1.5"><strong>PGA Member ~ Teaching Professional
+          <br>Golf Tips Magazine Senior Instruction Editor
+          <br>Southern California PGA Teacher of the Year
+          <br>Metropolitan Chapter PGA Teacher of the Year
+          <br>Golf Digest “Ranked One of Best Teachers in State”
+          <br>“One of GOLF MAGAZINE’s  Top 100 Teachers in America”
+        </strong></p></div>
+        <div class="buffer-25"></div>
+      </div> <!-- content text -->
+      <p style="color: black; font-size: 16px">Glenn Deck, Director of Instruction for Pelican Hill Golf Club and Oak Creek Golf Club, is founder of Genetic Golf. He has been in the golf business for over twenty-five years.  Glenn understands that every golfer is different in physical characteristics and capabilities, and that there is not "one perfect golf swing" that fits everyone. He brings a wealth of knowledge to the game of golf and his goal is to develop one’s own individual game based on their body structure, flexibility, strength, personality, and natural motion. He focuses on all aspects of the game in order to teach one how to lower their scores on the golf course.</p>
+      <h4 class="text-center"><%= link_to "Get your Genetic Golf code to find your best golf game and have more fun!", welcome_game_path, style: "text-decoration: underline" %></h4>
+      <div class="buffer-25"></div>
+    </div> <!-- text container -->
+  </div> <!-- opaque container -->
+</div> <!-- overlap-tall-hero-image -->
 
-  <div class="content-text">
-    <h3><br>Glenn Deck</h3>
-    <h3><small>Director of Instruction, Pelican Hill and Oak Creek Golf Club</small></h3>
-    <div class="row text-center">
-      <%= image_tag 'Featured Bar Icons/PGA logo.jpg', class: "awards_img", alt: "PGA Logo" %>
-      <%= image_tag 'Featured Bar Icons/Golf Magazine Top 100 Logo.jpg', class: "awards_img", alt: "Golf Magazine" %>
-      <%= image_tag 'Icons/golf_tips_logo.jpg', class: "awards_img", alt: "Golf Tip Magazine" %>
-      <%= image_tag 'Featured Bar Icons/TPI Certified Logo.jpg', class: "awards_img", alt: "TPI Certified Golf Fitness Instructor" %>
-    </div> <!-- icon row -->
-      <p><br>Glenn Deck, Director of Instruction for Pelican Hill Golf Club and Oak Creek Golf Club, is founder of Genetic Golf. He has been in the golf business for over twenty-five years.  Glenn understands that every golfer is different in physical characteristics and capabilities, and that there is not "one perfect golf swing" that fits everyone. He brings a wealth of knowledge to the game of golf and his goal is to develop one’s own individual game based on their body structure, flexibility, strength, personality, and natural motion. He focuses on all aspects of the game in order to teach one how to lower their scores on the golf course.</p>
-    <div class="text-center">
-      <p><strong><br>PGA Member ~ Teaching Professional
-      <br><br>Golf Tips Magazine Senior Instruction Editor
-      <br><br>Southern California PGA Teacher of the Year
-      <br><br>Metropolitan Chapter PGA Teacher of the Year
-      <br><br>Golf Digest “Ranked One of Best Teachers in State”
-      <br><br>“One of GOLF MAGAZINE’s  Top 100 Teachers in America”
-    </strong></p></div>
+<div class="row">
+  <div class="container">
 
-    <%= link_to welcome_game_path do %>
-      <h4 class="cta">Get your Genetic Golf code and you will find your best golf game and have more fun!</h4>
-    <% end %>
-  </div>
+
+  </div> <!-- container -->
+</div> <!-- row -->
 
 </div> <!-- container end -->

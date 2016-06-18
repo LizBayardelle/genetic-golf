@@ -1,15 +1,22 @@
-<div class="container quiz-page">
-  <div id="quiz_bs_edit" class="text-center">
-    <h1>Balance Quiz</h1>
-    <h4>Retest Your Balance</h4>
-  </div>
-
-  <div id="quiz_bs_pretext" class="text-center">
-    <h2>How to Take Your Balance Screen</h2>
-    <p class="col-sm-8 col-sm-offset-2">To accomodate both right- and left-sided golfers, this test refers to the <strong>back foot</strong> is the one away from your target and <strong>forward foot</strong> as the one closest to the target (as shown below):</p>
-  </div>
-
-<%= render "quiz", url: edit_bal_quiz_path(@bal_quiz), method: :put  %>
-
+<div class="text-center">
+  <h1>Balance Quiz</h1>
+  <h2>Retest Your Balance</h2>
+  <p class="col-sm-8 col-sm-offset-2">To accomodate both right- and left-sided golfers, this test refers to the <strong>back foot</strong> is the one away from your target and <strong>forward foot</strong> as the one closest to the target (as shown below):</p>
 </div>
-<div class="buffer-50"></div>
+
+
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 15.jpg', class: "tall-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
+
+<div class="overlap-tall-hero-image overlap-hero-scroll">
+  <div class="container quiz-page">
+
+    <%= render "quiz", url: edit_bal_quiz_path(@bal_quiz), method: :put  %>
+
+  </div> <!-- quiz-page container -->
+</div> <!-- overlap-tall-hero-image -->

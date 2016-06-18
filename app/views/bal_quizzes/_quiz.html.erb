@@ -1,7 +1,8 @@
 <%= form_for @bal_quiz do |f| %>
   <div class="row">
-      <div class="col-sm-12">
+      <div class="row buffer-25"></div>
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q1: Forward Foot Balance</h3>
           <p><strong>How to Perform Stand on Forward Leg</strong>
@@ -20,9 +21,11 @@
             <%= f.radio_button :bal01, '3'%><label>21 - 25 Seconds</label><br>
             <%= f.radio_button :bal01, '2'%><label>26 - 30 Seconds</label><br>
             <%= f.radio_button :bal01, '1'%><label>31 Seconds or More</label>
-          </div>
-        </div>
+          </div> <!-- radio buttons -->
+        </div> <!-- form group -->
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q2: Forward Foot Balance, Motion</h3>
           <p>
@@ -45,7 +48,9 @@
             <%= f.radio_button :bal02, '1'%><label>31 Seconds or More</label>
           </div>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q3: Forward Foot Balance, Eyes Closed</h3>
           <p>
@@ -66,7 +71,9 @@
             <%= f.radio_button :bal03, '1'%><label>31 Seconds or More</label>
           </div>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q4: Back Foot Balance</h3>
           <p><strong>How to Perform Stand on Back Leg</strong>
@@ -87,7 +94,9 @@
             <%= f.radio_button :bal04, '1'%><label>31 Seconds or More</label>
           </div>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q5: Back Foot Balance, Motion</h3>
           <p><strong>How to Perform Stand on Back Leg with Movement</strong>
@@ -110,7 +119,9 @@
             <%= f.radio_button :bal05, '1'%><label>31 Seconds or More</label>
           </div>
         </div>
+      </div> <!-- opaque container -->
 
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
         <div class="form-group">
           <h3>Q6: Back Foot Balance, Eyes Closed</h3>
           <p><strong>How to Perform the Single Leg Balance Test, Eyes Closed</strong>
@@ -131,16 +142,12 @@
             <%= f.radio_button :bal06, '1'%><label>31 Seconds or More</label>
           </div>
         </div>
+      </div> <!-- opaque container -->
 
     </div> <!-- column end -->
   </div> <!-- row end -->
 
-    <div class="buffer-25"></div>
-
   <div class="row">
-    <div class="col-xs-12 center-block">
-        <div class="center-block"><%= f.submit "Submit Answers" %></div>
-      </div> <!-- column end -->
+    <div class="text-center"><%= f.submit "Submit Answers", style: "margin-bottom: 50px" %></div>
   </div> <!-- row end -->
-
 <% end %>

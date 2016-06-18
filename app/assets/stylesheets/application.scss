@@ -83,7 +83,22 @@ a:hover {
 	text: red;
 }
 
+.black-outline {
+	color: white !important;
+	text-shadow:
+	-1px -1px 0 #000,
+	 1px -1px 0 #000,
+	 -1px 1px 0 #000,
+		1px 1px 0 #000 !important;
+}
 
+.white-outline {
+	text-shadow:
+	-1px -1px 0 #FFF,
+	 1px -1px 0 #FFF,
+	 -1px 1px 0 #FFF,
+		1px 1px 0 #FFF !important;
+}
 
 
 
@@ -96,6 +111,7 @@ a:hover {
 
 
 /* HEADER */
+
 #header-detail img {
 	max-width: 100px;
 }
@@ -286,17 +302,33 @@ a.black-text {
 	font: #000000;
 }
 
+.well-icon {
+	height: 70px;
+}
+
+.homepage-subheading {
+	margin-top: 3px;
+}
+
 .teaser-well {
-	background-color: #FFFFFF;
-	border: thin;
+	background-color: rgba(235, 235, 235, 0.8) !important;
+	border: none !important;
+	border-radius: 0px !important;
+	padding-top: 10px !important;
+	padding-bottom: 20px !important;
+}
+
+.teaser-well p {
+	font-size: 16px !important;
 }
 
 .teaser-well:hover {
-	background-color: #eeeeee;
+	background-color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .teaser-well h1 {
 	font-size: 24px;
+	color: black !important;
 }
 
 .teaser-well h2 {
@@ -436,11 +468,6 @@ a.black-text {
 	margin-bottom: 50px;
 }
 
-.quiz-page h2 {
-	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;
-	font-size: 24px;
-}
-
 .radio {
 	margin-left: 50px;
 }
@@ -452,6 +479,20 @@ a.black-text {
 .horizontal-radio-group label {
 	padding-left: 5px;
 	padding-right: 20px;
+}
+
+.form-group h3 {
+	margin-top: 15px !important;
+}
+
+.quiz-question {
+	background-color: rgba(235, 235, 235, 0.7) !important;
+	margin-bottom: 25px;
+}
+
+.quiz-question .form-group h3 {
+	color: black !important;
+	text-align: center;
 }
 
 
@@ -616,6 +657,238 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HEROS */
+.hero-image-row {
+   margin-top: -100px;
+   overflow-x: hidden !important;
+   width: 100% !important;
+ }
+
+.hero-image-outer {
+   width: 300%;
+   height: 500px;
+   overflow-y: hidden !important;
+ }
+
+ .hero-image-inner {
+   width: 66%;
+   overflow-x: hidden !important;
+ }
+
+ .hero-image {
+   height: 500px;
+   margin-left: -50%;
+   z-index: 0 !important;
+ }
+
+.overlap-hero-image {
+	 margin-top: -500px;
+	 height: 500px;
+}
+
+.overlap-hero-image h1 {
+	color: white;
+}
+
+.overlap-hero-image h2 {
+	color: white;
+	margin-top: 25px;
+}
+
+.overlap-hero-image h3 {
+ margin-top: 140px;
+ color: #FFFFFF !important;
+ line-height: 1.5;
+}
+
+.overlap-hero-image h3 a {
+	color: white !important;
+	text-decoration: underline !important;
+}
+
+.overlap-hero-image h4 {
+ color: #FFFFFF !important;
+ line-height: 1.5;
+}
+
+ @media screen and (min-width: 1100px) {
+   .hero-image-outer {
+     width: 100%;
+   }
+
+   .hero-image-inner {
+     width: 100%;
+   }
+
+   .hero-image {
+     width: 100%;
+     height: auto;
+     margin-left: 0%;
+   }
+ }
+
+ @media screen and (max-width: 768px) {
+		.overlap-hero-image {
+			overflow: scroll !important;
+		}
+	}
+
+
+
+
+
+ /* Tall Heros */
+ .tall-hero-image-row {
+    margin-top: -100px;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+ .tall-hero-image-outer {
+    width: 300%;
+    height: 800px;
+    overflow-y: hidden !important;
+  }
+
+  .tall-hero-image-inner {
+    width: 66%;
+    overflow-x: hidden !important;
+  }
+
+  .tall-hero-image {
+    height: 800px;
+    margin-left: -50%;
+    z-index: 0 !important;
+  }
+
+ .overlap-tall-hero-image {
+ 	 margin-top: -800px;
+ 	 height: 800px;
+ }
+
+.overlap-tall-hero-image h1 {
+	color: white;
+}
+
+.overlap-tall-hero-image h2 {
+	color: white;
+}
+
+ .overlap-tall-hero-image h3 {
+  margin-top: 140px;
+  color: #FFFFFF !important;
+  line-height: 1.5;
+ }
+
+  @media screen and (min-width: 1100px) {
+    .tall-hero-image-outer {
+      width: 100%;
+    }
+
+    .tall-hero-image-inner {
+      width: 100%;
+    }
+
+    .tall-hero-image {
+      width: 100%;
+      height: auto;
+      margin-left: 0%;
+    }
+  }
+
+	@media screen and (max-width: 768px) {
+    .overlap-tall-hero-image {
+      overflow: scroll !important;
+    }
+  }
+
+	.overlap-hero-scroll {
+		overflow: scroll !important;
+	}
+
+
+
+
+
+/* Short Hero */
+.short-hero-image-row {
+   margin-top: -100px;
+   overflow-x: hidden !important;
+   width: 100% !important;
+ }
+
+.short-hero-image-outer {
+   width: 300%;
+   height: 300px;
+   overflow-y: hidden !important;
+ }
+
+ .short-hero-image-inner {
+   width: 66%;
+   overflow-x: hidden !important;
+ }
+
+ .short-hero-image {
+   height: 300px;
+   margin-left: -50%;
+   z-index: 0 !important;
+ }
+
+ @media screen and (min-width: 1100px) {
+   .short-hero-image-outer {
+     width: 100%;
+   }
+
+   .short-hero-image-inner {
+     width: 100%;
+   }
+
+   .short-hero-image {
+     width: 100%;
+     height: auto;
+     margin-left: 0%;
+   }
+ }
+
+.overlap-short-hero-image {
+	margin-top: -290px;
+	height: 300px;
+	font-weight: 400;
+}
+
+.overlap-short-hero-image h3 {
+	margin-top: 120px;
+	color: #FFFFFF !important;
+}
+
+.overlap-short-hero-image h1 {
+	color: white;
+}
+
+.overlap-short-hero-image h2 {
+	color: white;
+}
+
+@media screen and (max-width: 768px) {
+	.overlap-short-hero-image {
+		overflow: scroll !important;
+	}
+}
 
 
 /*

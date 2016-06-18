@@ -1,7 +1,8 @@
 <%= form_for @flex_quiz do |f| %>
 <div class="row">
-   <div class="col-sm-12">
+   <div class="buffer-25"></div>
 
+   <div class="container col-xs-10 col-xs-push-1 quiz-question">
      <div class="form-group">
        <h3>Q1: How to Perform Toe Touch Test</h3>
        <p><strong>Body Part Being Tested:</strong> Hamstring Flexibility
@@ -16,7 +17,9 @@
          <%= f.radio_button :flex01, '5'%><label>Fingers are above ankle height</label>
        </div>
      </div>
+   </div> <!-- opaque container -->
 
+   <div class="container col-xs-10 col-xs-push-1 quiz-question">
      <div class="form-group">
        <h3>Q2: How to Perform the Overhead Deep Squat Test</h3>
        <p><strong>Body Part Being Tested:</strong> Overall flexibility
@@ -48,7 +51,9 @@
          <%= f.radio_button :flex02, '9'%><label>Heels on ground, thighs above horizontal, torso and elbow tilt forward</label>
        </div>
      </div>
+   </div> <!-- opaque container -->
 
+   <div class="container col-xs-10 col-xs-push-1 quiz-question">
      <div class="form-group">
        <h3>Q3: How to Perform the Pelvic Tilt Test</h3>
        <p>
@@ -70,8 +75,9 @@
          <%= f.radio_button :flex03, '5'%><label>Hips are not able to swivel to the ball or move out and up without knee, feet, or upper body movement</label>
        </div>
      </div>
+   </div> <!-- opaque container -->
 
-
+   <div class="container col-xs-10 col-xs-push-1 quiz-question">
      <div class="form-group">
        <h3>Q4: How to Perform the Neck Cervical Rotation Test</h3>
        <p><strong>Body Part Being Tested:</strong> Neck
@@ -92,8 +98,9 @@
          <%= f.radio_button :flex04, '7'%><label>Turning head any direction is difficult at this time</label>
        </div>
      </div>
+   </div> <!-- opaque container -->
 
-
+   <div class="container col-xs-10 col-xs-push-1 quiz-question">
      <div class="form-group">
        <h3>Q5: How to Perform the Pelvic Rotation Test, Back Hip</h3>
        <p><strong>Body Part Being Tested:</strong> Test is for the back/trial hip and backswing turn.  This will be your right hip if you are a right handed golfer and your left hip if you are a left handed golfer.
@@ -114,8 +121,9 @@
          <%= f.radio_button :flex05, '7'%><label>Back hip does not turn, belt buckle shows no movement</label>
        </div>
      </div>
+   </div> <!-- opaque container -->
 
-
+   <div class="container col-xs-10 col-xs-push-1 quiz-question">
       <div class="form-group">
         <h3>Q6: How to Perform Seated Trunk Rotation Test for Back Shoulder</h3>
         <p><strong>Body Part Being Tested:</strong> Back Shoulder turns back, back to target (right shoulder for a right handed golfer, left shoulder for a left handed golfer)
@@ -137,8 +145,9 @@
           <%= f.radio_button :flex06, '9'%><label>Back shoulder does not turn, but slides down</label>
         </div>
       </div>
+    </div> <!-- opaque container -->
 
-
+    <div class="container col-xs-10 col-xs-push-1 quiz-question">
      <div class="form-group">
        <h3>Q7: How to Perform Back Forearm 90/90</h3>
        <p><strong>Body Part Being Tested:</strong> Back forearm (right forearm for right handed golfer, left forearm for left handed golfer)
@@ -155,10 +164,9 @@
          <%= f.radio_button :flex08, '4'%><label>Easily More than Spine Angle - their forearm externally rotates past their spine angle (usually greater than 90 degrees)</label>
        </div>
      </div>
+   </div> <!-- opaque container -->
 
-
-
-
+   <div class="container col-xs-10 col-xs-push-1 quiz-question">
      <div class="form-group">
        <h3>Q8: How to Perform the Pelvic Rotation Test for the Forward Hip</h3>
        <p><strong>Body Part Being Tested:</strong> Target/forward hip forward turn (this will be your left hip if you are a right handed golfer and your right hip if you are a left handed golfer).
@@ -180,12 +188,9 @@
          <%= f.radio_button :flex08, '7'%><label>Forward hip does not turn, no belt buckle movement</label>
        </div>
      </div>
+   </div> <!-- opaque container -->
 
-
-
-
-
-
+   <div class="container col-xs-10 col-xs-push-1 quiz-question">
     <div class="form-group">
       <h3>Q9: How to Perform Forward Shoulder Trunk Rotation Test</h3>
       <p><strong>Body Part Being Tested:</strong> Forward Shoulder turns back, front to target (left shoulder for a right handed golfer, right shoulder for a left handed golfer)
@@ -207,12 +212,9 @@
         <%= f.radio_button :flex09, '8'%><label>Forward shoulder does not turn, just slides up or down</label>
       </div>
     </div>
+  </div> <!-- opaque container -->
 
-
-
-
-
-
+  <div class="container col-xs-10 col-xs-push-1 quiz-question">
      <div class="form-group">
        <h3>Q10: How to Perform Forward Forearm 90/90 Test</h3>
        <p><strong>Body Part Being Tested:</strong> Forward  Forearm (left forearm for a right handed golfer, right forearm for a left handed golfer)
@@ -229,17 +231,13 @@
          <%= f.radio_button :flex10, '4'%><label>Easily More than Spine Angle: Forearm externally rotates past their spine angle (usually greater than 90 degrees)</label>
        </div>
      </div>
-
-
-
+   </div> <!-- opaque container -->
  </div> <!-- column end -->
 </div> <!-- row end -->
 
- <div class="buffer-25"></div>
-
-<div class="row">
- <div class="col-xs-12 center-block">
-     <div class="center-block"><%= f.submit "Submit Answers" %></div>
-   </div> <!-- column end -->
+<div class="row text-center">
+  <%= f.submit "Submit Answers" %>
 </div> <!-- row end -->
+
+<div class="buffer-25"></div>
 <% end %>

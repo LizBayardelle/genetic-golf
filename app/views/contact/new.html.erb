@@ -1,45 +1,59 @@
-<div class="container-content">
-    <div class="container">
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 6 Tall.jpg', class: "tall-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
+
+<div class="overlap-tall-hero-image">
+  <div class="buffer-50"></div>
     <h1 class="text-center">Contact Us</h1>
-        <%= form_for @contact, url: contact_index_path do |f| %>
-        <% if @contact.errors.any? %>
-          <div class="alert alert-danger">
-            <h4><%= pluralize(@contact.errors.count, "error") %>.</h4>
-            <ul>
-              <% @contact.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-
-        <%= form_group_tag(@contact.errors[:name]) do %>
-            <% if current_user %>
-                <%= f.label :name %>
-                <%= f.text_field :name, required: true, class: 'form-control', value: current_user.name  %>
-            <% else %>
-                <%= f.label :name %>
-                <%= f.text_field :name, required: true, class: 'form-control'%>
+  <div class="buffer-25"></div>
+  <div class="container col-xs-10 col-xs-push-1" style="background-color: rgba(235, 235, 235, 0.7) !important">
+    <div class="buffer-25"></div>
+      <%= form_for @contact, url: contact_index_path do |f| %>
+      <% if @contact.errors.any? %>
+        <div class="alert alert-danger">
+          <h4><%= pluralize(@contact.errors.count, "error") %>.</h4>
+          <ul>
+            <% @contact.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
             <% end %>
-        <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-        <%= form_group_tag(@contact.errors[:email]) do %>
-            <% if current_user %>
-                <%= f.label :email %>
-                <%= f.text_field :email, required: true, class: 'form-control', value: current_user.email %>
-            <% else %>
-                <%= f.label :email %>
-                <%= f.text_field :email, required: true, class: 'form-control'%>
-            <% end %>
-        <% end %>
+      <%= form_group_tag(@contact.errors[:name]) do %>
+          <% if current_user %>
+              <%= f.label :name %>
+              <%= f.text_field :name, required: true, class: 'form-control', value: current_user.name  %>
+          <% else %>
+              <%= f.label :name %>
+              <%= f.text_field :name, required: true, class: 'form-control' %>
+          <% end %>
+      <% end %>
 
-        <%= form_group_tag(@contact.errors[:message]) do %>
-          <%= f.label :message %>
-          <%= f.text_field :message, class: 'form-control', placeholder: "Enter your message here.", style: "height: 200px" %>
-        <% end %>
+      <%= form_group_tag(@contact.errors[:email]) do %>
+          <% if current_user %>
+              <%= f.label :email %>
+              <%= f.text_field :email, required: true, class: 'form-control', value: current_user.email %>
+          <% else %>
+              <%= f.label :email %>
+              <%= f.text_field :email, required: true, class: 'form-control'%>
+          <% end %>
+      <% end %>
 
-        <div class="form-group">
+      <%= form_group_tag(@contact.errors[:message]) do %>
+        <%= f.label :message %>
+        <%= f.text_field :message, class: 'form-control', placeholder: "Enter your message here.", style: "height: 200px" %>
+      <% end %>
+
+      <div class="buffer-25"></div>
+        <div class="form-group text-center">
           <%= f.submit "Contact Us", class: 'btn btn-primary' %>
         </div>
-      <% end %>  </div>
-</div>
+      <div class="buffer-25"></div>
+    <% end %>
+  </div> <!-- container -->
+</div> <!-- overlap-tall-hero-image -->

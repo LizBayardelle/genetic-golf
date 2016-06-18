@@ -1,6 +1,10 @@
-<div class="full-width">
-  <%= image_tag "Background 1.jpg", style: "width: 100%" %>
-</div> <!-- padding-0 -->
+<div class="hero-image-row">
+  <div class="hero-image-outer text-center">
+    <div class="hero-image-inner text-center">
+      <%= image_tag 'Background 1.jpg', class: "hero-image",alt: "Beautiful Sunset over Pelican Hills Golf Course and Ocean Cliffs" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
 <div class="buffer-50"></div>
 
@@ -22,6 +26,7 @@ $( document ).ready(function() {
   <%= link_to welcome_personality_path, class: "no-color" do %>
   <div class="container col-sm-4"><div class="well bs-component teaser-well">
     <h1>Test Your Personality</h1>
+    <%= image_tag 'icon_yourid.png', class: "well-icon", alt: "Image of Hands Inside a Lightbulb" %>
     <h2 class="homepage-subheading">Your ID</h2>
     <p>Most golf websites and golf newsletters provide generic golf tips that are designed to fit everyone.
       <br><br>At Genetic Golf everything is based on your Genetic Golf Personal ID code so we can provide you with golf tips that actually benefit you because they are based on your individual test results and truly fit you.
@@ -32,6 +37,7 @@ $( document ).ready(function() {
   <%= link_to welcome_game_path, class: "no-color" do %>
   <div class="container col-sm-4"><div class="well bs-component teaser-well">
     <h1>Test Your Golf Swing</h1>
+    <%= image_tag 'icon_TEMP_yourcode.jpg', class: "well-icon", alt: "Image of Three Diffferent Golf Swings of Pro Golfers" %>
     <h2 class="homepage-subheading">Your Code</h2>
     <p>The Genetic Golf ID system is personalized to benefit you and your golf game. We run personalized tests, we don’t guess. No one else does this!
       <br><br>How can one tell you how to set up and swing the club before they even know your genetic makeup? We all have different minds, body structures, strengths, and skills, along with various weaknesses.
@@ -42,6 +48,7 @@ $( document ).ready(function() {
   <%= link_to welcome_body_path, class: "no-color" do %>
   <div class="container col-sm-4"><div class="well bs-component teaser-well">
     <h1>Understand Your Body</h1>
+    <%= image_tag 'icon_dynamics.png', class: "well-icon", alt: "Image of the Outline Image of a Body Being Examined" %>
     <h2 class="homepage-subheading">Dynamics</h2>
     <p>There are many factors that affect your golf game.  Until you understand your body, how will you know which golf tips fit you?
       <br><br>There is not one swing that works for everyone.   We don't teach everyone the same golf swing. To find your game, we run genetic tests for answers to help you discover a swing that personally fits you best.

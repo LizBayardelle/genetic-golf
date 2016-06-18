@@ -1,21 +1,19 @@
-<script>
-$( document ).ready(function() {
-    var heights = $(".teaser-well").map(function() {
-        return $(this).height();
-    }).get(),
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 11 Tall.jpg', class: "tall-hero-image",alt: "Aerial View of Golf Course, Palm Trees, and Ocean" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-    maxHeight = Math.max.apply(null, heights);
+<div class="overlap-tall-hero-image">
 
-    $(".teaser-well").height(maxHeight);
-
-    window.onresize = function(){ location.reload(); }
-});
-</script>
+  <div class="buffer-50"></div>
 
 <div class="container bs-component text-center">
   <% if current_user.nil? %>
     <%= link_to (new_session_path), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well">
+    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Body Structure Quiz</h1>
       <p>Your body structure will affect your style of swing and the clubs you should be using!
       <br><br>Test your body structure now!</p>
@@ -23,7 +21,7 @@ $( document ).ready(function() {
     <% end %>
   <% elsif current_user.bod_quiz.nil? %>
      <%= link_to (new_bod_quiz_path), class: "no-color" do %>
-     <div class="container col-sm-4"><div class="well bs-component teaser-well">
+     <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
        <h1>Body Structure Quiz</h1>
        <p>Your body structure will affect your style of swing and the clubs you should be using!
        <br><br>Test your body structure now!</p>
@@ -31,7 +29,7 @@ $( document ).ready(function() {
      <% end %>
   <% else %>
      <%= link_to (edit_bod_quiz_path(current_user.bod_quiz)), class: "no-color" do %>
-     <div class="container col-sm-4"><div class="well bs-component teaser-well">
+     <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
        <h1>Body Structure Quiz</h1>
        <p>Your body structure will affect your style of swing and the clubs you should be using!
        <br><br>Test your body structure now!</p>
@@ -41,7 +39,7 @@ $( document ).ready(function() {
 
   <% if current_user.nil? %>
     <%= link_to (new_session_path), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well">
+    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Flexibility Quiz</h1>
       <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
       <br><br>Your stability, strength, and flexibility play a major role in finding your best swing.
@@ -50,7 +48,7 @@ $( document ).ready(function() {
     <% end %>
   <% elsif current_user.flex_quiz.nil? %>
      <%= link_to (new_flex_quiz_path), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well">
+    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Flexibility Quiz</h1>
       <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
       <br><br>Your stability, strength, and flexibility play a major role in finding your best swing.
@@ -59,7 +57,7 @@ $( document ).ready(function() {
     <% end %>
  <% else %>
     <%= link_to (edit_flex_quiz_path(current_user.flex_quiz)), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well">
+    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Flexibility Quiz</h1>
       <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
       <br><br>Your stability, strength, and flexibility play a major role in finding your best swing.
@@ -70,7 +68,7 @@ $( document ).ready(function() {
 
   <% if current_user.nil? %>
     <%= link_to (new_session_path), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well">
+    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Balance Quiz</h1>
       <p>Your balance can affect every aspect of your game.
       <br><br>Evaluate your balance skills and find out the best way for you to swing in balance.
@@ -79,7 +77,7 @@ $( document ).ready(function() {
     <% end %>
   <% elsif current_user.bal_quiz.nil? %>
      <%= link_to (new_bal_quiz_path), class: "no-color" do %>
-      <div class="container col-sm-4"><div class="well bs-component teaser-well">
+      <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
         <h1>Balance Quiz</h1>
         <p>Your balance can affect every aspect of your game.
         <br><br>Evaluate your balance skills and find out the best way for you to swing in balance.
@@ -88,7 +86,7 @@ $( document ).ready(function() {
       <% end %>
    <% else %>
       <%= link_to (edit_bal_quiz_path(current_user.bal_quiz)), class: "no-color" do %>
-      <div class="container col-sm-4"><div class="well bs-component teaser-well">
+      <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
         <h1>Balance Quiz</h1>
         <p>Your balance can affect every aspect of your game.
         <br><br>Evaluate your balance skills and find out the best way for you to swing in balance.
@@ -97,4 +95,27 @@ $( document ).ready(function() {
       <% end %>
   <% end %>
 
+
+    <%= link_to (resources_fitness_path), class: "no-color" do %>
+    <div class="container col-sm-12"><div class="well bs-component teaser-well">
+      <h1>Your Fitness Plan</h1>
+      <p>More information coming soon!</p>
+    </div></div> <!-- well/container -->
+    <% end %>
+
 </div> <!-- container bs-component -->
+
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".teaser-well-3").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".teaser-well-3").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>

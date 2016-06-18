@@ -1,14 +1,21 @@
-<div class="container quiz-page">
-  <div id="bod_quiz_new" class="text-center">
-    <h1>Body Structure Quiz</h1>
-  </div>
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 16.jpg', class: "tall-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-  <div id="quiz_bs_pretext" class="text-center">
-    <h2>How to Take Your Body Structure Screen</h2>
-    <p class="col-sm-8 col-sm-offset-2">Your body structure, height, width, arm length, leg length, trunk length, and flexibility, will effect your style of swing and the clubs you should be using!   So look at the following body types and select which one best represents you today. Please fill out the additional information so that Genetic Golf can best help you.  If your body changes over time please revise your body structure code.</p>
-  </div>
+<div class="overlap-tall-hero-image overlap-hero-scroll">
+  <div class="container">
 
-<%= render partial: "quiz", locals: { url: bod_quizzes_path, method: :post } %>
+    <div class="text-center">
+      <h1 style="margin-top: 40px">Body Structure Quiz</h1>
+      <h2 style="color: white">How to Take Your Body Structure Screen</h2>
+      <p class="col-sm-8 col-sm-offset-2" style="color: white">Your body structure, height, width, arm length, leg length, trunk length, and flexibility, will effect your style of swing and the clubs you should be using!   So look at the following body types and select which one best represents you today. Please fill out the additional information so that Genetic Golf can best help you.  If your body changes over time please revise your body structure code.</p>
+    </div>
 
-</div>
-<div class="buffer-50"></div>
+    <%= render partial: "quiz", locals: { url: bod_quizzes_path, method: :post } %>
+
+  </div> <!-- container quiz-page -->
+</div> <!-- overlap-tall-hero-image -->

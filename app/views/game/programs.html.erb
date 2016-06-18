@@ -1,12 +1,27 @@
-<div class="container">
+<div class="hero-image-row">
+  <div class="hero-image-outer text-center">
+    <div class="hero-image-inner text-center">
+      <%= image_tag 'Background 13.jpg', class: "hero-image",alt: "St. Andrew's Golf Course, 18th Green" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-  <div class="text-center page-title-bar">
-    <h1>Golf Schools and Custom Programs</h1>
-    <h2><small>Finding the right coach in golf is critical to your future succes!</small></h2>
-  </div>
+<div class="overlap-hero-image">
+  <div class="container">
+    <div class="text-center page-title-bar">
+      <h1 style="padding-top: 30px">Golf Schools and Custom Programs</h1>
+      <h3 style="margin-top: 20px">Finding the right coach in golf is critical to your future succes!</h3>
+      <div class="buffer-50 hidden-xs"></div>
+      <div class="buffer-50 hidden-xs"></div>
+      <div class="buffer-25 hidden-xs"></div>
+      <div class="buffer-50 visible-lg"></div>
+      <p class="text-center col-sm-10 col-sm-push-1" style="color: white; font-size: 18px">At Genetic Golf we focus on you, your body, and your entire golf game. We begin with a full Genetic Golf evaluation and run specific tests to evaluate how your body performs best and establish your personal ID and Genetic Golf code. Our evaluations and solutions are personally customized to fit you, your body, and your golf game.</p>
+    </div>
+  </div> <!-- container -->
+</div> <!-- overlap-hero-image -->
 
-  <div i class="content-text">
-        <p>At Genetic Golf we focus on you, your body, and your entire golf game. We begin with a full Genetic Golf evaluation and run specific tests to evaluate how your body performs best and establish your personal ID and Genetic Golf code. Our evaluations and solutions are personally customized to fit you, your body, and your golf game.</p>
+<div class="container" style="padding-top: 30px">
+  <div class="content-text">
       <h4>Genetic Golf Schools</h4>
         <p>Genetic Golf schools are currently being done at <a href="http://www.golfpelicanhill.com/">The Resort at Pelican Hill</a> through Glenn Deck, founder of Genetic Golf.
         <br><br>We have several options for individual golf programs:
@@ -24,7 +39,7 @@
           <br><br>When you want to separate yourself from the others, there is Genetic Golf.
         </p>
     <%#= link_to about_contact_path do %>
-      <h4 class="cta">If you want to realize your true potential and find your best game, contact Genetic Golf!</h4>
+      <h4 class="cta">If you want to realize your true potential and find your best game,<br><%= link_to "contact Genetic Golf", new_contact_path %>!</h4>
     <%# end %>
   </div>
 

@@ -1,16 +1,29 @@
-<div class="container">
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 6 Tall.jpg', class: "tall-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-  <div id="swing_book_new" class="text-center">
-    <h1>Need to Edit Your Full Swing Code?</h1>
-    <h2><small>Sometimes things change.
-      <br>Let your golf tips change with you.</small></h2>
-  </div>
+<div class="overlap-tall-hero-image">
+  <div class="buffer-25"></div>
+  <div class="buffer-50"></div>
+  <div class="container">
+    <div class="container col-xs-10 col-xs-push-1" style="background-color: rgba(235, 235, 235, 0.7) !important">
+      <div class="buffer-25"></div>
 
-  <div id="enter_swing_code" class="enter_book_code text-center">
-    <h2>Enter your new and improved swing code here:</h2>
-    <%= render partial: "quiz", locals: { url: edit_swing_book_path(@swing_book), method: :put } %>
-  </div>
+      <div id="swing_book_new" class="text-center">
+        <h1 style="color: black">Need to Edit Your Full Swing Code?</h1>
+        <h2 style="color: black">Sometimes things change.
+          <br>Let your golf tips change with you.</h2>
+      </div>
 
-</div>
-
-<div class="buffer-50"></div>
+      <div id="enter_swing_code" class="enter_book_code text-center">
+        <h2><small>Enter your new and improved swing code here:</small></h2>
+        <%= render partial: "quiz", locals: { url: edit_swing_book_path(@swing_book), method: :put } %>
+      </div>
+      <div class="buffer-50"></div>
+    </div> <!-- opaque container -->
+  </div> <!-- container -->
+</div> <!-- overlap-tall-hero-image -->

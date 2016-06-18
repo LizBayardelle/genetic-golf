@@ -1,20 +1,14 @@
-<script>
-$( document ).ready(function() {
-    var heights = $(".well-triple").map(function() {
-        return $(this).height();
-    }).get(),
-    maxHeight = Math.max.apply(null, heights);
-    $(".well-triple").height(maxHeight);
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 5 Tall.jpg', class: "tall-hero-image",alt: "Sunset Over Pelican Hill Golf Course and the Ocean" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-    var heights = $(".well-double").map(function() {
-        return $(this).height();
-    }).get(),
-    maxHeight = Math.max.apply(null, heights);
-    $(".well-double").height(maxHeight);
+<div class="overlap-tall-hero-image">
 
-    window.onresize = function(){ location.reload(); }
-});
-</script>
+  <div class="buffer-50"></div>
 
 <div class="container bs-component text-center">
   <% if current_user.nil? %>
@@ -80,3 +74,22 @@ $( document ).ready(function() {
 <% end %>
 
 </div> <!-- container bs-component -->
+
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".well-triple").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".well-triple").height(maxHeight);
+
+    var heights = $(".well-double").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".well-double").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>

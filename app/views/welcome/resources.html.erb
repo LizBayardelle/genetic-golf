@@ -1,22 +1,24 @@
-<script>
-$( document ).ready(function() {
-    var heights = $(".well-triple").map(function() {
-        return $(this).height();
-    }).get(),
-    maxHeight = Math.max.apply(null, heights);
-    $(".well-triple").height(maxHeight);
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 7 Tall.jpg', class: "tall-hero-image",alt: "Aerial View of Golf Course, Palm Trees, and Ocean" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-    var heights = $(".well-double").map(function() {
-        return $(this).height();
-    }).get(),
-    maxHeight = Math.max.apply(null, heights);
-    $(".well-double").height(maxHeight);
+<div class="overlap-tall-hero-image">
 
-    window.onresize = function(){ location.reload(); }
-});
-</script>
+  <div class="buffer-50"></div>
 
 <div class="container bs-component text-center">
+
+    <%= link_to (resources_aids_path), class: "no-color" do %>
+    <div class="container col-sm-12"><div class="well well-double bs-component teaser-well">
+      <h1>Training Aids</h1>
+      <p>Serious about making progress in your golf game?  Then you need the right tools.  Here are some hand-picked training aids that will help you work on each individual part of your game.</p>
+    </div></div> <!-- well/container -->
+    <% end %>
+
   <%= link_to (fitting_full_path), class: "no-color" do %>
   <div class="container col-sm-4"><div class="well well-triple bs-component teaser-well">
     <h1>Full Swing Club Fitting</h1>
@@ -38,26 +40,31 @@ $( document ).ready(function() {
   </div></div> <!-- well/container -->
   <% end %>
 
-  <%= link_to (resources_aids_path), class: "no-color" do %>
+  <%= link_to (resources_fitness_path), class: "no-color" do %>
   <div class="container col-sm-12"><div class="well well-double bs-component teaser-well">
-    <h1>Training Aids</h1>
-    <p>Serious about making progress in your golf game?  Then you need the right tools.  Here are some hand-picked training aids that will help you work on each individual part of your game.</p>
-  </div></div> <!-- well/container -->
-  <% end %>
-
-  <%= link_to (resources_fitness_path), class: "no-color" do %>
-  <div class="container col-sm-6"><div class="well well-double bs-component teaser-well">
     <h1>Your Fitness Plan</h1>
-    <p>More information coming soon!</p>
-  </div></div> <!-- well/container -->
-  <% end %>
-
-  <%= link_to (resources_fitness_path), class: "no-color" do %>
-  <div class="container col-sm-6"><div class="well well-double bs-component teaser-well">
-    <h1>Fitness Equipment</h1>
-    <p>More information coming soon!</p>
+    <p>Physical fitness for one sport is not exactly the same as for another. Before you start a sport specific program, it’s critical that you have a Seven Basic Movement evaluation. </p>
   </div></div> <!-- well/container -->
   <% end %>
 
 
 </div> <!-- container bs-component -->
+
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".well-triple").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".well-triple").height(maxHeight);
+
+    var heights = $(".well-double").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".well-double").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>

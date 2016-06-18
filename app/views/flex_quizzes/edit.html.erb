@@ -1,10 +1,19 @@
-<div class="container quiz-page">
-  <div class="text-center">
-    <h1>Body Flexibility Quiz</h1>
-    <h4>Retest Your Body Structure</h4>
-  </div>
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 16.jpg', class: "tall-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-<%= render "quiz", url: edit_flex_quiz_path(@flex_quiz), method: :put  %>
+<div class="overlap-tall-hero-image overlap-hero-scroll">
+  <div class="container">
 
-</div>
-<div class="buffer-50"></div>
+    <div class="text-center">
+      <h1 style="margin-top: 40px">Body Flexibility Quiz</h1>
+    </div>
+
+    <%= render "quiz", url: edit_flex_quiz_path(@flex_quiz), method: :put  %>
+
+  </div> <!-- container quiz-page -->
+</div> <!-- overlap-tall-hero-image -->

@@ -1,10 +1,22 @@
+<div class="short-hero-image-row">
+  <div class="short-hero-image-outer text-center">
+    <div class="short-hero-image-inner text-center">
+      <%= image_tag 'Background 12 Short.jpg', class: "short-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
+
+<div class="overlap-short-hero-image">
+  <div class="container">
+    <div id="swing_book_new" class="text-center">
+      <h1 style="padding-top: 15px">Genetic Golf Full Swing Book</h1>
+      <h2 style="padding-top: 50px">Comes with Free Genetic Golf ID Evaluation Test</h2>
+    </div>
+  </div> <!-- container -->
+</div> <!-- overlap-short-hero-image -->
+
 <div class="container">
-
-  <div id="swing_book_new" class="text-center">
-    <h1>Genetic Golf Full Swing Book</h1>
-    <h2><small>Comes with Free Genetic Golf ID Evaluation Test</small></h2>
-  </div>
-
+  <div class="buffer-25"></div>
   <div id="per_quiz_pretext" class="content-text">
       <p>The Genetic Golf Swing Book with ID Evaluation is a true paradigm shift in golf and a real game changer. It is personalized for you, your body, and it will identify your best golf swing. We run personalized tests, we don’t guess at what works best for you.
       <br><br><span class="red-text">Find your Genetic ID code and find your best golf game! No one else does this!</span>
@@ -27,10 +39,25 @@
   <div id="buy_full_swing_book" class="buy-now">
     <h1>Price: $X.XX</h1>
   </div>
+</div> <!-- container -->
 
-  <div id="enter_swing_code" class="enter_book_code">
-    <h2>Already have your code? Add it to your profile now!</h2>
-    <%= render partial: "quiz", locals: { url: swing_books_path, method: :post } %>
-  </div>
+<div class="hero-image-row">
+  <div class="hero-image-outer text-center">
+    <div class="hero-image-inner text-center">
+      <%= image_tag 'Background 12 2.jpg', class: "hero-image",alt: "View of Golf Course" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
 
-</div>
+<div class="overlap-hero-image">
+  <div class="buffer-50"></div>
+    <h1 class="text-center">Already have your code?</h1>
+  <div class="buffer-25"></div>
+  <div class="container col-xs-10 col-xs-push-1" style="background-color: rgba(235, 235, 235, 0.7) !important">
+    <div class="buffer-25"></div>
+    <div id="enter_swing_code" class="enter_book_code text-center">
+      <h2 style="color: black">Add your code to your profile now!</h2>
+      <%= render partial: "quiz", locals: { url: swing_books_path, method: :post } %>
+    </div>
+  </div> <!-- opaque container -->
+</div> <!-- overlap-hero-image -->
