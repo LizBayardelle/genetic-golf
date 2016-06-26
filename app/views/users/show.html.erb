@@ -134,7 +134,7 @@
         <p><strong>Dominant Hand: </strong><%= @user.dom_hand %></p>
         <p><strong>Best Other Sport: </strong><%= @user.sport %></p>
         <div class="text-center">
-          <%= link_to "Edit Your Information", edit_user_path(@user), class: 'btn btn-secondary' %>
+          <%= link_to "Edit Your Information", edit_user_path(@user) %>
         </div>
       </div></div>
 
@@ -146,7 +146,7 @@
         <p><strong>Average Practices per Month: </strong><%= @user.g_practice %></p>
         <p><strong>Current Index or Handicap: </strong><%= @user.handicap %></p>
         <div class="text-center">
-          <%= link_to "Edit Your Information", edit_user_path(@user), class: 'btn-custom' %>
+          <%= link_to "Edit Your Information", edit_user_path(@user) %>
         </div>
       </div></div>
 
