@@ -7,26 +7,27 @@
 </div> <!-- row -->
 
 
+
 <div class="overlap-short-hero-image">
   <div id="per_quiz_new" class="text-center">
     <h1>Test Your Personality</h1>
-    <h3>Shouldn't your golf tips be personalized to fit you?<br>Get your Personal Profile ID now!</h3>
+    <h3>Shouldn't your golf tips be personalized to fit you?
+      <br>Get your Personal Profile ID now!</h3>
   </div>
 </div>
 
+<div class="container">
   <div id="per_quiz_pretext" class="content-text">
-    <h4>One Size Doesn't Fit All in Golf</h4>
-      <p>The best players in the world had different personalities, different body structure, different equipment, and different swings.  Very few golfers are the same.
-      <br><br>Genetic Golf provides you with information that actually benefits you, your body, and your mind,  because everything is based on your individual test results. Everything is personalized to fit you!</p>
     <h4>Get Your Personal Profile ID</h4>
-      <p>Your personality has a direct effect on how you learn best, your mental process, how you perform best, and how you can play your best golf. That makes it the first component in your Genetic Golf ID code.
-      <br><br>Your brain is the master control that everything runs through. Knowing your ID code is critical to identifying the best path for you to develop your golf skills.</p>
+      <p>The best players in the world have different personalities, very few golfers are the same.  Your personality has a direct effect on how you learn best, your mental process, how you perform best, and how you can play your best golf. That makes it the first component in your Genetic Golf ID code.
+      </p>
     <h4>Test Your Personality</h4>
-      <p>Take the two free Personal ID tests shown below to identify your personality ID.
-      <br><br>This is an important aspect of your learning style and will determine how effective your personalized tips are, so please try to be honest in answering these tests.</p>
-  </div>
+      <p>Your brain is the master control that everything runs through. Knowing your ID code is critical to identifying the best path for you to develop your golf skills.
+        <br><br>Take the two free Personal ID tests shown below to identify your personality ID.  It’s important to be honest in answering these test, for they determine how your personalized coaching benefits you and your game.
+      </p>
+  </div> <!-- content-text -->
 
 <%= render partial: "quiz", locals: { url: per_quizzes_path, method: :post } %>
 
-</div>
+</div> <!-- container -->
 <div class="buffer-50"></div>
