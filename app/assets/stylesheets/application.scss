@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.container p, ol, li {
+   font-size: 16px !important;
+}
+
 .very-top {
 	padding-top: 10px;
 	padding-right: 25px;
@@ -173,7 +177,8 @@ a:hover {
 	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;;
 	width: 16.9%;
 	text-align: center;
-	height: 60px
+	height: 60px;
+	font-size: 14px !important;
 }
 
 .dropdown li {
