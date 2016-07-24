@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= favicon_link_tag '/app/assets/images/favicon.ico' %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= analytics_init if GoogleAnalytics.valid_tracker? %>
   <link href="https://fonts.googleapis.com/css?family=Muli|Josefin+Sans|Cinzel" rel="stylesheet" type="text/css">
 
@@ -62,12 +62,11 @@
 </div><!-- very-top -->
 
 <div class="container" id="header-detail">
-  <div class="row">
+  <div class="row" style="margin-top: -20px">
     <div class="col-xs-10">
       <h1 class="text-center" style="color: #567e3a">Welcome to Genetic Golf</h1>
-      <p class="text-center text-muted">Be yourself! Your game must match you and your body!
+      <p class="text-center text-muted">Your game must match you and your body!
       <br>We don't guess, we test to find what works best for you.
-      <br>Find your game and have more fun!</p>
     </div>
   </div> <!-- row -->
 </div>  <!-- header-detail -->

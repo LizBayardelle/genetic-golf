@@ -104,6 +104,14 @@ a:hover {
 		1px 1px 0 #FFF !important;
 }
 
+.grey-outline {
+	text-shadow:
+	-1px -1px 0 #D3D3D3,
+	 1px -1px 0 #D3D3D3,
+	 -1px 1px 0 #D3D3D3,
+		1px 1px 0 #D3D3D3 !important;
+}
+
 .btn-custom {
 	font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;;
 	border: solid thin #c4c4c4;
@@ -126,8 +134,8 @@ a:hover {
 
 
 
-/* HEADER */
 
+/* HEADER */
 #header-detail img {
 	max-width: 100px;
 }
@@ -553,6 +561,11 @@ body {
 	padding-top: 10px;
 }
 
+.footer h4 {
+  font-family: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;
+  font-weight: 800;
+}
+
 .sf-checkbox {
 	display: block;
 	margin-left: auto;
@@ -906,6 +919,58 @@ body {
 		overflow: scroll !important;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+/* CAROUSEL */
+.carousel-contents {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 50px;
+  height: 450px;
+}
+
+#logo-slider {
+  height: 275px;
+  width: auto !important;
+}
+
+.carousel-contents h1 {
+  color: black !important;
+  font-size: 28px;
+}
+
+.carousel-contents h2 {
+  color: black !important;
+  font-family: 'Muli', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.carousel-contents img {
+  width: 22%;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.ss-box {
+  background-color: rgba(235, 235, 235, 0.7) !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+
+
 
 
 /*
