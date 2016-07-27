@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :users, only: [:show]
 
   get 'coming_soon/putting_book'
   get 'coming_soon/short_book'
@@ -27,8 +29,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
   resources :bal_quizzes
   resources :flex_quizzes
   resources :bod_quizzes

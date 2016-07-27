@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= analytics_init if GoogleAnalytics.valid_tracker? %>
-  <link href="https://fonts.googleapis.com/css?family=Muli|Josefin+Sans|Cinzel" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Khula:400,300,800,700|Cinzel" rel="stylesheet" type="text/css">
 
   <!-- bootstrap material design -->
   <!-- Material Design fonts -->
@@ -32,7 +32,7 @@
 <div class="very-top row">
   <div class="pull-right user-info text-right">
   <p><% if current_user %>
-    <%= link_to current_user.name, user_path(current_user) %> -
+    <%= link_to current_user.first_name, user_path(current_user) %> -
     <% if current_user.swing_book != nil %>
       ID Code:
         <%= current_user.swing_book.swing01 %>
@@ -49,8 +49,8 @@
         <%= current_user.swing_book.swing10 %>
     <% end %>
   <% else %>
-    <%= link_to "Sign In", new_session_path %> or
-    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign In", new_user_session_path %> or
+    <%= link_to "Sign Up", new_user_registration_path %>
   <% end %></p>
   </div> <!-- user info -->
 
@@ -74,7 +74,22 @@
 <div class="buffer-25"></div>
 
 
-
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:notice] %>
+  </div>
+<% elsif flash.now[:alert] %>
+  <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash.now[:alert] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:alert] %>
+  </div>
+<% end %>
 
 
 <nav class="navbar navbar-default">
@@ -183,22 +198,7 @@
 
 
 
-<% if flash[:notice] %>
-  <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= flash[:notice] %>
-  </div>
-<% elsif flash.now[:alert] %>
-  <div class="alert alert-danger">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= flash.now[:alert] %>
-  </div>
-<% elsif flash[:alert] %>
-  <div class="alert alert-warning">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= flash[:alert] %>
-  </div>
-<% end %>
+
 
 
 
@@ -219,12 +219,12 @@
 
     <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-1">
       <% if current_user.nil? %>
-        <%= link_to (new_user_path) do %>
+        <%= link_to (new_user_registration_path) do %>
           <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
           Step 1: <br class="sm-none"></strong>Create Your Profile</h5></a>
         <% end %>
       <% elsif current_user.gender.nil? %>
-         <%= link_to (edit_user_path(current_user)) do %>
+         <%= link_to (edit_user_registration_path(current_user)) do %>
             <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
             Step 1: <br class="sm-none"></strong>Create Your Profile</h5></a>
           <% end %>
@@ -260,7 +260,7 @@
 
     <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-4">
       <% if current_user.nil? %>
-        <%= link_to (new_user_path) do %>
+        <%= link_to (new_user_registration_path) do %>
           <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
           Step 4: <br class="sm-none"></strong>Finish Your Profile</h5></a>
         <% end %>

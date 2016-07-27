@@ -1,8 +1,8 @@
 <div class="container">
-  <p class="text-right"><%= link_to "Sign Out", session_path(current_user), method: :delete %></p>
+  <p class="text-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
 
   <div id="locker_header" class="text-center">
-    <h1><%= @user.name %>'s Locker</h1>
+    <h1><%= @user.first_name %>'s Locker</h1>
 
     <div class="buffer-15"></div>
 
@@ -134,7 +134,7 @@
         <p><strong>Dominant Hand: </strong><%= @user.dom_hand %></p>
         <p><strong>Best Other Sport: </strong><%= @user.sport %></p>
         <div class="text-center">
-          <%= link_to "Edit Your Information", edit_user_path(@user) %>
+          <%= link_to "Edit Your Information", edit_user_registration_path(@user) %>
         </div>
       </div></div>
 
@@ -146,7 +146,7 @@
         <p><strong>Average Practices per Month: </strong><%= @user.g_practice %></p>
         <p><strong>Current Index or Handicap: </strong><%= @user.handicap %></p>
         <div class="text-center">
-          <%= link_to "Edit Your Information", edit_user_path(@user) %>
+          <%= link_to "Edit Your Information", edit_user_registration_path(@user) %>
         </div>
       </div></div>
 

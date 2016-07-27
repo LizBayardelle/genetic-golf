@@ -12,7 +12,7 @@
 
 <div class="container bs-component text-center">
   <% if current_user.nil? %>
-    <%= link_to (new_session_path), class: "no-color" do %>
+    <%= link_to (new_user_session_path), class: "no-color" do %>
     <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Body Structure Quiz</h1>
       <p>Your body structure will affect your style of swing and the clubs you should be using!
@@ -38,7 +38,7 @@
   <% end %>
 
   <% if current_user.nil? %>
-    <%= link_to (new_session_path), class: "no-color" do %>
+    <%= link_to (new_user_session_path), class: "no-color" do %>
     <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Flexibility Quiz</h1>
       <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
@@ -67,7 +67,7 @@
   <% end %>
 
   <% if current_user.nil? %>
-    <%= link_to (new_session_path), class: "no-color" do %>
+    <%= link_to (new_user_session_path), class: "no-color" do %>
     <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Balance Quiz</h1>
       <p>Your balance can affect every aspect of your game.

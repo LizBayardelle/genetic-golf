@@ -13,11 +13,6 @@ group :development do
   gem 'quiet_assets'
 end
 
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
-end
-
-gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -28,6 +23,5 @@ gem 'simple_form'
 gem 'mail_form'
 gem 'google-analytics-rails', '1.1.0'
 gem 'figaro', '1.0'
-
-# Used for encrypting User passwords
+gem 'devise'
 gem 'bcrypt'
