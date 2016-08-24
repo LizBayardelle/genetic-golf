@@ -9,5 +9,9 @@ class User < ActiveRecord::Base
    has_one :bod_quiz
    has_one :per_quiz
    has_one :swing_book
-   
+
+   def full_name
+     "#{first_name} #{last_name}"
+   end
+
 end

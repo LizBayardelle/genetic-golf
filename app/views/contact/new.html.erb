@@ -25,11 +25,11 @@
       <div class="col-sm-6">
         <%= form_group_tag(@contact.errors[:name]) do %>
             <% if current_user %>
-                <%= f.label :name %>
-                <%= f.text_field :name, required: true, class: 'form-control', value: current_user.name  %>
+                <%= f.label :full_name %>
+                <%= f.text_field :full_name, required: true, class: 'form-control', value: current_user.full_name  %>
             <% else %>
-                <%= f.label :name %>
-                <%= f.text_field :name, required: true, class: 'form-control' %>
+                <%= f.label :full_name %>
+                <%= f.text_field :full_name, required: true, class: 'form-control' %>
             <% end %>
         <% end %>
       </div>
