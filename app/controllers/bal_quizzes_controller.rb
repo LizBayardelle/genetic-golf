@@ -6,7 +6,7 @@ class BalQuizzesController < ApplicationController
   end
 
   def new
-    @bal_quiz =  current_user.build_bal_quiz
+    @bal_quiz = current_user.bal_quiz || current_user.build_bal_quiz
   end
 
   def create

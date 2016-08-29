@@ -15,8 +15,6 @@
 
 <div class="overlap-tall-hero-image overlap-hero-scroll">
   <div class="container quiz-page">
-
-    <%= render "quiz", url: edit_bal_quiz_path(@bal_quiz), method: :put  %>
-
+    <%= render partial: "bal_quizzes/quiz", locals: { bal_quiz: @bal_quiz } %>
   </div> <!-- quiz-page container -->
 </div> <!-- overlap-tall-hero-image -->
