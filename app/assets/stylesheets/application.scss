@@ -670,35 +670,19 @@ body {
 	}
 }
 
-
-
-.fixed-footer {
-	position: fixed;
-	text-align: center;
-	padding-top: 10px;
-	height: 80px;
-	bottom: 0;
-	width: 100%;
-	background-color: rgba(300,300,300,0.8);
-}
-
 .f-footer-logo {
 	height: 30px;
 }
 
-/* FIXED FOOTER for Medium devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-	.fixed-footer {
-		text-align: left;
-		line-height: 70px;
-	}
-
 	.f-footer-logo {
 		height: 40px;
 	}
 }
 
-
+#ff-image-container img {
+  margin-top: 30px;
+}
 
 
 
