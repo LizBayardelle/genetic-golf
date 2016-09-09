@@ -101,40 +101,16 @@
         <li class="dropdown">
           <%= link_to "Step 2<br /> Your Body".html_safe, welcome_body_path, class: "dropdown-toggle", role: "button" %>
           <ul id="subnavlist" class="dropdown-menu">
-            <li>
-              <% if current_user.nil? || current_user.bod_quiz.nil? %>
-                 <%= link_to "Body Structure Quiz", new_bod_quiz_path %>
-              <% else %>
-                 <%= link_to "Body Structure Quiz ✓", edit_bod_quiz_path(current_user.bod_quiz) %>
-              <% end %>
-            </li>
-            <li>
-              <% if current_user && current_user.bal_quiz != nil? %>
-                 <%= link_to "Balance Quiz ✓", edit_bal_quiz_path(current_user.bal_quiz), data: { 'no-turbolinks': true} %>
-              <% else %>
-                 <%= link_to "Balance Quiz", new_bal_quiz_path %>
-              <% end %>
-            </li>
-            <li>
-              <% if current_user.nil? || current_user.flex_quiz.nil? %>
-                 <%= link_to "Flexibility Quiz", new_flex_quiz_path %>
-              <% else %>
-                 <%= link_to "Flexibility Quiz ✓", edit_flex_quiz_path(current_user.flex_quiz) %>
-              <% end %>
-            </li>
+            <li><%= link_to "Body Structure Quiz", new_bod_quiz_path %></li>
+            <li><%= link_to "Balance Quiz", new_bal_quiz_path %></li>
+            <li><%= link_to "Flexibility Quiz", new_flex_quiz_path %></li>
           </ul>
         </li>
 
         <li class="dropdown">
           <%= link_to "Step 3<br /> Your Swing".html_safe, welcome_game_path, class: "dropdown-toggle", role: "button" %>
           <ul id="subnavlist" class="dropdown-menu">
-            <li>
-              <% if current_user.nil? || current_user.swing_book.nil? %>
-                 <%= link_to "Your Genetic Golf Swing", new_swing_book_path %>
-              <% else %>
-                 <%= link_to "Full Swing ID ✓", edit_swing_book_path(current_user.swing_book) %>
-              <% end %>
-            </li>
+            <li><%= link_to "Your Genetic Golf Swing", new_swing_book_path %></li>
             <li><%= link_to "Your Genetic Short Game", coming_soon_short_book_path %></li>
             <li><%= link_to "Your Genetic Putting Game", coming_soon_putting_book_path %></li>
           </ul>

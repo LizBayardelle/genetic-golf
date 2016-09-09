@@ -4,10 +4,14 @@
       <h1 class="text-center">New Newsletter</h1>
       <%= form_for @newsletter do |f| %>
         <div class="col-xs-12">
-          <%= f.label "Newsletter Title" %>
+          <%= f.label "Title" %>
           <%= f.text_field :title, class: "form-control" %>
           <%= f.label "Content" %>
           <%= f.text_area :body, class: "form-control" %>
+        </div>
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6">
         </div>
         <div class="text-center">
           <%= f.submit class: "hvr-box-shadow-outset btn-custom" %>
