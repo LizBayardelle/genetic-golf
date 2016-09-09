@@ -2,6 +2,13 @@
   <div class="container">
     <div class="col-xs-12 col-sm-10 col-sm-push-1 transparent-box">
       <h1 class="text-center">New Newsletter</h1>
+      <%= form_for @newsletter do |f| %>
+        <%= f.label "Newsletter Title" %>
+        <%= f.text_field :title, class: "form-control" %>
+        <div class="text-center">
+          <%= f.submit, class: "hvr-box-shadow-outset btn-custom" %>
+        </div> <!-- centered -->
+      <% end %>
     </div>
   </div> <!-- container -->
 </div> <!-- grass -->
