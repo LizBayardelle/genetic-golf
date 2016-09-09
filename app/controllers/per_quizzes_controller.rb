@@ -6,10 +6,11 @@ class PerQuizzesController < ApplicationController
     end
 
     def new
-      @per_quiz = current_user.build_per_quiz
-  #    unless current_user.per_quiz.nil?
-  #      redirect_to edit_per_quiz_path(current_user.per_quiz)
-  #    end
+      if current_user.per_quiz
+        redirect_to edit_per_quiz_path(current_user.per_quiz)
+      else
+        @per_quiz = current_user.build_per_quiz
+      end
     end
 
     def create

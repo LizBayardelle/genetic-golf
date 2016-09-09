@@ -3,16 +3,22 @@
     <div class="col-xs-12 col-sm-10 col-sm-push-1 transparent-box">
       <h1 class="text-center">New Newsletter</h1>
       <%= form_for @newsletter do |f| %>
-        <div class="col-xs-12">
+        <div class="">
           <%= f.label "Title" %>
           <%= f.text_field :title, class: "form-control" %>
           <%= f.label "Content" %>
           <%= f.text_area :body, class: "form-control" %>
         </div>
-        <div class="col-sm-6">
-        </div>
-        <div class="col-sm-6">
-        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <%= f.label "Type" %>
+            <%= f.select :type, options_for_select([['ISTJ', 'ISTJ'], ['ISTP', 'ISTP'], ['ESTP', 'ESTP'], ['ESTJ', 'ESTJ'], ['ISFJ', 'ISFJ'], ['ISFP', 'ISFP'], ['ESFP', 'ESFP'], ['ESFJ', 'ESFJ'], ['INFJ', 'INFJ'], ['INFP', 'INFP'], ['ENFP', 'ENFP'], ['ENFJ', 'ENFJ'], ['INTJ', 'INTJ'], ['INTP', 'INTP'], ['ENTP', 'ENTP'], ['ENTJ', 'ENTJ']]), {}, {class: "form-control"} %>
+          </div>
+          <div class="col-sm-6">
+            <%= f.label "Week #" %>
+            <%= f.number_field :week, class: "form-control" %>
+          </div>
+        </div> <!-- row -->
         <div class="text-center">
           <%= f.submit class: "hvr-box-shadow-outset btn-custom" %>
         </div> <!-- centered -->
