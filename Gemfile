@@ -11,6 +11,8 @@ group :development do
   gem 'sqlite3'
   gem 'pry-rails'
   gem 'quiet_assets'
+  gem 'binding_of_caller'
+  gem 'better_errors'
 end
 
 gem 'pg'

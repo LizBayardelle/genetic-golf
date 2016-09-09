@@ -81,7 +81,6 @@
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#MainNav" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -92,24 +91,11 @@
       <%= link_to "Genetic Golf", welcome_index_path, :class => 'navbar-brand' %>
     </div> <!-- navbar-header -->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div id="MainNav" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul id="navlist" class="nav nav-tabs">
 
         <li class="dropdown">
-            <%= link_to "Step 1<br /> Personality".html_safe, welcome_personality_path, class: "dropdown-toggle", role: "button" %>
-          <ul id="subnavlist" class="dropdown-menu">
-            <li>
-              <% if current_user.nil? || current_user.per_quiz.nil? %>
-                 <%= link_to "Get Your Personality Profile ID", new_per_quiz_path %>
-              <% else %>
-                 <%= link_to "Personality Profile ID ✓", edit_per_quiz_path(current_user.per_quiz) %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "Personalized Golf Tips Newsletter", welcome_newsletter_path %>
-            </li>
-          </ul>
+            <%= link_to "Step 1<br /> Personality".html_safe, new_per_quiz_path, class: "dropdown-toggle", role: "button" %>
         </li>
 
         <li class="dropdown">
@@ -287,16 +273,12 @@
     </div> <!-- facebook end -->
   </div> <!-- sm end -->
 
-
-
-
   <div class="container col-xs-12 col-sm-9" id="sf-philosophy">
     <h4 class="text-center">Genetic Golf Philosophy</h4>
     <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons! We don’t guess, we test. Instead of telling everyone to make the exact same swing or guessing at what might benefit you, we test your body and your mind. As a result we find your body’s best genetic and neurokinetic motion and match that up to you and your golf game and you can start to repeat it with success.
     <br><small>© Copyright 2014 by Genetic Golf. All Rights Reserved.</small></p>
   </div> <!-- end philosophy -->
 
-  <div class="row">
     <div id="ff-image-container" class="container" style="padding-top: 20px">
       <div class="row">
         <div class="col-xs-2"><%= image_tag "V3   Genetic Golf   Array-01.png", class: "f-footer-logo", alt: "Genetic Golf Logo" %></div>
@@ -307,7 +289,6 @@
         <div class="col-xs-2"><%= image_tag "Featured Bar Icons/EliteGolf 360 Logo NB.png", class: "f-footer-logo", alt: "Elite Golf 360 Logo" %></div>
       </div> <!-- row ends -->
     </div> <!-- ff-container ends -->
-  </div> <!-- ff row -->
 
 </div> <!-- sticky footer end -->
 

@@ -1,34 +1,76 @@
-<div class="short-hero-image-row">
-  <div class="short-hero-image-outer text-center">
-    <div class="short-hero-image-inner text-center">
-      <%= image_tag 'Background 3 Short.jpg', class: "short-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
-    </div> <!-- hero-image-inner -->
-  </div> <!-- hero-image-inner -->
-</div> <!-- row -->
-
-
-<div class="overlap-short-hero-image">
-  <div id="per_quiz_edit" class="text-center">
-    <h1>Retest Your Personality</h1>
-    <h3>Shouldn't your golf tips be personalized to fit you?<br>Get your Personal Profile ID now!</h3>
-  </div>
-</div>
-
 <div class="container">
-  <div class="content-text" style="margin-top: -30px">
-    <h4>One Size Doesn't Fit All in Golf</h4>
-      <p>Your golf game is as unique as you are, yet most golf websites and golf newsletters provide generic golf tips that are designed to fit everyone. <strong>That’s crazy!</strong>
-      <br><br>At Genetic Golf everything is based on your Genetic Golf Personal ID code, along with your body’s structure, neurokinetics, flexibility and balance code. We can provide you with golf tips that actually benefit you because they are based on your individual test results and truly fit you.</p>
-    <h4>Get Your Personal Profile ID</h4>
-      <p>Your personality has a direct effect on how you learn best, your mental process, how you perform best, and how you can play your best golf. That makes it the first component in your Genetic Golf ID code.
-      <br><br>Your ID is the master control that everything runs through. This code is how we know the best path for you to develop your golf skills.</p>
-    <h4>Test Your Personality</h4>
-      <p>Take the two free Personal ID tests shown below to identify your personality ID.
-      <br><br>This is an important aspect of your learning style and will determine how effective your personalized tips are, so please try to be honest in answering these tests.</p>
-  </div>
+  <div class="text-center">
+    <h1 style="margin-bottom: 20px"><strong>Step 1:</strong> Test Your Personality</h1>
+  </div> <!-- text center heading -->
 
+  <div class="row">
+    <div class="col-xs-8">
+      <div style="padding: 0 0 0 20px">
+        <h4>You can't listen to generic golf tips that don't take your individual personality into account. <strong>Test your personality</strong> to gain access to golf tips that <strong>truly fit you</strong> and are guaranteed to better your game more than any one-size-fits-all approach.</h4>
+        <h4>Take these two tests to get golf tips that are custom fit for your personality and find your best golf game!</h4>
+      </div> <!-- container -->
+      <div class="hidden-xs">
+        <%= form_for @per_quiz do |f| %>
+          <div class="row">
+              <div class="col-sm-12 text-center">
+                <div class="form-group col-sm-6 bottom-pad-15">
+                  <a href="http://www.ipersonic.com/test.html" target="_blank"><h3 class="text-center">Take the iPersonic Personality Test</h3>
+                  <p class="text-center" style="color: black; text-decoration: none">(2-4 Minutes)</p>
+                  <%= image_tag "Logo (iPersonic).png", class: "personality-logo" %></a>
+                  <p>Select Your Result:</p>
+                  <%= f.select :iper_code, options_for_select([['Analytical Thinker', 'Analytical Thinker'], ['Determined Realist', 'Determined Realist'], ['Dreamy Idealist', 'Dreamy Idealist'], ['Dynamic Thinker', 'Dynamic Thinker'], ['Energetic Doer', 'Energetic Doer'], ['Engaged Idealist', 'Engaged Idealist'], ['Good-Natured Realist', 'Good-Natured Realist'], ['Groundbreaking Thinker', 'Groundbreaking Thinker'], ['Harmony-Seeking Idealist', 'Harmony-Seeking Idealist'], ['Independent Thinker', 'Independent Thinker'], ['Individualistic Doer', 'Individualistic Doer'], ['Laid-Back Doer', 'Laid-Back Doer'], ['Reliable Realist', 'Reliable Realist'], ['Sensitive Doer', 'Sensitive Doer'], ['Social Realist', 'Social Realist'], ['Spontaneous Idealist', 'Spontaneous Idealist']]), {}, {class: "form-control"} %>
+                </div>
+                <div class="form-group col-sm-6 bottom-pad-15 text-center">
+                  <a href="http://www.my-personality-test.com/personality-type/" target="_blank"><h3 class="text-center">Take the iPersonic Personality Test</h3>
+                  <p class="text-center" style="color: black; text-decoration: none">(10-20 Minutes)</p>
+                  <%= image_tag "Logo (My-Personality).png", class: "personality-logo" %></a>
+                  <p>Select Your Result:</p>
+                  <%= f.select :myper_code, options_for_select([['ISTJ', 'ISTJ'], ['ISTP', 'ISTP'], ['ESTP', 'ESTP'], ['ESTJ', 'ESTJ'], ['ISFJ', 'ISFJ'], ['ISFP', 'ISFP'], ['ESFP', 'ESFP'], ['ESFJ', 'ESFJ'], ['INFJ', 'INFJ'], ['INFP', 'INFP'], ['ENFP', 'ENFP'], ['ENFJ', 'ENFJ'], ['INTJ', 'INTJ'], ['INTP', 'INTP'], ['ENTP', 'ENTP'], ['ENTJ', 'ENTJ']]), {}, {class: "form-control"} %>
+                </div>
+            </div> <!-- column end -->
+          </div> <!-- row end -->
+          <div class="row">
+            <div class="col-xs-12 center-block">
+                <div class="text-center"><%= f.submit "Submit Your Results", class: "hvr-box-shadow-outset btn-custom" %></div>
+              </div> <!-- column end -->
+          </div> <!-- row end -->
+        <% end %>
+      </div> <!-- hidden-xs -->
+    </div> <!-- text column -->
 
-<%= render "quiz", url: edit_per_quiz_path(@per_quiz), method: :put  %>
+    <div class="col-xs-4">
+      <%= image_tag "graphic_mind_gears.jpg", class: "slideRight", style: "width: 100%; max-width: 300px"%>
+    </div> <!-- image -->
+  </div> <!-- intro text row -->
 
-</div>
-<div class="buffer-50"></div>
+  <div class="container">
+    <div class="visible-xs" style="margin-top: 50px">
+      <%= form_for @per_quiz do |f| %>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+              <div class="form-group col-sm-6 bottom-pad-15">
+                <a href="http://www.ipersonic.com/test.html" target="_blank"><h3 class="text-center">Take the iPersonic Personality Test</h3>
+                <p class="text-center" style="color: black; text-decoration: none">(2-4 Minutes)</p>
+                <%= image_tag "Logo (iPersonic).png", class: "personality-logo" %></a>
+                <p>Select Your Result:</p>
+                <%= f.select :iper_code, options_for_select([['Analytical Thinker', 'Analytical Thinker'], ['Determined Realist', 'Determined Realist'], ['Dreamy Idealist', 'Dreamy Idealist'], ['Dynamic Thinker', 'Dynamic Thinker'], ['Energetic Doer', 'Energetic Doer'], ['Engaged Idealist', 'Engaged Idealist'], ['Good-Natured Realist', 'Good-Natured Realist'], ['Groundbreaking Thinker', 'Groundbreaking Thinker'], ['Harmony-Seeking Idealist', 'Harmony-Seeking Idealist'], ['Independent Thinker', 'Independent Thinker'], ['Individualistic Doer', 'Individualistic Doer'], ['Laid-Back Doer', 'Laid-Back Doer'], ['Reliable Realist', 'Reliable Realist'], ['Sensitive Doer', 'Sensitive Doer'], ['Social Realist', 'Social Realist'], ['Spontaneous Idealist', 'Spontaneous Idealist']]), {}, {class: "form-control"} %>
+              </div>
+              <hr style="width: 50%; margin-left: 25%; padding: 15px 0 15px 0">
+              <div class="form-group col-sm-6 bottom-pad-15 text-center">
+                <a href="http://www.my-personality-test.com/personality-type/" target="_blank"><h3 class="text-center">Take the iPersonic Personality Test</h3>
+                <p class="text-center" style="color: black; text-decoration: none">(10-20 Minutes)</p>
+                <%= image_tag "Logo (My-Personality).png", class: "personality-logo" %></a>
+                <p>Select Your Result:</p>
+                <%= f.select :myper_code, options_for_select([['ISTJ', 'ISTJ'], ['ISTP', 'ISTP'], ['ESTP', 'ESTP'], ['ESTJ', 'ESTJ'], ['ISFJ', 'ISFJ'], ['ISFP', 'ISFP'], ['ESFP', 'ESFP'], ['ESFJ', 'ESFJ'], ['INFJ', 'INFJ'], ['INFP', 'INFP'], ['ENFP', 'ENFP'], ['ENFJ', 'ENFJ'], ['INTJ', 'INTJ'], ['INTP', 'INTP'], ['ENTP', 'ENTP'], ['ENTJ', 'ENTJ']]), {}, {class: "form-control"} %>
+              </div>
+          </div> <!-- column end -->
+        </div> <!-- row end -->
+        <div class="row">
+          <div class="col-xs-12 center-block">
+              <div class="text-center"><%= f.submit "Submit Your Results", class: "hvr-box-shadow-outset btn-custom" %></div>
+            </div> <!-- column end -->
+        </div> <!-- row end -->
+      <% end %>
+    </div> <!-- visible-xs -->
+  </div> <!-- xs quiz container-->
+</div> <!-- container -->

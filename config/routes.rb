@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users, only: [:show]
 
@@ -35,5 +36,6 @@ Rails.application.routes.draw do
   resources :per_quizzes
   resources :swing_books
   resources :contact, only: [:new, :create]
+  resources :newsletters
 
 end
