@@ -109,7 +109,7 @@
               <% end %>
             </li>
             <li>
-              <% if current_user && current_user.bal_quiz.persisted? %>
+              <% if current_user && current_user.bal_quiz != nil? %>
                  <%= link_to "Balance Quiz ✓", edit_bal_quiz_path(current_user.bal_quiz), data: { 'no-turbolinks': true} %>
               <% else %>
                  <%= link_to "Balance Quiz", new_bal_quiz_path %>
