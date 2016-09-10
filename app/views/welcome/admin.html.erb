@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center">Add Content</h1>
+    <div class="text-center">
+      <%= link_to "Create Newsletter", new_newsletter_path, class: "hvr-box-shadow-outset btn-custom" %>
+    </div>
+  <h1 class="text-center">List of Members</h1>
+  <div style="width: 100%; overflow-x: scroll">
+    <table>
+      <th>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Personality</td>
+        <td>Swing Code</td>
+        <td>Body Codes</td>
+      </th>
+      <% @users.each do |u| %>
+        <tr>
+          <td><%= u.id %></td>
+          <td><%= link_to u.first_name, user_path(u) %></td>
+          <td><%= link_to u.last_name, user_path(u) %></td>
+          <td><%= u.try(:per_quiz).try(:per_code) %></td>
+          <td><%= u.try(:swing_book).try(:swing_code) %></td>
+          <td><%= u.try(:bal_quiz).try(:bal_code) %> (Balance)
+            <br><%= u.try(:flex_quiz).try(:flex_code) %> (Flexibility)
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div> <!-- table div -->
+</div> <!-- page container -->

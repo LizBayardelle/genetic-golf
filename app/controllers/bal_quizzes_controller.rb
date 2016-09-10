@@ -6,7 +6,11 @@ class BalQuizzesController < ApplicationController
   end
 
   def new
-    @bal_quiz = current_user.bal_quiz || current_user.build_bal_quiz
+    if current_user.bal_quiz
+      redirect_to edit_bal_quiz_path(current_user.bal_quiz)
+    else
+      @bal_quiz = current_user.build_bal_quiz
+    end
   end
 
   def create

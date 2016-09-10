@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'welcome/body'
   get 'welcome/resources'
   get 'welcome/about'
+  get 'welcome/admin'
 
   root 'welcome#index'
 

@@ -6,7 +6,11 @@ class BodQuizzesController < ApplicationController
   end
 
   def new
-    @bod_quiz = current_user.build_bod_quiz
+    if current_user.bod_quiz
+      redirect_to edit_bod_quiz_path(current_user.bod_quiz)
+    else
+      @bod_quiz = current_user.build_bod_quiz
+    end
   end
 
   def create

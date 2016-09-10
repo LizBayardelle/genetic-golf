@@ -28,6 +28,7 @@ class NewslettersController < ApplicationController
   end
 
   def show
+    @most_recent_newsletter = Newsletter.limit(1)
     @newsletter = Newsletter.find(params[:id])
   end
 
@@ -44,6 +45,6 @@ class NewslettersController < ApplicationController
 
   private
   def newsletter_params
-    params.require(:newsletter).permit(:user, :title, :body, :type, :week)
+    params.require(:newsletter).permit(:user, :title, :body, :newsletter_type, :week)
   end
 end

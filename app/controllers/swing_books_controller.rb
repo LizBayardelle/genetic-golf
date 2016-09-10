@@ -6,7 +6,11 @@ class SwingBooksController < ApplicationController
     end
 
     def new
-      @swing_book = current_user.build_swing_book
+      if current_user.swing_book
+        redirect_to edit_swing_book_path(current_user.swing_book)
+      else
+        @swing_book = current_user.build_swing_book
+      end
     end
 
     def create

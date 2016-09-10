@@ -1,18 +1,20 @@
-<div class="grass" style="margin-top: -20px">
+<div class="grass" style="margin: -20px 0 -25px 0">
   <div class="container">
     <div class="col-xs-12 col-sm-10 col-sm-push-1 transparent-box">
       <h1 class="text-center">New Newsletter</h1>
       <%= form_for @newsletter do |f| %>
-        <div class="">
+        <div class="form-group">
           <%= f.label "Title" %>
           <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="form-group">
           <%= f.label "Content" %>
-          <%= f.text_area :body, class: "form-control" %>
+          <%= f.text_area :body, class: "form-control", rows: 10 %>
         </div>
         <div class="row">
           <div class="col-sm-6">
             <%= f.label "Type" %>
-            <%= f.select :type, options_for_select([['ISTJ', 'ISTJ'], ['ISTP', 'ISTP'], ['ESTP', 'ESTP'], ['ESTJ', 'ESTJ'], ['ISFJ', 'ISFJ'], ['ISFP', 'ISFP'], ['ESFP', 'ESFP'], ['ESFJ', 'ESFJ'], ['INFJ', 'INFJ'], ['INFP', 'INFP'], ['ENFP', 'ENFP'], ['ENFJ', 'ENFJ'], ['INTJ', 'INTJ'], ['INTP', 'INTP'], ['ENTP', 'ENTP'], ['ENTJ', 'ENTJ']]), {}, {class: "form-control"} %>
+            <%= f.select :newsletter_type, options_for_select([['ISTJ', 'ISTJ'], ['ISTP', 'ISTP'], ['ESTP', 'ESTP'], ['ESTJ', 'ESTJ'], ['ISFJ', 'ISFJ'], ['ISFP', 'ISFP'], ['ESFP', 'ESFP'], ['ESFJ', 'ESFJ'], ['INFJ', 'INFJ'], ['INFP', 'INFP'], ['ENFP', 'ENFP'], ['ENFJ', 'ENFJ'], ['INTJ', 'INTJ'], ['INTP', 'INTP'], ['ENTP', 'ENTP'], ['ENTJ', 'ENTJ']]), {}, {class: "form-control"} %>
           </div>
           <div class="col-sm-6">
             <%= f.label "Week #" %>

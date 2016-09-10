@@ -157,6 +157,25 @@ h4 {
 
 
 
+
+
+/* Tables */
+td {
+  vertical-align: middle;
+  padding: 5px 10px 5px 10px;
+  border-bottom: thin solid #c0c0c0;
+}
+
+th {
+  font-weight: bolder !important;
+  border-bottom: thin double #c0c0c0;
+}
+
+
+
+
+
+
 /* HEADER */
 #header-detail img {
 	max-width: 100px;

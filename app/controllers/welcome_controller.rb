@@ -19,4 +19,12 @@ class WelcomeController < ApplicationController
 
   def contact
   end
+
+  def admin
+    unless current_user && current_user.admin == true
+      redirect_to welcome_index_path
+      flash[:alert] = "Sorry, you have to be an admin to see that!"
+    end
+    @users = User.order("last_name DESC")
+  end
 end

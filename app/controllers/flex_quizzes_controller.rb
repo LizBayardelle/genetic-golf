@@ -7,7 +7,11 @@ class FlexQuizzesController < ApplicationController
       end
 
       def new
-        @flex_quiz = current_user.build_flex_quiz
+        if current_user.flex_quiz
+          redirect_to edit_flex_quiz_path(current_user.flex_quiz)
+        else
+          @flex_quiz = current_user.build_flex_quiz
+        end
       end
 
       def create
