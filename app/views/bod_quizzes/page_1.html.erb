@@ -1,0 +1,40 @@
+<div class="tall-hero-image-row">
+  <div class="tall-hero-image-outer text-center">
+    <div class="tall-hero-image-inner text-center">
+      <%= image_tag 'Background 16.jpg', class: "tall-hero-image",alt: "View of Golf Course, Ocean, and Dunes" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
+
+<div class="overlap-tall-hero-image overlap-hero-scroll">
+  <div class="container">
+
+    <div class="text-center">
+      <h1 style="margin-top: 40px">Body Structure Quiz</h1>
+      <h2 style="color: white">Page 1 of 3</h2>
+    </div>
+
+    <%= form_for @bod_quiz, url: wizard_path, method: :put do |f| %>
+      <div class="buffer-25"></div>
+
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q1: Body Type</h3>
+          <p>Please select the number that represents the body type that most closely resembles your own.</p>
+          <%= image_tag "Body Structure Guide.png" %>
+          <div class="horizontal-radio-group">
+            <%= f.radio_button :bod_type, '1'%><label>1 </label>
+            <%= f.radio_button :bod_type, '2'%><label>2 </label>
+            <%= f.radio_button :bod_type, '3'%><label>3 </label>
+            <%= f.radio_button :bod_type, '4'%><label>4 </label>
+            <%= f.radio_button :bod_type, '5'%><label>5 </label>
+            <%= f.radio_button :bod_type, '6'%><label>6 </label>
+            <%= f.radio_button :bod_type, '7'%><label>7 </label>
+            <%= f.radio_button :bod_type, '8'%><label>8 </label>
+            <%= f.radio_button :bod_type, '9'%><label>9 </label>
+          </div> <!-- radio group -->
+        </div> <!-- form group -->
+      </div> <!-- opaque container -->
+
+  </div> <!-- container quiz-page -->
+</div> <!-- overlap-tall-hero-image -->

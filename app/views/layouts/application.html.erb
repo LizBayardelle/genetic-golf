@@ -172,61 +172,39 @@
   <div class="col-sm-10 col-sm-offset-1" id="sf-steps">
     <h4 class="text-center">Build Your Profile</h4>
 
-    <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-1">
-      <% if current_user.nil? %>
-        <%= link_to (new_user_registration_path) do %>
-          <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
-          Step 1: <br class="sm-none"></strong>Create Your Profile</h5></a>
-        <% end %>
-      <% elsif current_user.gender.nil? %>
-         <%= link_to (edit_user_registration_path(current_user)) do %>
-            <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
-            Step 1: <br class="sm-none"></strong>Create Your Profile</h5></a>
-          <% end %>
-      <% else %>
-         <h5><strong><%= image_tag "Checkbox Green.png", class: "sf-checkbox", alt: "Checked Checkbox"%>
-         Step 1: <br class="sm-none"></strong>Create Your Profile</h5>
-      <% end %>
-    </div> <!-- step 1 -->
-
-    <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-2">
+    <div class="container col-xs-12 col-sm-4 sf-step" id="sf-step-2">
       <% if current_user.nil? || current_user.per_quiz.nil? %>
          <%= link_to(new_per_quiz_path) do %>
             <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
-            Step 2: <br class="sm-none"></strong>Test Your Personality</h5></a>
+            Step 1: <br class="sm-none"></strong>Test Your Personality</h5></a>
          <% end %>
       <% else %>
          <h5><strong><%= image_tag "Checkbox Green.png", class: "sf-checkbox", alt: "Checked Checkbox"%>
-         Step 2: <br class="sm-none"></strong>Test Your Personality</h5>
+         Step 1: <br class="sm-none"></strong>Test Your Personality</h5>
       <% end %>
     </div> <!-- step 2 -->
 
-    <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-3">
+    <div class="container col-xs-12 col-sm-4 sf-step" id="sf-step-3">
       <% if current_user.nil? || current_user.swing_book.nil? %>
          <%= link_to(new_swing_book_path) do %>
             <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
-            Step 3: <br class="sm-none"></strong>Test Your Swing</h5></a>
+            Step 2: <br class="sm-none"></strong>Test Your Swing</h5></a>
          <% end %>
       <% else %>
          <h5><strong><%= image_tag "Checkbox Green.png", class: "sf-checkbox", alt: "Checked Checkbox"%>
-         Step 3: <br class="sm-none"></strong>Test Your Swing</h5>
+         Step 2: <br class="sm-none"></strong>Test Your Swing</h5>
       <% end %>
     </div> <!-- step 3 -->
 
-    <div class="container col-xs-12 col-sm-3 sf-step" id="sf-step-4">
-      <% if current_user.nil? %>
-        <%= link_to (new_user_registration_path) do %>
-          <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
-          Step 4: <br class="sm-none"></strong>Finish Your Profile</h5></a>
-        <% end %>
-      <% elsif current_user.bal_quiz.nil? || current_user.flex_quiz.nil? || current_user.bod_quiz.nil? %>
+    <div class="container col-xs-12 col-sm-4 sf-step" id="sf-step-4">
+      <% if current_user.bal_quiz.nil? || current_user.flex_quiz.nil? || current_user.bod_quiz.nil? %>
          <%= link_to(user_path(current_user)) do %>
             <h5 class="no-color"><strong><%= image_tag "Checkbox Blank.png", class: "sf-checkbox", alt: "Blank Checkbox"%>
-            Step 4: <br class="sm-none"></strong>Finish Your Profile</h5></a>
+            Step 3: <br class="sm-none"></strong>Test Your Body</h5></a>
          <% end %>
       <% else %>
          <h5><strong><%= image_tag "Checkbox Green.png", class: "sf-checkbox", alt: "Checked Checkbox"%>
-         Step 4: <br class="sm-none"></strong>Finish Your Profile</h5>
+         Step 3: <br class="sm-none"></strong>Test Your Body</h5>
       <% end %>
     </div> <!-- step 4 -->
 
