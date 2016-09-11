@@ -8,7 +8,7 @@
 
 <div class="overlap-short-hero-image">
   <div class="container">
-    <p class="text-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
+    <p class="text-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: "color: black !important" %></p>
 
     <div id="locker_header" class="text-center">
       <h1 style="font-weight: bolder; color: black; margin-top: 0px;"><%= @user.first_name %>'s Locker</h1>

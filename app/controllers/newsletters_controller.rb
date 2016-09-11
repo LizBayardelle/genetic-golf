@@ -34,6 +34,7 @@ class NewslettersController < ApplicationController
 
   def index
     @newsletters = Newsletter.all
+    @user = current_user
   end
 
   def destroy

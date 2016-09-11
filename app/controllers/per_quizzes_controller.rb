@@ -7,7 +7,7 @@ class PerQuizzesController < ApplicationController
 
     def new
       if current_user.per_quiz
-        redirect_to edit_per_quiz_path(current_user.per_quiz)
+        redirect_to newsletters_path
       else
         @per_quiz = current_user.build_per_quiz
       end
@@ -24,7 +24,7 @@ class PerQuizzesController < ApplicationController
 
       if @per_quiz.save
         flash[:notice] = "Your personality saved successfully."
-        redirect_to user_path(current_user)
+        redirect_to newsletters_path
       else
         flash[:alert] = "Sorry, your results failed to save."
         redirect_to welcome_index_path

@@ -25,9 +25,8 @@
     <% if current_user.admin == true %>
        | <%= link_to "Admin Panel", welcome_admin_path, style: "margin-bottom: -40px" %>
     <% end %>
-    <br><%= current_user.first_name %>'s
     <% if current_user.swing_book != nil %>
-      ID Code:
+    <br><%= current_user.first_name %>'s ID Code:
         <%= current_user.swing_book.swing01 %>
         <%= current_user.swing_book.swing02 %>
         <%= current_user.swing_book.swing03 %>
