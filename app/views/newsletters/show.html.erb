@@ -1,2 +1,20 @@
-<h1>Newsletters#show</h1>
-<p>Find me in app/views/newsletters/show.html.erb</p>
+<div class="short-hero-image-row">
+  <div class="short-hero-image-outer text-center">
+    <div class="short-hero-image-inner text-center">
+      <%= image_tag 'Background 9s.jpg', class: "short-hero-image",alt: "View of Golf Course, Ocean, and Sunset" %>
+    </div> <!-- short-hero-image-inner -->
+  </div> <!-- short-hero-image-inner -->
+</div> <!-- row -->
+
+<div class="overlap-short-hero-image text-center" style="padding-top: 10px">
+  <p><%= link_to "Back to Newsletters Home", newsletters_path, style: "color: white !important" %></p>
+  <h1 style="color: black"><%= @newsletter.title %></h1>
+  <% if current_user.admin %>
+    <h4 style="color: black !important; margin-top: 30px"><%= @newsletter.newsletter_type %>, Week <%= @newsletter.week %></h4>
+    <%= link_to "Edit Newsletter", edit_newsletter_path(@newsletter), class: "btn-custom hvr-box-shadow-outset", style: "margin-top: 50px"%>
+  <% end %>
+</div>
+
+<div class="container" style="padding-top: 20px">
+  <%= raw(@newsletter.body) %>
+</div> <!-- container -->

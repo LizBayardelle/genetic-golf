@@ -1,2 +1,54 @@
-<h1>Newsletters#index</h1>
-<p>Find me in app/views/newsletters/index.html.erb</p>
+<div class="short-hero-image-row">
+  <div class="short-hero-image-outer text-center">
+    <div class="short-hero-image-inner text-center">
+      <%= image_tag 'Background 2s.jpg', class: "short-hero-image",alt: "View of Golf Course, Ocean, and Sunset" %>
+    </div> <!-- short-hero-image-inner -->
+  </div> <!-- short-hero-image-inner -->
+</div> <!-- row -->
+
+<div class="overlap-short-hero-image text-center" style="padding-top: 30px">
+  <% if current_user.admin %>
+    <h1 style="color: black">Newsletters Homepage</h1>
+    <%= link_to "Create New Newsletter", new_newsletter_path, class: "btn-custom hvr-box-shadow-outset", style: "margin-top: 80px"%>
+  <% else %>
+    <h1 style="color: black"><%= @user.first_name %>'s Personalized Golf Tips %></h1>
+  <% end %>
+</div>
+
+<% unless current_user.admin %>
+  <h1 class="text-center">My Current Tips</h1>
+<% end %>
+
+
+<div class="container">
+  <% if current_user.admin %>
+    <h1 class="text-center">List of Newsletters</h1>
+  <% else %>
+    <h1 class="text-center">My Past Newsletters</h1>
+  <% end %>
+
+  <div style="width: 100%; overflow-x: scroll">
+    <table>
+      <th>
+        <td>Title</td>
+        <% if current_user.admin %>
+          <td>Grouping</td>
+          <td>Week</td>
+        <% end %>
+      </th>
+      <% @newsletters.each do |n| %>
+        <tr>
+          <% if current_user.admin %>
+            <td><%= n.id %></td>
+          <% end %>
+          <td><%= link_to n.title, newsletter_path(n) %></td>
+          <% if current_user.admin %>
+            <td><%= n.try(:newsletter_type) %></td>
+            <td><%= n.try(:week) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </div> <!-- table div -->
+
+</div> <!-- content container -->
