@@ -10,7 +10,7 @@
   <div class="form-inputs">
     <div class="row">
       <div class="col-sm-6">
-        <div class="well">
+        <div class="well height-fix">
           <%= f.input :first_name, required: true, autofocus: true %>
           <%= f.input :last_name, required: true, autofocus: true %>
           <%= f.input :email, required: true, autofocus: true %>
@@ -41,26 +41,26 @@
       </div> <!-- col-sm-6 -->
 
     <div class="col-sm-6">
-      <div class="well">
+      <div class="well height-fix">
         <div class="form-group">
           <%= f.label "Number of Years Golfing" %>
-          <%= f.text_field :g_years, class: 'form-control', placeholder: "Please type a number" %>
+          <%= f.number_field :g_years, class: 'form-control', placeholder: "Please type a number" %>
         </div> <!-- form group -->
         <div class="form-group">
-          <%= f.label "Average Golf Score" %>
-          <%= f.text_field :g_score, class: 'form-control', placeholder: "Please type a number" %>
+          <%= f.label "Average Current Golf Score" %>
+          <%= f.number_field :g_score_current, class: 'form-control', placeholder: "Please type a number" %>
         </div> <!-- form group -->
         <div class="form-group">
           <%= f.label "Average Number of Golf Rounds per Month" %>
-          <%= f.text_field :g_rounds, class: 'form-control', placeholder: "Please type a number" %>
+          <%= f.number_field :g_rounds, class: 'form-control', placeholder: "Please type a number" %>
         </div> <!-- form group -->
         <div class="form-group">
           <%= f.label "Average Number of Golf Practices" %>
-          <%= f.text_field :g_practice, class: 'form-control', placeholder: "Please type a number" %>
+          <%= f.number_field :g_practice, class: 'form-control', placeholder: "Please type a number" %>
         </div> <!-- form group -->
         <div class="form-group">
           <%= f.label "Currrent Index or Handicap" %>
-          <%= f.text_field :handicap, class: 'form-control', placeholder: "Please type a number" %>
+          <%= f.number_field :handicap, class: 'form-control', placeholder: "Please type a number" %>
         </div> <!-- form group -->
       </div> <!-- well -->
     </div> <!-- col-sm-6 -->
@@ -90,3 +90,14 @@
 
   <%= link_to "Back", :back %>
 </div>
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".height-fix").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".height-fix").height(maxHeight);
+    window.onresize = function(){ location.reload(); }
+});
+</script>

@@ -1,0 +1,2 @@
+module ClubFittingHelper
+end

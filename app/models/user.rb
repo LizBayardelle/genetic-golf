@@ -9,6 +9,13 @@ class User < ActiveRecord::Base
    has_one :bod_quiz
    has_one :per_quiz
    has_one :swing_book
+   has_many :club_fittings
+
+   before_save :set_current_score
+
+   def set_current_score
+     self.g_score_current = g_score_start
+   end
 
    def full_name
      "#{first_name} #{last_name}"

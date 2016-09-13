@@ -39,5 +39,6 @@ Rails.application.routes.draw do
   resources :swing_books
   resources :contact, only: [:new, :create]
   resources :newsletters
+  resources :club_fittings
 
 end

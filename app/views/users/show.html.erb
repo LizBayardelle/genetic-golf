@@ -37,8 +37,7 @@
 </div> <!-- overlap-short-hero-image -->
 
 <div class="col-xs-12 text-center">
-  <div id="personality" class="well bs-component">
-    <h4><strong>Personality</strong></h4>
+  <h1><strong>Step 1:</strong> Test Your Personality</h1>
     <% if @user.per_quiz == nil %>
       <h3>????</h3>
       <p><%= link_to "Test Your Personality", new_per_quiz_path %></p>
@@ -47,11 +46,16 @@
       <!-- if bought newsletter statement/links -->
       <p><%= link_to "Retest Results", edit_per_quiz_path(@user.per_quiz) %></p>
     <% end %>
-  </div> <!-- well bs-component -->
 </div> <!-- col-xs-12 -->
 
-<div class="col-sm-4 text-center">
-  <div id="balance" class="well bs-component">
+<div class="row" style="margin-bottom: 10px">
+  <hr class="col-xs-6 col-xs-push-3">
+</div> <!-- row -->
+
+<div class="text-center">
+  <h1><strong>Step 2:</strong> Know Your Body</h1>
+
+  <div class="col-sm-3">
     <h4><strong>Balance</strong></h4>
     <% if @user.bal_quiz == nil %>
       <h3>???-???</h3>
@@ -60,98 +64,224 @@
       <h3><%= @user.bal_quiz.bal_code %></h3>
       <p><%= link_to "Retest Results", edit_bal_quiz_path(@user.bal_quiz) %></p>
     <% end %>
-  </div> <!-- well bs-component -->
-</div> <!-- col-sm-4 -->
+  </div> <!-- col-sm-4 -->
 
-<div class="col-sm-4 text-center"><div id="flexibility" class="well bs-component">
-  <h4><strong>Flexibility</strong></h4>
-  <% if @user.flex_quiz == nil %>
-    <h3>???-???-????</h3>
-    <p><%= link_to "Test Your Flexibility", new_flex_quiz_path %></p>
-  <% else %>
-    <h3><%= @user.flex_quiz.flex_code %></h3>
-    <p><%= link_to "Retest Results", edit_flex_quiz_path(@user.flex_quiz) %></p>
-  <% end %>
-</div></div>
-
-<div class="col-sm-4 text-c"><div id="motor_dominance" class="well bs-component text-center">
-  <h4><strong>Motor Dominance</strong></h4>
-  <h3><%=  %>???-???</h3>
-  <p>Check Back Soon</p>
-</div></div>
-
-<div class="col-xs-12 text-left"><div id="body_balance" class="well bs-component">
-  <h4 class="text-center"><strong>Body Structure</strong></h4>
-  <% if @user.bod_quiz == nil %>
-    <p class="text-center"><%= link_to "Test Your Body Structure", new_bod_quiz_path %></p>
-  <% else %>
-    <div class="row">
-      <div class="col-sm-6">
-        <% if @user.bod_quiz.bod_type != nil %>
-          <p><strong>Body Type: </strong><%= @user.bod_quiz.bod_type %></p>
-        <% else %>
-          <p> </p>
-        <% end %>
-        <% if @user.bod_quiz.height != nil %>
-          <p><strong>Height: </strong><%= @user.bod_quiz.height %> Inches</p>
-        <% else %>
-          <p> </p>
-        <% end %>
-        <% if @user.bod_quiz.weight != nil %>
-          <p><strong>Weight: </strong><%= @user.bod_quiz.weight %> Pounds</p>
-        <% else %>
-          <p> </p>
-        <% end %>
-        <% if @user.bod_quiz.age != nil %>
-          <p><strong>Age: </strong><%= @user.bod_quiz.age %> Years Old</p>
-        <% else %>
-          <p> </p>
-        <% end %>
-      </div> <!-- col-sm-6 -->
-      <div class="col-sm-6">
-        <% if @user.bod_quiz.wrist_floor != nil %>
-          <p><strong>Wrist to Floor: </strong><%= @user.bod_quiz.wrist_floor %> Inches</p>
-        <% else %>
-          <p> </p>
-        <% end %>
-        <% if @user.bod_quiz.hand_length != nil %>
-          <p><strong>Hand Length: </strong><%= @user.bod_quiz.hand_length %> Inches</p>
-        <% else %>
-          <p> </p>
-        <% end %>
-        <% if @user.bod_quiz.longest_finger != nil %>
-          <p><strong>Longest Finger: </strong><%= @user.bod_quiz.longest_finger %> Inches</p>
-        <% else %>
-          <p> </p>
-        <% end %>
-      </div> <!-- col-sm-6 -->
-    </div> <!-- row -->
-    <div class="row text-center">
-      <p><%= link_to "Retest Your Body Structure", edit_bod_quiz_path(@user.bod_quiz) %></p>
-    </div> <!-- text center row -->
-  <% end %>
-</div></div> <!-- col/well bs -->
-
-<div class="col-sm-6"><div id="personal_information" class="well bs-component">
-  <h4 class="text-center"><strong>Personal Stats</strong></h4>
-  <p><strong>Email: </strong><%= @user.email %></p>
-  <p><strong>Gender: </strong><%= @user.gender %></p>
-  <p><strong>Birthday: </strong><%= @user.birthday %></p>
-  <p><strong>Dominant Hand: </strong><%= @user.dom_hand %></p>
-  <p><strong>Best Other Sport: </strong><%= @user.sport %></p>
-  <div class="text-center">
-    <%= link_to "Edit Your Information", edit_user_registration_path(@user) %>
+  <div class="col-sm-3">
+    <h4><strong>Flexibility</strong></h4>
+    <% if @user.flex_quiz == nil %>
+      <h3>???-???-????</h3>
+      <p><%= link_to "Test Your Flexibility", new_flex_quiz_path %></p>
+    <% else %>
+      <h3><%= @user.flex_quiz.flex_code %></h3>
+      <p><%= link_to "Retest Results", edit_flex_quiz_path(@user.flex_quiz) %></p>
+    <% end %>
   </div>
-</div></div>
 
-<div class="col-sm-6"><div id="golf_information" class="well bs-component">
-  <h4 class="text-center"><strong>Golf Stats</strong></h4>
-  <p><strong>Years Golfing: </strong><%= @user.g_years %></p>
-  <p><strong>Average Golf Score: </strong><%= @user.g_score %></p>
-  <p><strong>Average Rounds per Month: </strong><%= @user.g_rounds %></p>
-  <p><strong>Average Practices per Month: </strong><%= @user.g_practice %></p>
-  <p><strong>Current Index or Handicap: </strong><%= @user.handicap %></p>
-  <div class="text-center">
-    <%= link_to "Edit Your Information", edit_user_registration_path(@user) %>
-  </div> <!-- text-center -->
-</div></div> <!-- col/well -->
+  <div class="col-sm-3">
+    <h4><strong>Motor Dominance</strong></h4>
+    <h3><%=  %>???-???</h3>
+    <p>Check Back Soon</p>
+  </div>
+
+  <div class="col-sm-3">
+    <h4><strong>Fitness</strong></h4>
+    <h3><%=  %>???-???</h3>
+    <p>Check Back Soon</p>
+  </div>
+</div> <!-- step 2 container -->
+
+<div class="row" style="margin-bottom: 20px">
+  <hr class="col-xs-6 col-xs-push-3">
+</div> <!-- row -->
+
+<div class="text-center">
+  <h1><strong>Step 3:</strong> Find Your Swing</h1>
+  <% if @user.swing_book == nil %>
+    <h3 style="margin-top: 0px; color: black !important">Genetic Golf ID Code: ???-???-????<%= %></h3>
+    <p><%= link_to "Get Your Genetic Golf ID Code Now!", new_swing_book_path %></p>
+  <% else %>
+    <h3 style="margin-top: 0px; color: black !important">Genetic Golf ID Code:
+      <%= @user.swing_book.swing01 %>
+      <%= @user.swing_book.swing02 %>
+      <%= @user.swing_book.swing03 %>
+      -
+      <%= @user.swing_book.swing04 %>
+      <%= @user.swing_book.swing05 %>
+      <%= @user.swing_book.swing06 %>
+      -
+      <%= @user.swing_book.swing07 %>
+      <%= @user.swing_book.swing08 %>
+      <%= @user.swing_book.swing09 %>
+      <%= @user.swing_book.swing10 %></h3>
+    <p><%= link_to "Update Your Code", edit_swing_book_path(@user.swing_book) %></p>
+  <% end %>
+</div> <!-- step 3 -->
+
+<div class="row" style="margin-bottom: 20px">
+  <hr class="col-xs-6 col-xs-push-3">
+</div> <!-- row -->
+
+<div class="row">
+  <div class="text-center container">
+    <h1 style="margin-bottom: 20px">Your Information</h1>
+
+    <div class="col-sm-4"><div class="height-fix well bs-component">
+        <h4 class="text-center"><strong>Body Structure</strong></h4>
+        <% if @user.bod_quiz == nil %>
+          <p class="text-center"><%= link_to "Test Your Body Structure", new_bod_quiz_path %></p>
+        <% else %>
+          <div class="row">
+              <% if @user.bod_quiz.bod_type != nil %>
+                <p><strong>Body Type: </strong><%= @user.bod_quiz.bod_type %></p>
+              <% else %>
+                <p> </p>
+              <% end %>
+              <% if @user.bod_quiz.height != nil %>
+                <p><strong>Height: </strong><%= @user.bod_quiz.height %> Inches</p>
+              <% else %>
+                <p> </p>
+              <% end %>
+              <% if @user.bod_quiz.weight != nil %>
+                <p><strong>Weight: </strong><%= @user.bod_quiz.weight %> Pounds</p>
+              <% else %>
+                <p> </p>
+              <% end %>
+              <% if @user.bod_quiz.age != nil %>
+                <p><strong>Age: </strong><%= @user.bod_quiz.age %> Years Old</p>
+              <% else %>
+                <p> </p>
+              <% end %>
+              <% if @user.bod_quiz.wrist_floor != nil %>
+                <p><strong>Wrist to Floor: </strong><%= @user.bod_quiz.wrist_floor %> Inches</p>
+              <% else %>
+                <p> </p>
+              <% end %>
+              <% if @user.bod_quiz.hand_length != nil %>
+                <p><strong>Hand Length: </strong><%= @user.bod_quiz.hand_length %> Inches</p>
+              <% else %>
+                <p> </p>
+              <% end %>
+              <% if @user.bod_quiz.longest_finger != nil %>
+                <p><strong>Longest Finger: </strong><%= @user.bod_quiz.longest_finger %> Inches</p>
+              <% else %>
+                <p> </p>
+              <% end %>
+          </div> <!-- row -->
+          <div class="row text-center">
+            <%= link_to "Retest Your Body Structure", edit_bod_quiz_path(@user.bod_quiz) %>
+          </div> <!-- text center row -->
+        <% end %>
+      </div> <!-- container bs -->
+    </div> <!-- bs row -->
+
+    <div class="col-sm-4"><div id="personal_information" class="height-fix well">
+      <h4 class="text-center"><strong>Personal Stats</strong></h4>
+      <p><strong>Email: </strong><%= @user.email %></p>
+      <p><strong>Gender: </strong><%= @user.gender %></p>
+      <p><strong>Birthday: </strong><%= @user.birthday %></p>
+      <p><strong>Dominant Hand: </strong><%= @user.dom_hand %></p>
+      <p><strong>Best Other Sport: </strong><%= @user.sport %></p>
+      <div class="text-center">
+        <%= link_to "Edit Your Information", edit_user_registration_path(@user) %>
+      </div>
+    </div></div>
+
+    <div class="col-sm-4"><div id="golf_information" class="height-fix well">
+      <h4 class="text-center"><strong>Golf Stats</strong></h4>
+      <p><strong>Years Golfing: </strong><%= @user.g_years %></p>
+      <p><strong>Golf Score Before Genetic Golf: </strong><%= @user.g_score_start %></p>
+      <p><strong>Current Average Golf Score: </strong><%= @user.g_score_current %></p>
+      <p><strong>Average Rounds per Month: </strong><%= @user.g_rounds %></p>
+      <p><strong>Average Practices per Month: </strong><%= @user.g_practice %></p>
+      <p><strong>Current Index or Handicap: </strong><%= @user.handicap %></p>
+      <div class="text-center">
+        <%= link_to "Edit Your Information", edit_user_registration_path(@user) %>
+      </div> <!-- text-center -->
+    </div></div> <!-- col/well -->
+  </div> <!-- your info container -->
+</div> <!-- your info row -->
+
+<div class="row">
+  <div class="container">
+    <div class="col-sm-12">
+      <div id="golf_information" class="well">
+        <h4 class="text-center"><strong>Club Recommendations</strong></h4>
+        <div class="row">
+
+          <div class="col-sm-4">
+            <h4 class="text-center"><strong>Full Swing Club</strong></h4>
+            <% if @full_swing != nil %>
+              <p><strong>Model:</strong> <%= @full_swing.model %></p>
+              <p><strong>Loft:</strong> <%= @full_swing.loft %></p>
+              <p><strong>Hosel Position:</strong> <%= @full_swing.hosel_position %></p>
+              <p><strong>Shaft:</strong> <%= @full_swing.shaft %></p>
+              <p><strong>Flex:</strong> <%= @full_swing.flex %></p>
+              <p><strong>Length:</strong> <%= @full_swing.length %></p>
+              <p><strong>Grip:</strong> <%= @full_swing.grip %></p>
+              <p><strong>Grip Color Code:</strong> <%= @full_swing.grip_color_code %></p>
+              <div class="text-center">
+                <%= link_to "Retest My Results", fitting_full_path %>
+              </div>
+            <% else %>
+              <div class="text-center">
+                <%= link_to "Get Fitted Now", fitting_full_path %>
+              </div>
+            <% end %>
+          </div> <!-- full swing column -->
+
+          <div class="col-sm-4">
+            <h4 class="text-center"><strong>Wedges</strong></h4>
+            <% if @wedge != nil %>
+              <p><strong>Model:</strong> <%= @wedge.model %></p>
+              <p><strong>Color Code:</strong> <%= @wedge.color_code %></p>
+              <p><strong>Shaft:</strong> <%= @wedge.shaft %></p>
+              <p><strong>Flex:</strong> <%= @wedge.flex %></p>
+              <p><strong>Length:</strong> <%= @wedge.length %></p>
+              <p><strong>Grip:</strong> <%= @wedge.grip %></p>
+              <p><strong>Grip Color Code:</strong> <%= @wedge.grip_color_code %></p>
+              <div class="text-center">
+                <%= link_to "Retest My Results", fitting_wedge_path %>
+              </div>
+            <% else %>
+              <div class="text-center">
+                <%= link_to "Get Fitted Now", fitting_wedge_path %>
+              </div>
+            <% end %>
+          </div> <!-- full swing column -->
+
+          <div class="col-sm-4">
+            <h4 class="text-center"><strong>Putter</strong></h4>
+            <% if @putter != nil %>
+              <p><strong>Series:</strong> <%= @putter.series %></p>
+              <p><strong>Model:</strong> <%= @putter.model %></p>
+              <p><strong>Length:</strong> <%= @putter.length %></p>
+              <div class="text-center">
+                <%= link_to "Retest My Results", fitting_putter_path %>
+              </div>
+            <% else %>
+              <div class="text-center">
+                <%= link_to "Get Fitted Now", fitting_putter_path %>
+              </div>
+            <% end %>
+          </div> <!-- full swing column -->
+
+        </div> <!-- 3 recs row -->
+      </div> <!-- well -->
+    </div> <!-- col 12 -->
+  </div> <!-- container -->
+</div> <!-- club rec row -->
+
+
+<script>
+$( document ).ready(function() {
+    var heights = $(".height-fix").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".height-fix").height(maxHeight);
+
+    window.onresize = function(){ location.reload(); }
+});
+</script>

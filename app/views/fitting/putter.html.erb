@@ -22,22 +22,52 @@
     </p>
 
     <h4 class="cta">Go to <a href="http://www.ping.com/fitting/nflightweb.aspx" target="_blank">PING.com</a> to get an initial fit of what fits you best.</h4>
+  </div> <!-- content text -->
 
-    <%= image_tag 'PING_nFlightWeb_Final.png', alt: "Ping nFlight Web Logo", class: "ping-logo" %>
-  </div>
+  <div class="text-center">
+    <a href="http://www.ping.com/fitting/nflightweb.aspx" target="_blank"><%= image_tag 'PING_nFlightWeb_Final.png', alt: "Ping nFlight Web Logo", class: "ping-logo hvr-pulse-grow" %></a>
+  </div> <!-- text center -->
+
+  <div class="row">
+    <div class="col-xs-10 col-xs-push-1" style="border: solid #C0C0C0 thin; border-radius: 5px; margin: 30px 0 10px 0">
+      <h3 class="text-center">Which&nbsp;putter&nbsp;fits&nbsp;you&nbsp;best?  Add&nbsp;it&nbsp;to&nbsp;your&nbsp;profile!</h3>
+      <%= form_for @club_fitting do |f| %>
+        <div class="row">
+          <div class="col-sm-6 col-sm-push-3">
+              <%= f.hidden_field :club_type, value: "Putter" %>
+            <div class="form-group">
+              <%= f.label "Series" %>
+              <%= f.text_field :series, class: "form-control" %>
+            </div> <!-- form group -->
+            <div class="form-group">
+              <%= f.label :model %>
+              <%= f.text_field :model, class: "form-control" %>
+            </div> <!-- form group -->
+            <div class="form-group">
+              <%= f.label :length %>
+              <%= f.text_field :length, class: "form-control" %>
+            </div> <!-- form group -->
+          </div> <!-- inner column -->
+        </div> <!-- row -->
+        <div class="text-center row">
+          <%= f.submit "Add to Profile", class: "btn-custom hvr-box-shadow-outset" %>
+        </div>
+      <% end %>
+    </div> <!-- reporting box -->
 
   <div class="bottom-arrows">
     <div class="col-xs-6 text-left">
       <h4><%= link_to fitting_wedge_path do %>
         <%= image_tag 'LogoLeftArrow.jpg', alt: "Left Arrow", class: "fitting-arrow" %>
         Wedge Fitting
-      </h4><% end %>    </div>
+      </h4><% end %>
+    </div> <!-- left arrow -->
     <div class="col-xs-6 text-right">
       <h4><%= link_to fitting_full_path do %>
         Full Swing Fitting
         <%= image_tag 'LogoRightArrow.jpg', alt: "Right Arrow", class: "fitting-arrow" %>
       </h4><% end %>
-    </div>
-  </div>
+    </div> <!-- right arrow -->
+  </div> <!-- bottom arrows -->
 
 </div> <!-- container end -->

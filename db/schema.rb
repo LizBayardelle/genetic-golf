@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910154813) do
+ActiveRecord::Schema.define(version: 20160912223413) do
 
   create_table "bal_quizzes", force: :cascade do |t|
     t.integer  "user_id"
@@ -59,6 +59,25 @@ ActiveRecord::Schema.define(version: 20160910154813) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+
+  create_table "club_fittings", force: :cascade do |t|
+    t.string   "club_type"
+    t.string   "model"
+    t.integer  "loft"
+    t.string   "hosel_position"
+    t.string   "shaft"
+    t.string   "flex"
+    t.float    "length"
+    t.string   "grip"
+    t.string   "grip_color_code"
+    t.string   "color_code"
+    t.string   "series"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "club_fittings", ["user_id"], name: "index_club_fittings_on_user_id"
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -152,8 +171,9 @@ ActiveRecord::Schema.define(version: 20160910154813) do
     t.integer  "g_rounds"
     t.integer  "g_practice"
     t.integer  "handicap"
-    t.integer  "g_score"
+    t.integer  "g_score_current"
     t.boolean  "admin",                  default: false
+    t.integer  "g_score_start"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

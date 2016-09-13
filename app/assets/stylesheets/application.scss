@@ -487,10 +487,6 @@ a.black-text {
 	margin-right: auto;
 }
 
-.bottom-arrows {
-	margin-top: -40px;
-}
-
 .bottom-arrows h4 {
 	font-family: $accent-font;
 	margin: 20px;
@@ -973,7 +969,11 @@ body {
 
 
 
-
+.locker-box {
+  background-color: #DCDCDC;
+  margin-top: 30px;
+  border-radius: 5px;
+}
 
 
 
