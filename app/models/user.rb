@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
    has_one :flex_quiz
    has_one :bod_quiz
    has_one :per_quiz
+   has_one :fit_quiz
    has_one :swing_book
    has_many :club_fittings
 

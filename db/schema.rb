@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912223413) do
+ActiveRecord::Schema.define(version: 20160913195748) do
 
   create_table "bal_quizzes", force: :cascade do |t|
     t.integer  "user_id"
@@ -86,6 +86,23 @@ ActiveRecord::Schema.define(version: 20160912223413) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "fit_quizzes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "fit01"
+    t.integer  "fit02"
+    t.integer  "fit03"
+    t.integer  "fit04"
+    t.integer  "fit05"
+    t.integer  "fit06"
+    t.integer  "fit07"
+    t.integer  "fit08"
+    t.string   "fit_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "fit_quizzes", ["user_id"], name: "index_fit_quizzes_on_user_id"
 
   create_table "flex_quizzes", force: :cascade do |t|
     t.integer  "user_id"

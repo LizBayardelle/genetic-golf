@@ -85,8 +85,13 @@
 
   <div class="col-sm-3">
     <h4><strong>Fitness</strong></h4>
-    <h3><%=  %>???-???</h3>
-    <p>Check Back Soon</p>
+    <% if @user.fit_quiz == nil %>
+      <h3>????-????</h3>
+      <p><%= link_to "Test Your Fitness", new_fit_quiz_path %></p>
+    <% else %>
+      <h3><%= @user.fit_quiz.fit_code %></h3>
+      <p><%= link_to "Retest Results", edit_fit_quiz_path(@user.fit_quiz) %></p>
+    <% end %>
   </div>
 </div> <!-- step 2 container -->
 
@@ -209,7 +214,10 @@
         <div class="row">
 
           <div class="col-sm-4">
-            <h4 class="text-center"><strong>Full Swing Club</strong></h4>
+            <div class="text-center height-fix-2">
+              <h4><strong>Full Swing Club</strong></h4>
+              <%= image_tag 'PingClubFullSwing.png', alt: "Ping Full Swing Club", class: "fitting-results" %>
+            </div> <!-- text center -->
             <% if @full_swing != nil %>
               <p><strong>Model:</strong> <%= @full_swing.model %></p>
               <p><strong>Loft:</strong> <%= @full_swing.loft %></p>
@@ -230,7 +238,10 @@
           </div> <!-- full swing column -->
 
           <div class="col-sm-4">
-            <h4 class="text-center"><strong>Wedges</strong></h4>
+            <div class="text-center height-fix-2">
+              <h4><strong>Wedges</strong></h4>
+              <%= image_tag 'PingClubWedge.png', alt: "Ping Wedge", class: "fitting-results" %>
+            </div> <!-- text center -->
             <% if @wedge != nil %>
               <p><strong>Model:</strong> <%= @wedge.model %></p>
               <p><strong>Color Code:</strong> <%= @wedge.color_code %></p>
@@ -250,7 +261,10 @@
           </div> <!-- full swing column -->
 
           <div class="col-sm-4">
-            <h4 class="text-center"><strong>Putter</strong></h4>
+            <div class="text-center height-fix-2">
+              <h4><strong>Putter</strong></h4>
+              <%= image_tag 'PingClubPutter.png', alt: "Ping Putter", class: "fitting-results" %>
+            </div> <!-- text center -->
             <% if @putter != nil %>
               <p><strong>Series:</strong> <%= @putter.series %></p>
               <p><strong>Model:</strong> <%= @putter.model %></p>
@@ -277,11 +291,16 @@ $( document ).ready(function() {
     var heights = $(".height-fix").map(function() {
         return $(this).height();
     }).get(),
-
     maxHeight = Math.max.apply(null, heights);
-
     $(".height-fix").height(maxHeight);
-
+    window.onresize = function(){ location.reload(); }
+});
+$( document ).ready(function() {
+    var heights = $(".height-fix-2").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".height-fix-2").height(maxHeight);
     window.onresize = function(){ location.reload(); }
 });
 </script>

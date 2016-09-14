@@ -54,7 +54,7 @@ class BalQuizzesController < ApplicationController
 
   private
   def bal_quiz_params
-    params.require(:bal_quiz).permit(:bal01, :bal02, :bal03, :bal04, :bbal05, :bal06)
+    params.require(:bal_quiz).permit(:bal01, :bal02, :bal03, :bal04, :bal05, :bal06)
   end
 
 end

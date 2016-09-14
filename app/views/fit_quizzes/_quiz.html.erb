@@ -1,0 +1,130 @@
+<%= form_for @fit_quiz do |f| %>
+  <div class="row">
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q1: Endurance</h3>
+          <p>Select the first activity from the list below that would make you feel out of breath.</p>
+          <div class="radio radio-group">
+            <%= f.radio_button :fit01, '6'%><label>Walking the width of an average putting green</label><br>
+            <%= f.radio_button :fit01, '5'%><label>Walking the length of an average drive (assuming the ground is flat)</label><br>
+            <%= f.radio_button :fit01, '4'%><label>Walking the length of an average golf hole (from tee to green, assuming the ground is flat)</label><br>
+            <%= f.radio_button :fit01, '3'%><label>Carrying a full golf bag the length of an average golf hole</label><br>
+            <%= f.radio_button :fit01, '2'%><label>Carrying a full golf bag for a full round of golf</label><br>
+            <%= f.radio_button :fit01, '1'%><label>None of these would make me feel out of breath</label><br>
+          </div> <!-- radio buttons -->
+        </div> <!-- form group -->
+      </div> <!-- opaque container -->
+
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q2: Squatting</h3>
+          <p>Select the first movement you could NOT do without difficulty.</p>
+          <div class="radio radio-group">
+            <%= f.radio_button :fit02, '6'%><label>Bending both knees while standing up so that your eye level lowers at least one foot</label><br>
+            <%= f.radio_button :fit02, '5'%><label>Sitting down in a normal-height chair, without using your hands or letting yourself "drop" into the seat</label><br>
+            <%= f.radio_button :fit02, '4'%><label>Squatting down to the point where your knees are at a right angle and returning to a standing position</label><br>
+            <%= f.radio_button :fit02, '3'%><label>Sitting down on the ground without using your hands or letting yourself "drop"</label><br>
+            <%= f.radio_button :fit02, '2'%><label>Squatting down so that your posterior touches the back of your heels and returning to a standing position</label><br>
+            <%= f.radio_button :fit02, '1'%><label>None of these would be difficult</label><br>
+          </div>
+        </div>
+      </div> <!-- opaque container -->
+
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q3: Lunging</h3>
+          <p>Select the first item that would be difficult for you to do without losing your balance</p>
+          <div class="radio radio-group">
+            <%= f.radio_button :fit03, '6'%><label>Take a step forward with one foot ending up 3 feet in front of your other foot</label><br>
+            <%= f.radio_button :fit03, '5'%><label>Take a 3-foot step forward and bend your knees slightly</label><br>
+            <%= f.radio_button :fit03, '4'%><label>Take a 3-foot step forward and (keeping your chest up) bend your knees to right angles</label><br>
+            <%= f.radio_button :fit03, '3'%><label>Take a 3-foot step forward and (keeping your chest up) touch your back knee to the ground</label><br>
+            <%= f.radio_button :fit03, '2'%><label>Take a 3-foot step forward (keeping your chest up), touch your back knee to the ground, and then return to a normal standing position</label><br>
+            <%= f.radio_button :fit03, '1'%><label>None of these would make it difficult to maintain my balance</label><br>
+          </div>
+        </div>
+      </div> <!-- opaque container -->
+
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q4: Pushing</h3>
+          <p>Which of the following best describes you?</p>
+          <div class="radio radio-group">
+            <%= f.radio_button :fit04, '6'%><label>Even from my knees, I find it hard to do a pushup</label><br>
+            <%= f.radio_button :fit04, '5'%><label>From my knees, I can do a pushup with proper form (low enough that my elbows bend to right angles while keeping my body in a straight line)</label><br>
+            <%= f.radio_button :fit04, '4'%><label>I can do more than 5 knee pushups without stopping to rest.</label><br>
+            <%= f.radio_button :fit04, '3'%><label>I can do a pushup with proper form, but no more than 5 in a row.</label><br>
+            <%= f.radio_button :fit04, '2'%><label>I can do more than 5 but fewer than 25 pushups without stopping.</label><br>
+            <%= f.radio_button :fit04, '1'%><label>I can comfortably do 25 or more pushups.</label><br>
+          </div>
+        </div>
+      </div> <!-- opaque container -->
+
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q5: Pulling</h3>
+          <p>Select the first item that would be hard for you to pick up and place on a table.</p>
+          <div class="radio radio-group">
+            <%= f.radio_button :fit05, '6'%><label>An average-size, full grocery bag</label><br>
+            <%= f.radio_button :fit05, '5'%><label>A bag containing a 12-pack of soda</label><br>
+            <%= f.radio_button :fit05, '4'%><label>A typical backpack</label><br>
+            <%= f.radio_button :fit05, '3'%><label>A carry on sized suitcase</label><br>
+            <%= f.radio_button :fit05, '2'%><label>A large box full of books</label><br>
+            <%= f.radio_button :fit05, '1'%><label>I could comfortably pick up all of these items.</label><br>
+          </div>
+        </div>
+      </div> <!-- opaque container -->
+
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q6: Bending</h3>
+          <p>If you start standing up with your feet together and bend forward without rounding your back, which is the furthest position you can reach?</p>
+          <div class="radio radio-group">
+            <%= f.radio_button :fit06, '6'%><label>Leaning forwards with my hands just past my belt</label><br>
+            <%= f.radio_button :fit06, '5'%><label>Fingertips above my knees</label><br>
+            <%= f.radio_button :fit06, '4'%><label>Fingertips touching my knees or shins</label><br>
+            <%= f.radio_button :fit06, '3'%><label>Fingertips touching my feet</label><br>
+            <%= f.radio_button :fit06, '2'%><label>Fingertips touching the floor</label><br>
+            <%= f.radio_button :fit06, '1'%><label>Palms or arms touching the floor</label><br>
+          </div>
+        </div>
+      </div> <!-- opaque container -->
+
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q7: Twisting</h3>
+          <p>Start sitting on the floor with your feet straight out in front of you (pointing to 12 o'clock, if you were sitting on a clock face) and your arms stretched out to each side as if you were trying to touch two opposite walls of a room (starting pointing towards 9 o'clock and 3 o'clock).  If you twist your chest to the left, which is the furthest position to which you can get your arms.</p>
+          <div class="radio radio-group">
+            <%= f.radio_button :fit07, '6'%><label>My arms don't move much from the 3 o'clock and 9 o'clock positions</label><br>
+            <%= f.radio_button :fit07, '5'%><label>2 o'clock (right arm) and 8 o'clock (left arm)</label><br>
+            <%= f.radio_button :fit07, '4'%><label>1 o'clock (right arm) and 7 o'clock (left arm)</label><br>
+            <%= f.radio_button :fit07, '3'%><label>12 o'clock (right arm) and 6 o'clock (left arm)</label><br>
+            <%= f.radio_button :fit07, '3'%><label>11 o'clock (right arm) and 5 o'clock (left arm)</label><br>
+            <%= f.radio_button :fit07, '1'%><label>All of these positions are comfortable</label><br>
+          </div>
+        </div>
+      </div> <!-- opaque container -->
+
+      <div class="container col-xs-10 col-xs-push-1 quiz-question">
+        <div class="form-group">
+          <h3>Q8: Gait</h3>
+          <p>Select the first statement that <em>does not</em> apply to you.</p>
+          <div class="radio radio-group">
+            <%= f.radio_button :fit08, '6'%><label>I can walk any distance I need to (in the course of a normal day) without discomfort.</label><br>
+            <%= f.radio_button :fit08, '5'%><label>When walking normally, my steps with the left foot are equal in distance to those with my right foot.</label><br>
+            <%= f.radio_button :fit08, '4'%><label>I can adjust my steps to any length or speed without discomfort or loss of balance.</label><br>
+            <%= f.radio_button :fit08, '3'%><label>I can transition from walking to jogging without discomfort or trouble.</label><br>
+            <%= f.radio_button :fit08, '2'%><label>I can comfortably walk or run at any speed without pain or loss of balance.</label><br>
+            <%= f.radio_button :fit08, '1'%><label>All of these statements apply to me.</label><br>
+          </div>
+        </div>
+      </div> <!-- opaque container -->
+
+
+    </div> <!-- column end -->
+  </div> <!-- row end -->
+
+  <div class="row">
+    <div class="text-center"><%= f.submit "Submit Answers", class: "hvr-box-shadow-outset btn-custom", style: "margin-bottom: 50px" %></div>
+  </div> <!-- row end -->
+<% end %>

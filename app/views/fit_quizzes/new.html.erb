@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="text-center" style="margin-bottom: 20px">Test Your Fitness</h1>
+  <div class="content-text">
+    <p>Every movement our bodies perform can be broken down into a series of one of seven basic movement patterns and they are as follows:</p>
+      <%= image_tag "Movements.jpg", alt: "Seven Basic Movement Patterns: Squat, Lunge, Push, Pull, Bend, Twist, Gait", class: "content-image-center", style: "margin-bottom: 30px" %>
+    <p>Yes, most individuals perform all seven basic movements throughout the week. However, once you start doing specific movements faster and more frequently, physical problems can arise if you have issues that have not been addressed.</p>
+    <p>To help reduce chance of future injuries, your first goal should be to make sure your body can do all seven basic movement patterns with no constraints. After mastering the basic movements, you can move on to a specific sports training plan with much less risk of a future injury.</p>
+    <p><strong>Test your fitness levels now:</strong></p>
+  </div>
+</div>
+
+<div class="container">
+  <%= render partial: "fit_quizzes/quiz", locals: { fit_quiz: @fit_quiz } %>
+</div>

@@ -3,21 +3,40 @@
   <div class="text-center page-title-bar">
     <h1>Your Fitness Plan</h1>
     <h2><small>Genetic Golf Fitness Training</small></h2>
+    <% if @user.fit_quiz.fit_code != nil %>
+      <h2 style="color: red; font-weight: bolder">Your Genetic Golf Fitness Code is: <%= @user.fit_quiz.fit_code %></h2>
+    <% end %>
   </div>
 
   <div class="content-text">
-    <p>The goal of most sports’ fitness training plans is to prepare you for the physical demands of competition for that sport.
-      <br><br>Physical fitness for one sport is not exactly the same as for another. Before you start a sport specific program, it’s critical that you have a Seven Basic Movement evaluation.
-      <br><br>Every movement our bodies perform can be broken down into a series of one of Seven Basic Movement patterns and they are as follows:
-      <%= image_tag "Movements.jpg", alt: "Seven Basic Movement Patterns: Squat, Lunge, Push, Pull, Bend, Twist, Gait", class: "content-image-center" %>
-      <br><br>Yes, most individuals perform all seven basic movements throughout the week, but once you start doing a lot of a specific movements faster and more frequent, motion and physical problems can arise if you have issues that have not been addressed.
-      <br><br>To help reduce chance of future injuries, your first goal should be to make sure your body can efficiently do all seven basic functional movement patterns with no constraints. Once you have the seven basic movements down, you can move on to a specific sports training plan with much less risk of a future injury.
-      <br><br>The first step to a new fitness plan is look at your lifestyle and activities is to see at what level you need to start.
-      <br><br>If you are not currently working out on a consistent basis, start with a simple 5-15 minute functional movement program. This will benefit your body now and improve your future quality of life. A healthy body should be your first priority. Once you have this then you can move on to a specific plan that will prepare you more for your specific sport.
-      <br><br>If you currently don’t have Seven Basic Movement body improvement program in place, we recommend BurnIt Athletics
-      <br><br>If you’re ready for a golf specific fitness program, we recommend you go to the <a href="http://www.mytpi.com/">TPI Website</a> for a trainer that can do a golf-specific screen and create a golf program that is personalized for you.
-    </p>
-
+    <p>The goal of most sports’ fitness training plans is to prepare you for the physical demands of competition for that sport.</p>
+    <% if @user.fit_quiz.fit_code == nil %>
+      <p>Physical fitness for one sport is not exactly the same as for another. Before you start a sport specific program, it’s critical that you have a Seven Basic Movement evaluation.</p>
+    <% end %>
+    <p>Every movement our bodies perform can be broken down into a series of one of Seven Basic Movement patterns and they are as follows:</p>
+    <%= image_tag "Movements.jpg", alt: "Seven Basic Movement Patterns: Squat, Lunge, Push, Pull, Bend, Twist, Gait", class: "content-image-center" %>
+    <p>Yes, most individuals perform all seven basic movements throughout the week, but once you start doing a lot of a specific movements faster and more frequent, motion and physical problems can arise if you have issues that have not been addressed.</p>
+    <p>To help reduce chance of future injuries, your first goal should be to make sure your body can efficiently do all seven basic functional movement patterns with no constraints. Once you have the seven basic movements down, you can move on to a specific sports training plan with much less risk of a future injury.</p>
+    <% if @user.fit_quiz.fit_code == nil %>
+      <p>The first step to a new fitness plan is look at your lifestyle and activities is to see at what level you need to start. Take your <%= link_to "basic movement pattern fitness assessment", new_fit_quiz_path %> now!</p>
+    <% end %>
+    <p>If you are not currently working out on a consistent basis, start with a simple 5-15 minute functional movement program. This will benefit your body now and improve your future quality of life. A healthy body should be your first priority. Once you have this then you can move on to a specific plan that will prepare you more for your specific sport.</p>
+    <p>If you need help with your seven basic movements, we recommend <a href="http://www.burnitathletics.com">BurnIt Athletics</a>.  If you’re ready for a golf specific fitness program, we recommend you go to the <a href="http://www.mytpi.com/">TPI Website</a> for a trainer that can do a golf-specific screen and create a golf program that is personalized for you.</p>
+    <p><strong>Take the next step today!</strong></p>
   </div>
 
+  <div class="text-center">
+    <a href="http://www.burnitathletics.com">
+      <div class="fit-box hvr-box-shadow-outset">
+        <h3 style="color: black">General<br>Fitness Plan</h3>
+        <%= image_tag "fit_bia.jpg", class: "fit-box-logo", alt: "TPI Fitness Logo" %>
+      </div> <!--- bia box -->
+    </a>
+    <a href="http://www.mytpi.com/">
+      <div class="fit-box hvr-box-shadow-outset">
+        <h3 style="color: black">Golf Specific<br>Fitness Plan</h3>
+        <%= image_tag "fit_tpi.jpg", class: "fit-box-logo", alt: "TPI Fitness Logo" %>
+      </div> <!--- bia box -->
+    </a>
+  </div> <!-- text center for boxes -->
 </div> <!-- container end -->

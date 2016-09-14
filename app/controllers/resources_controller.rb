@@ -3,5 +3,6 @@ class ResourcesController < ApplicationController
   end
 
   def fitness
+    @user = current_user
   end
 end

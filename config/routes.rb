@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   resources :flex_quizzes
   resources :bod_quizzes
   resources :per_quizzes
+  resources :fit_quizzes
   resources :swing_books
   resources :contact, only: [:new, :create]
   resources :newsletters
