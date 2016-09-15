@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
   end
 
   def body
+    @user = current_user
   end
 
   def resources

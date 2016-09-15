@@ -11,99 +11,59 @@
   <div class="buffer-50"></div>
 
 <div class="container bs-component text-center">
-  <% if current_user.nil? %>
-    <%= link_to (new_user_session_path), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
-      <h1>Body Structure Quiz</h1>
-      <p>Your body structure will affect your style of swing and the clubs you should be using!
-      <br><br>Test your body structure now!</p>
-    </div></div> <!-- well/container -->
-    <% end %>
-  <% elsif current_user.bod_quiz.nil? %>
-     <%= link_to (new_bod_quiz_path), class: "no-color" do %>
-     <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
-       <h1>Body Structure Quiz</h1>
-       <p>Your body structure will affect your style of swing and the clubs you should be using!
-       <br><br>Test your body structure now!</p>
-     </div></div> <!-- well/container -->
-     <% end %>
-  <% else %>
-     <%= link_to (edit_bod_quiz_path(current_user.bod_quiz)), class: "no-color" do %>
-     <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
-       <h1>Body Structure Quiz</h1>
-       <p>Your body structure will affect your style of swing and the clubs you should be using!
-       <br><br>Test your body structure now!</p>
-     </div></div> <!-- well/container -->
-    <% end %>
+  <%= link_to (new_bod_quiz_path), class: "no-color" do %>
+  <div class="container col-sm-6 col-lg-3"><div class="well bs-component teaser-well teaser-well-3">
+    <h1>Body Structure Quiz</h1>
+    <p>Your body structure will affect your style of swing and the clubs you should be using!</p>
+    <p>Test your body structure now!</p>
+  </div></div> <!-- well/container -->
   <% end %>
 
-  <% if current_user.nil? %>
-    <%= link_to (new_user_session_path), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
+  <%= link_to (new_flex_quiz_path), class: "no-color" do %>
+    <div class="container col-sm-6 col-lg-3"><div class="well bs-component teaser-well teaser-well-3">
       <h1>Flexibility Quiz</h1>
       <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
       <br><br>Your stability, strength, and flexibility play a major role in finding your best swing.
-      <br><br>Test your flexibility today!</p>
-    </div></div> <!-- well/container -->
+      <% if @user.flex_quiz %>
+        <h2 style="color: black; font-size: 22px; font-weight: bolder">Your&nbsp;code: <%= @user.flex_quiz.flex_code %></h2>
+        <p>Retest Your Body Flexibility</p>
+      <% else %>
+        <p>Test your flexibility now!</p>
+      <% end %>
+      </div></div> <!-- well/container -->
     <% end %>
-  <% elsif current_user.flex_quiz.nil? %>
-     <%= link_to (new_flex_quiz_path), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
-      <h1>Flexibility Quiz</h1>
-      <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
-      <br><br>Your stability, strength, and flexibility play a major role in finding your best swing.
-      <br><br>Test your flexibility today!</p>
-    </div></div> <!-- well/container -->
-    <% end %>
- <% else %>
-    <%= link_to (edit_flex_quiz_path(current_user.flex_quiz)), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
-      <h1>Flexibility Quiz</h1>
-      <p>Think your level of flexibility doesn't affect your golf swing?  Think again!
-      <br><br>Your stability, strength, and flexibility play a major role in finding your best swing.
-      <br><br>Test your flexibility today!</p>
-    </div></div> <!-- well/container -->
-    <% end %>
-  <% end %>
 
-  <% if current_user.nil? %>
-    <%= link_to (new_user_session_path), class: "no-color" do %>
-    <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
-      <h1>Balance Quiz</h1>
-      <p>Your balance can affect every aspect of your game.
-      <br><br>Evaluate your balance skills and find out the best way for you to swing in balance.
-      <br><br>Test your balance now!</p>
-    </div></div> <!-- well/container -->
-    <% end %>
-  <% elsif current_user.bal_quiz.nil? %>
-     <%= link_to (new_bal_quiz_path), class: "no-color" do %>
-      <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
+   <%= link_to (new_bal_quiz_path), class: "no-color" do %>
+      <div class="container col-sm-6 col-lg-3"><div class="well bs-component teaser-well teaser-well-3">
         <h1>Balance Quiz</h1>
         <p>Your balance can affect every aspect of your game.
         <br><br>Evaluate your balance skills and find out the best way for you to swing in balance.
-        <br><br>Test your balance now!</p>
+        <% if @user.bal_quiz %>
+          <h2 style="color: black; font-size: 22px; font-weight: bolder">Your&nbsp;code: <%= @user.bal_quiz.bal_code %></h2>
+          <p>Retest Your Balance</p>
+        <% else %>
+          <p>Test your balance now!</p>
+        <% end %>
       </div></div> <!-- well/container -->
-      <% end %>
-   <% else %>
-      <%= link_to (edit_bal_quiz_path(current_user.bal_quiz)), class: "no-color" do %>
-      <div class="container col-sm-4"><div class="well bs-component teaser-well teaser-well-3">
-        <h1>Balance Quiz</h1>
-        <p>Your balance can affect every aspect of your game.
-        <br><br>Evaluate your balance skills and find out the best way for you to swing in balance.
-        <br><br>Test your balance now!</p>
-      </div></div> <!-- well/container -->
-      <% end %>
-  <% end %>
-
+    <% end %>
 
     <%= link_to (resources_fitness_path), class: "no-color" do %>
-    <div class="container col-sm-12"><div class="well bs-component teaser-well">
-      <h1>Your Fitness Plan</h1>
-      <p>More information coming soon!</p>
-    </div></div> <!-- well/container -->
+      <div class="container col-sm-6 col-lg-3"><div class="well bs-component teaser-well teaser-well-3">
+        <h1>Fitness Quiz</h1>
+        <p>Like any sport, golf requires physical fitness, coordination, and movement.</p>
+        <p>Test your seven basic movements to receive a fitness plan that will better your golf game!</p>
+        <% if @user.fit_quiz %>
+          <h2 style="color: black; font-size: 22px; font-weight: bolder">Your&nbsp;code: <%= @user.fit_quiz.fit_code %></h2>
+          <p>Retest Your Fitness</p>
+        <% else %>
+          <p>Test your fitness now!</p>
+        <% end %>
+
+      </div></div> <!-- well/container -->
     <% end %>
 
-</div> <!-- container bs-component -->
+  </div> <!-- container bs-component -->
+</div> <!-- overlap-tall-hero-image -->
 
 
 <script>

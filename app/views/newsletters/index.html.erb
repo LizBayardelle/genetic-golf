@@ -11,7 +11,7 @@
     <h1 style="color: black">Newsletters Homepage</h1>
     <%= link_to "Create New Newsletter", new_newsletter_path, class: "btn-custom hvr-box-shadow-outset", style: "margin-top: 80px"%>
   <% else %>
-    <h1 style="color: black"><%= @user.first_name %>'s Personalized Golf Tips</h1>
+    <h1 style="color: black; font-weight: bolder"><%= @user.first_name %>'s Personalized Golf Tips</h1>
   <% end %>
 </div>
 
@@ -20,7 +20,7 @@
     <%= link_to "Retest Personality", edit_per_quiz_path(@user.per_quiz) %> |
   <% end %>
   <% if @user.swing_book %>
-    <%= link_to "Retest Personality", edit_swing_book_path(@user.swing_book) %> |
+    <%= link_to "Retest Full Swing", edit_swing_book_path(@user.swing_book) %> |
   <% end %>
   <%= link_to "My Locker", user_path(@user) %>
 </p></div>

@@ -4,7 +4,8 @@
     <h1>Your Fitness Plan</h1>
     <h2><small>Genetic Golf Fitness Training</small></h2>
     <% if @user.fit_quiz.fit_code != nil %>
-      <h2 style="color: red; font-weight: bolder">Your Genetic Golf Fitness Code is: <%= @user.fit_quiz.fit_code %></h2>
+      <h2 style="color: red; font-weight: bolder; margin-bottom: 0px">Your Genetic Golf Fitness Code is: <%= @user.fit_quiz.fit_code %></h2>
+      <p style="margin-bottom: 20px !important"><%= link_to "Retest Your Fitness", edit_fit_quiz_path(@user.fit_quiz), style: "color: black !important" %></p>
     <% end %>
   </div>
 

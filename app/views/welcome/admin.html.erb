@@ -20,8 +20,16 @@
           <td><%= link_to u.last_name, user_path(u) %></td>
           <td><%= u.try(:per_quiz).try(:per_code) %></td>
           <td><%= u.try(:swing_book).try(:swing_code) %></td>
-          <td><%= u.try(:bal_quiz).try(:bal_code) %> (Balance)
-            <br><%= u.try(:flex_quiz).try(:flex_code) %> (Flexibility)
+          <td>
+            <% if u.bal_quiz %>
+              <%= u.try(:bal_quiz).try(:bal_code) %> (Balance)
+            <% end %>
+            <% if u.flex_quiz %>
+              <br><%= u.try(:flex_quiz).try(:flex_code) %> (Flexibility)
+            <% end %>
+            <% if u.fit_quiz %>
+              <br><%= u.try(:fit_quiz).try(:fit_code) %> (Fitness)
+            <% end %>
           </td>
         </tr>
       <% end %>

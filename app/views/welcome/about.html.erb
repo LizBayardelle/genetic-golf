@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="text-center page-title-bar">
     <h1>About Genetic Golf</h1>
     <h2><small>Find your best golf game and have more fun!</small></h2>
@@ -14,7 +13,6 @@
   <%= link_to welcome_game_path do %>
     <h4 class="text-center" style="padding-top: 30px; padding-bottom: 30px">Find your personalized Genetic Golf swing today!</h4>
   <% end %>
-
 </div> <!-- container -->
 
 <div class="buffer-50"></div>
@@ -31,62 +29,99 @@
     </div> <!-- hero-image-inner -->
   </div> <!-- row -->
 
-<div class="container">
-  <div class="overlap-tall-hero-image">
+  <div class="container">
+    <div class="overlap-tall-hero-image">
+      <div class="buffer-25"></div>
 
-  <div class="buffer-50"></div>
+      <%= link_to (about_benefits_path), class: "no-color" do %>
+          <div class="container text-center col-sm-6 col-lg-4"><div class="well sm-1 lg-1 bs-component teaser-well">
+            <h1>Benefits of Genetic Golf</h1>
+            <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons.</p>
+            <p>Instead of telling everyone the same generic tips, we personally test you to find your best swing or putting stroke.
+        </div></div>
+      <% end %>
 
-  <%= link_to (about_benefits_path), class: "no-color" do %>
-      <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
-        <h1>Benefits of Genetic Golf</h1>
-        <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons. Instead of telling everyone the same thing or guessing at the best way for you to swing, we personally test you to find your best swing or putting stroke.
-        <br><br>Find your code and find your game!</p>
-    </div></div>
-  <% end %>
+      <%= link_to (about_principles_path), class: "no-color" do %>
+          <div class="container text-center col-sm-6 col-lg-4"><div class="well sm-1 lg-1 bs-component teaser-well">
+            <h1>Genetic Golf Principles</h1>
+            <p>Genetic Golf is a paradigm shift in which we test each person to find your best genetic golf motion.</p>
+            <p>Without Genetic Golf testing, you are just guessing and you won't get the best results for you.</p>
+        </div></div> <!-- well/container -->
+      <% end %>
 
-  <%= link_to (about_principles_path), class: "no-color" do %>
-      <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
-        <h1>Genetic Golf Principles</h1>
-        <p>Genetic Golf’s new dynamic learning style will change the future of golf lessons.
-        <br><br>It is a paradigm shift in which we test each person to find your best genetic golf motion.
-        <br><br>Without Genetic Golf testing, you are just guessing and you won't get the best results for you.</p>
-    </div></div> <!-- well/container -->
-  <% end %>
+      <%= link_to (about_staff_path), class: "no-color" do %>
+          <div class="container text-center col-sm-6 col-lg-4"><div class="sm-2 lg-1 well bs-component teaser-well">
+            <h1>Staff and Awards</h1>
+            <p>To get the best results, shouldn't you have the best instructors?</p>
+            <p>Read more about the Genetic Golf team!</p>
+        </div></div> <!-- well/container -->
+      <% end %>
 
-  <%= link_to (about_staff_path), class: "no-color" do %>
-      <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
-        <h1>Staff and Awards</h1>
-        <p>To get the best results, shouldn't you have the best instructors?
-        <br><br>Glenn Deck, Director of Instruction for Pelican Hill Golf Club and Oak Creek Golf Club, is founder of Genetic Golf. He has been in the golf business for over twenty-five years.
-        <br><br>Read more about the Genetic Golf team!</p>
-    </div></div> <!-- well/container -->
-  <% end %>
+      <%= link_to (new_contact_path), class: "no-color" do %>
+          <div class="container text-center col-sm-6 col-lg-4"><div class="well sm-2 lg-2 bs-component teaser-well">
+            <h1>Contact Us</h1>
+            <p>Whatever you need, drop us a line and we'll get back to you shortly.</p>
+            <p>We're always here to help you find your best game!</p>
+        </div></div> <!-- well/container -->
+      <% end %>
 
-  <%= link_to (new_contact_path), class: "no-color" do %>
-      <div class="container text-center col-sm-6 col-lg-3"><div class="well bs-component teaser-well">
-        <h1>Contact Us</h1>
-        <p>Questions?  Comments?  Thoughts?
-        <br><br>Whatever you need, drop us a line and we'll get back to you shortly.
-        <br><br>We're always here to help you find your best game!</p>
-    </div></div> <!-- well/container -->
-  <% end %>
+      <%= link_to game_instruction_path, class: "no-color" do %>
+        <div class="container col-sm-6 col-lg-4"><div class="well sm-3 lg-2 well-double bs-component teaser-well text-center">
+          <h1>Genetic Golf Private Instruction</h1>
+          <p>Our instructors conduct evaluations and work with you to improve all aspects of your game.</p>
+          <p>Find a Genetic Golf instructor near you!</p>
+        </div></div> <!-- well/container -->
+      <% end %>
 
-</div> <!-- container -->
-</div> <!-- content-text -->
+      <%= link_to game_programs_path, class: "no-color" do %>
+        <div class="container col-sm-6 col-lg-4"><div class="well sm-3 lg-2 well-double bs-component teaser-well text-center">
+          <h1>Golf School and Custom Programs</h1>
+          <p>Genetic Golf school features a full evaluation, then run specific tests to evaluate how your body performs best.</p>
+          <p>Find out about Genetic Golf schools and custom events!</p>
+        </div></div> <!-- well/container -->
+      <% end %>
 
+    </div> <!-- overlap-tall-hero-image -->
+  </div> <!-- content-text -->
 </div> <!-- container end -->
 
 
 <script>
 $( document ).ready(function() {
-    var heights = $(".teaser-well").map(function() {
+    var heights = $(".sm-1").map(function() {
         return $(this).height();
     }).get(),
-
     maxHeight = Math.max.apply(null, heights);
-
-    $(".teaser-well").height(maxHeight);
-
+    $(".sm-1").height(maxHeight);
+    window.onresize = function(){ location.reload(); }
+});
+$( document ).ready(function() {
+    var heights = $(".sm-2").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".sm-2").height(maxHeight);
+    window.onresize = function(){ location.reload(); }
+});$( document ).ready(function() {
+    var heights = $(".sm-3").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".sm-3").height(maxHeight);
+    window.onresize = function(){ location.reload(); }
+});$( document ).ready(function() {
+    var heights = $(".lg-1").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".lg-1").height(maxHeight);
+    window.onresize = function(){ location.reload(); }
+});$( document ).ready(function() {
+    var heights = $(".lg-2").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".lg-2").height(maxHeight);
     window.onresize = function(){ location.reload(); }
 });
 </script>
