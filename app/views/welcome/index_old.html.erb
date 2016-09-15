@@ -1,0 +1,157 @@
+<div class="hero-image-row">
+  <div class="hero-image-outer text-center">
+    <div class="hero-image-inner text-center">
+      <%= image_tag 'Background 1.jpg', class: "hero-image",alt: "Beautiful Sunset over Pelican Hills Golf Course and Ocean Cliffs" %>
+    </div> <!-- hero-image-inner -->
+  </div> <!-- hero-image-inner -->
+</div> <!-- row -->
+
+<div class="overlap-hero-image">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="max-height: 500px">
+  <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="carousel-contents text-center">
+          <h1 style="font-weight: 800; font-size: 42px">Genetic Golf</h1>
+          <h1>We&nbsp;don't&nbsp;guess, we&nbsp;test to find what works best&nbsp;for&nbsp;you!</h1>
+        </div> <!-- carousel-contents -->
+      </div>
+
+      <div class="item">
+        <div class="carousel-contents text-center">
+          <div class="ss-box">
+            <h1>Only 7 men and 6 women have won over 50 PGA or LPGA&nbsp;Tour&nbsp;events.</h1>
+            <h2>None of them have the same&nbsp;swing!!!</h2>
+            <%= image_tag 'ss01.jpg' %>
+            <%= image_tag 'ss02.jpg' %>
+            <%= image_tag 'ss03.jpg' %>
+          </div> <!-- ss box -->
+        </div> <!-- carousel-contents -->
+      </div>
+
+      <div class="item">
+        <div class="carousel-contents text-center">
+          <div class="ss-box">
+            <h1>Each golfing great had a swing that matched their body&nbsp;and&nbsp;mind.</h1>
+            <h2>They unlocked their genetic code to find a swing that worked&nbsp;for&nbsp;them.</h2>
+            <%= image_tag 'ss06.jpg' %>
+            <%= image_tag 'ss04.jpg' %>
+            <%= image_tag 'ss05.jpg' %>
+          </div> <!-- ss box -->
+        </div> <!-- carousel-contents -->
+      </div>
+
+      <div class="item">
+        <div class="carousel-contents text-center">
+          <div class="ss-box">
+            <h1>The greatest golfers to play the game didn't have&nbsp;perfect&nbsp;swings.</h1>
+            <h2>They were all different!</h2>
+            <%= image_tag 'ss07.jpg' %>
+            <%= image_tag 'ss08.jpg' %>
+            <%= image_tag 'ss09.jpg' %>
+          </div> <!-- ss box -->
+        </div> <!-- carousel-contents -->
+      </div>
+
+      <div class="item">
+        <div class="carousel-contents text-center">
+          <div class="ss-box">
+            <h1>Genetic Golf is a true paradigm shift in&nbsp;learning&nbsp;golf.</h1>
+            <h2>We run specific tests to find what works best&nbsp;for&nbsp;you!</h2>
+            <%= image_tag 'ss10.jpg' %>
+            <%= image_tag 'ss12.jpg' %>
+            <%= image_tag 'ss11.jpg' %>
+          </div> <!-- ss box -->
+        </div> <!-- carousel-contents -->
+      </div>
+
+    <div class="item">
+      <div class="carousel-contents text-center">
+        <div class="ss-box">
+          <h1>Genetic Golf unlocks the code to find your&nbsp;best&nbsp;game!</h1>
+          <h2>Your game must match you and&nbsp;your&nbsp;body.</h2>
+          <%= image_tag 'ss20.jpg' %>
+          <%= image_tag 'ss16.jpg' %>
+          <%= image_tag 'ss12.jpg' %>
+        </div> <!-- ss box -->
+      </div> <!-- carousel-contents -->
+    </div>
+
+  </div>
+
+
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div> <!-- overlap-hero-image -->
+
+<div class="container" style="margin-top: 20px">
+
+  <%= link_to new_per_quiz_path, class: "no-hvr-underline col-sm-4 hvr-overline-from-center", style: "color: black !important" do %>
+    <div class="text-center">
+      <h1><strong>Step 1</strong></h1>
+      <h2>Test Your<br>Personality</h2>
+      <div class="index-step-icon-row">
+        <%= image_tag 'icon_yourid.png', class: "hvr-pulse-grow index-step-icon", alt: "Image of Hands Inside a Lightbulb" %>
+      </div> <!-- image row -->
+      <p style="height: 120px">Your personality has a direct effect on how you learn and perform best, your mental processes, and how you can play your best golf.</p>
+    </div> <!-- third step column -->
+  <% end %>
+
+  <div class="row visible-xs">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- hr row -->
+
+  <%= link_to welcome_body_path, class: "no-hvr-underline col-sm-4 hvr-overline-from-center", style: "color: black !important" do %>
+    <div class="text-center">
+      <h1><strong>Step 2</strong></h1>
+      <h2>Know<br>Your Body</h2>
+      <div class="index-step-icon-row">
+        <%= image_tag 'icon_dynamics.png', class: "hvr-pulse-grow index-step-icon", alt: "Image of the Outline Image of a Body Being Examined" %>
+      </div> <!-- image row -->
+      <p style="height: 120px">Until you understand your body, how will you know which golf tips will work for you? Test your body now and optimize your game.</p>
+    </div> <!-- third step column -->
+  <% end %>
+
+  <div class="row visible-xs">
+    <hr class="col-xs-6 col-xs-push-3">
+  </div> <!-- hr row -->
+
+  <%= link_to new_swing_book_path, class: "no-hvr-underline col-sm-4 hvr-overline-from-center", style: "color: black !important" do %>
+    <div class="text-center">
+      <h1><strong>Step 3</strong></h1>
+      <h2>Find<br>Your Swing</h2>
+      <div class="index-step-icon-row">
+        <%= image_tag 'icon_TEMP_yourcode.jpg', class: "hvr-pulse-grow index-step-icon", alt: "Image of Three Diffferent Golf Swings of Pro Golfers" %>
+      </div> <!-- image row -->
+      <p style="height: 120px">There is no one swing that works for everyone. Run the genetic tests to discover the swing that brings out your best game.</p>
+    </div> <!-- third step column -->
+  <% end %>
+
+
+</div> <!-- steps container -->
+
+<script>
+$('.carousel').carousel({
+  interval: 5000,
+  wrap: false
+});
+</script>
