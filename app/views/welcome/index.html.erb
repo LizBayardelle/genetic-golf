@@ -7,7 +7,7 @@
 </div> <!-- row -->
 
 <div class="overlap-hero-image">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="max-height: 500px">
   <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -24,7 +24,6 @@
         <div class="carousel-contents text-center">
           <h1 style="font-weight: 800; font-size: 42px">Genetic Golf</h1>
           <h1>We&nbsp;don't&nbsp;guess, we&nbsp;test to find what works best&nbsp;for&nbsp;you!</h1>
-          <%= image_tag 'black_logo.png', id: "logo-slider", alt: "Genetic Golf logo" %>
         </div> <!-- carousel-contents -->
       </div>
 
@@ -149,3 +148,10 @@
 
 
 </div> <!-- steps container -->
+
+<script>
+$('.carousel').carousel({
+  interval: 5000,
+  wrap: false
+});
+</script>

@@ -256,6 +256,10 @@ th {
 
 
 /* OLD NAV CSS */
+#MainNav .navbar {
+  margin-bottom: 0px !important;
+}
+
 #MainNav ul#navlist li:hover {
 	background-color: #E5E5E5;
 }
@@ -776,7 +780,6 @@ body {
 
 /* HEROS */
 .hero-image-row {
-   margin-top: -100px;
    overflow-x: hidden !important;
    width: 100% !important;
  }
@@ -856,7 +859,6 @@ body {
 
  /* Tall Heros */
  .tall-hero-image-row {
-    margin-top: -100px;
     overflow-x: hidden !important;
     width: 100% !important;
   }
@@ -929,7 +931,6 @@ body {
 
 /* Short Hero */
 .short-hero-image-row {
-   margin-top: -100px;
    overflow-x: hidden !important;
    width: 100% !important;
  }
@@ -1264,3 +1265,114 @@ body {
    left: 0;
    right: 0;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+ /* INDEX SLIDESHOW */
+
+ .hero-image-row-index {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+ .hero-image-outer-index {
+    width: 300%;
+    height: 400px;
+    overflow-y: hidden !important;
+  }
+
+  .hero-image-inner-index {
+    width: 66%;
+    overflow-x: hidden !important;
+  }
+
+  .hero-image-index {
+    height: 400px;
+    margin-left: -50%;
+    z-index: 0 !important;
+  }
+
+ .overlap-hero-image-index {
+ 	 margin-top: -400px;
+ 	 height: 400px;
+ }
+
+ .slide {
+   height: 400px;
+   width: 100%;
+ }
+
+ .slide img {
+   height: 200px;
+   margin: 0 20px 0 20px;
+ }
+
+
+ /*
+ ==============================================
+ slideRightSlider
+ ==============================================
+ */
+
+
+ .slideRightSlider {
+ 	animation-name: slideRightSlider;
+ 	-webkit-animation-name: slideRightSlider;
+ 	animation-duration: 1s;
+ 	-webkit-animation-duration: 1s;
+ 	animation-timing-function: ease-in-out;
+ 	-webkit-animation-timing-function: ease-in-out;
+ 	visibility: visible !important;
+  -webkit-animation-delay: 0.25s; /* Chrome, Safari, Opera */
+  animation-delay: 0.25s;
+ }
+
+ @keyframes slideRightSlider {
+ 	0% { transform: translateX(-150%); }
+ 	100% { transform: translateX(0%); }
+ }
+
+ @-webkit-keyframes slideRightSlider {
+ 	0% { -webkit-transform: translateX(-150%); }
+ 	100% { -webkit-transform: translateX(0%); }
+ }/*
+==============================================
+fadeIn
+==============================================
+*/
+
+.fadeIn{
+	animation-name: fadeIn;
+	-webkit-animation-name: fadeIn;
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+	visibility: visible !important;
+  -webkit-animation-delay: 1.25s; /* Chrome, Safari, Opera */
+  animation-delay: 1.25s;
+
+}
+
+@keyframes fadeIn {
+	0% { transform: scale(0); opacity: 0.0; }
+	60% { transform: scale(1.1); }
+	80% { transform: scale(0.9); opacity: 1; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+	0% { -webkit-transform: scale(0); opacity: 0.0; }
+	60% { -webkit-transform: scale(1.1); }
+	80% { -webkit-transform: scale(0.9); opacity: 1; }
+	100% { -webkit-transform: scale(1); opacity: 1; }
+}

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'game/programs'
 
   get 'welcome/index'
+  get 'welcome/index_2'
   get 'welcome/personality'
   get 'welcome/newsletter'
   get 'welcome/game'

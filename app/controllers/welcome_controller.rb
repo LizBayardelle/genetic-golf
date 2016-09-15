@@ -2,6 +2,9 @@ class WelcomeController < ApplicationController
   def index
   end
 
+  def index_2
+  end
+
   def personality
   end
 
