@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+		</head>
+	<body>
+		<div style="text-align: center">
+			<h1>Welcome to Genetic Golf</h1>
+
+			<h4 style="font-weight: bold">
+				We give you coaching and advice that fits your body and mind,
+				<br>but first we have to get to know you a little better.
+			</h4>
+			<h4 style="font-weight: bold">
+				The Genetic Golf process is as easy as 1, 2, 3...
+			</h4>
+		</div> <!-- center text -->
+
+		<!-- step 1 -->
+		<h3><strong>Step 1: </strong>Test Your Personality</h3>
+		<p><strong>What You Do:</strong><br>Take tests to assess your personality</p>
+		<p><strong>What You Get:</strong><br>A bi-weekly newsletter with golf tips and coaching for your specific mindset</p>
+		<p><strong><%= link_to "Test your personality now!", new_per_quiz_url, style: "color: #567E3A" %></strong></p>
+
+		<!-- step 2 -->
+		<h3><strong>Step 2: </strong>Know Your Body</h3>
+		<p><strong>What You Do:</strong><br>Take tests to assess your body</p>
+		<p><strong>What You Get:</strong><br>Your coaching now focuses in on your genetic predispositions and physical capabilities</p>
+		<p><strong><%= link_to "Test your body now!", user_url(@user), style: "color: #567E3A" %></strong></p>
+
+		<!-- step 3 -->
+		<h3><strong>Step 3: </strong>Test Your Personality</h3>
+		<p><strong>What You Do:</strong><br>Work through the Genetic Golf Swing Book with your local pro and input your 10-digit swing code</p>
+		<p><strong>What You Get:</strong><br>The most personalized golf coaching you can get, fitted to your individual swing, mind, and body</p>
+		<p><strong><%= link_to "Get my full swing book now!", new_swing_book_url, style: "color: #567E3A" %></strong></p>
+
+		<div style="text-align: center">
+			<h2><%= link_to "Get Started Now", user_url(@user), style: "color: #567E3A" %></h2>
+		</div> <!-- text center -->
+	</body>
+</html>

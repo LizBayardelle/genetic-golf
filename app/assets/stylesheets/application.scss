@@ -1,10 +1,27 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'ionicons';
 
 
 $primary-font: 'Khula', sans-serif;
 $accent-font: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;
-
+$color-green: #567E3A;
 
 
 
@@ -67,7 +84,7 @@ h1 {
 }
 
 a {
-  color: #567E3A !important;
+  color: $color-green !important;
 }
 
 .no-color {
@@ -131,7 +148,7 @@ a:hover {
 
 .btn-custom:hover {
 	background-color: white;
-	color: #567e3a;
+	color: $color-green;
 }
 
 h4 {
@@ -162,6 +179,19 @@ h4 {
   align-items: center;
 }
 
+label {
+	text-transform: capitalize !important;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -177,6 +207,16 @@ th {
   font-weight: bolder !important;
   border-bottom: thin double #c0c0c0;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -314,6 +354,14 @@ th {
 	border-radius: 0px;
 }
 
+ul#navlist.nav.nav-tabs {
+	width: 110%;
+}
+
+#MainNav .collapse.navbar-collapse {
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
 
 #MainNav ul#navlist li:hover ul#subnavlist li:hover a {
 	color: #001E00;
@@ -356,6 +404,13 @@ th {
 
 
 
+
+
+
+
+
+
+
 /* CONTENT */
 .page-title-bar h1 {
 	margin-bottom: -20px !important;
@@ -367,7 +422,7 @@ th {
 
 .content-text h4 {
 	margin-top: 30px;
-	font: #567e3a;
+	font: $color-green;
 	font-family: $accent-font;
 }
 
@@ -422,7 +477,7 @@ a.black-text {
 }
 
 .teaser-well h2 {
-	font: #567e3a;
+	font: $color-green;
 	font-size: 20px;
 	line-height: 1.8;
 }
@@ -489,7 +544,7 @@ a.black-text {
 }
 
 .fitting-results {
-  width: 40%;
+  height: 100px;
   margin: 0 0 10px 0;
 }
 
@@ -544,6 +599,22 @@ a.black-text {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* DEVISE */
+
+.shared-login-links * {
+	font-size: 18px;
+}
 
 
 
@@ -627,18 +698,12 @@ body {
   height: 100%;
 }
 
-/* Wrapper for page content to push down footer */
-.wrapper {
-  min-height: 100%;
-  height: auto !important;
-  /* Negative indent footer by its height */
-  margin: 0 auto -450px;
-}
 
-/* Set the fixed height of the footer here */
-.footer, .push {
-  height: 450px;
-}
+
+
+
+
+
 
 
 
@@ -663,10 +728,10 @@ body {
 }
 
 .sm-icon {
-		display: inline-block;
-		height: 20px;
-		margin-left: 10px;
-		margin-right: 10px;
+	display: inline-block;
+	height: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .sm-unit {
@@ -709,22 +774,6 @@ body {
 	#sf-philosophy p {
 		font-size: 12px;
 	}
-
-	.wrapper {
-	  margin: 0 auto -650px;
-	}
-
-	.footer, .push {
-	  height: 650px;
-	}
-
-	.fixed-footer p {
-		font-size: 12px;
-	}
-
-	.f-footer-logo {
-		height:15px;
-	}
 }
 
 /* Small Screens Only */
@@ -740,23 +789,17 @@ body {
 	.sm-unit {
 		display: inline-block;
 	}
-
-	.wrapper {
-		margin: 0 auto -620px;
-	}
-
-	.footer, .push {
-		height: 620px;
-	}
 }
 
 .f-footer-logo {
-	height: 30px;
+	height: 60px;
+	margin: 25px;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 768px) {
 	.f-footer-logo {
 		height: 40px;
+		margin: 15px;
 	}
 }
 
@@ -831,27 +874,42 @@ body {
  line-height: 1.5;
 }
 
- @media screen and (min-width: 1100px) {
-   .hero-image-outer {
-     width: 100%;
+
+@media screen and (min-width: 980px) {
+   .hero-image-outer-index {
+   		width: 100%;
+   		height: 400px;
+   		overflow: hidden;
    }
 
-   .hero-image-inner {
-     width: 100%;
+   .hero-image-inner-index {
+   		width: 100%;
+   		height: 400px;
+   		overflow: hidden;
+   		position: relative;
    }
 
-   .hero-image {
-     width: 100%;
-     height: auto;
-     margin-left: 0%;
+   .hero-image-index {
+   		width: 100%;
+   		height: auto;
+   		position: absolute;
+   		bottom: 0;
+   		margin-left: -50%;
    }
- }
+}
 
  @media screen and (max-width: 768px) {
 		.overlap-hero-image {
 			overflow: scroll !important;
 		}
 	}
+
+
+
+
+
+
+
 
 
 
@@ -924,6 +982,12 @@ body {
 	.overlap-hero-scroll {
 		overflow: scroll !important;
 	}
+
+
+
+
+
+
 
 
 
@@ -1002,6 +1066,12 @@ body {
 
 
 
+
+
+
+
+
+
 .locker-box {
   background-color: #DCDCDC;
   margin-top: 30px;
@@ -1015,43 +1085,57 @@ body {
 
 
 
-/* CAROUSEL */
-.carousel-contents {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 50px;
-  height: 450px;
+
+
+
+
+
+
+/* FROM SO HELP FOR SLIDER */
+
+.slideshow-contianer {
+  position: relative;
 }
 
-#logo-slider {
-  height: 275px;
-  width: auto !important;
+.slides {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-.carousel-contents h1 {
-  color: black !important;
-  font-size: 28px;
+.controller {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  background: rgba(0,0,0,0.25);
+  -webkit-display: flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  z-index: 200;
 }
 
-.carousel-contents h2 {
-  color: black !important;
-  font-family: $primary-font;
-  font-weight: 400;
-  font-size: 24px;
+.controller span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  margin: 10px;
+  /* Transition is a personal asthetic. */
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.carousel-contents img {
-  width: 22%;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 15px;
-}
-
-.ss-box {
-  background-color: rgba(235, 235, 235, 0.7) !important;
-  padding-top: 20px;
-  padding-bottom: 20px;
+.controller span.active,
+.controller span:hover {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  background-color: white;
 }
 
 
@@ -1059,21 +1143,34 @@ body {
 
 
 
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INTRO PAGE */
+
+
+
+@media screen and (min-width: 768px) {
+	.step-text {
+		margin-top: 50px;
+		padding-left: 30px;
+	}
+}
+
+
+
+
+
 
 
 
@@ -1218,7 +1315,7 @@ body {
    left: 50%;
    right: 50%;
    bottom: 0;
-   background: #567e3a;
+   background: $color-green;
    height: 4px;
    -webkit-transition-property: left, right;
    transition-property: left, right;
@@ -1252,7 +1349,7 @@ body {
    left: 50%;
    right: 50%;
    top: 0;
-   background: #567e3a;
+   background: $color-green;
    height: 4px;
    -webkit-transition-property: left, right;
    transition-property: left, right;
@@ -1301,9 +1398,33 @@ body {
     z-index: 0 !important;
   }
 
- .overlap-hero-image-index {
+@media screen and (min-width: 980px) {
+   .hero-image-outer-index {
+   		width: 100%;
+   		height: 400px;
+   		overflow: hidden;
+   }
+
+   .hero-image-inner-index {
+   		width: 100%;
+   		height: 400px;
+   		overflow: hidden;
+   		position: relative;
+   }
+
+   .hero-image-index {
+   		width: 100%;
+   		height: auto;
+   		position: absolute;
+   		bottom: 0;
+   		margin-left: -50%;
+   }
+}
+
+ #overlap-hero-image-index {
  	 margin-top: -400px;
  	 height: 400px;
+ 	 position: relative;
  }
 
  .slide {
@@ -1317,6 +1438,28 @@ body {
    max-height: 200px;
    margin: 0 20px 0 20px;
    max-width: 20%;
+ }
+
+ .slide .icon {
+ 	font-size: 24px;
+ }
+
+ .ion-chevron-left {
+ 	padding-right: 20px;
+ }
+
+  .ion-chevron-right {
+ 	padding-left: 20px;
+ }
+
+ #overlap-hero-image-index .slide .index-icon-box {
+ 	position: absolute;
+ 	margin-left: -20px;
+ 	width: 100%;
+ 	text-align: center;
+ 	height: 50px;
+ 	bottom: 0;
+ 	padding-bottom: 0px;
  }
 
 

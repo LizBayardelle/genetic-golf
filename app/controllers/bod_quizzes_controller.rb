@@ -1,7 +1,7 @@
 class BodQuizzesController < ApplicationController
-#  include Wicked::Wizard
-#  steps :page_1, :page_2, :page_3
-  before_action :require_sign_in
+  include Wicked::Wizard
+  steps :page_1, :page_2, :page_3
+  before_action :require_sign_up
 
   def show
     @bod_quiz = BodQuiz.find(params[:id])
@@ -12,7 +12,7 @@ class BodQuizzesController < ApplicationController
       redirect_to edit_bod_quiz_path(current_user.bod_quiz)
     else
       @bod_quiz = current_user.build_bod_quiz
-#      render_wizard
+      render_wizard
     end
   end
 
@@ -54,6 +54,13 @@ class BodQuizzesController < ApplicationController
     else
       flash.now[:alert] = "There was an error saving your results. Please try again."
       redirect_to welcome_index_path
+    end
+  end
+
+  def require_sign_up
+    unless current_user
+      redirect_to new_user_registration_path
+      flash[:alert] = "Sorry, you have to be logged in to do that."
     end
   end
 

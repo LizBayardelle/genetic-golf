@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'about/benefits'
   get 'about/principles'
   get 'about/staff'
+  get 'about/howitworks'
 
   get 'resources/aids'
   get 'resources/fitness'

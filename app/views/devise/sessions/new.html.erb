@@ -13,6 +13,7 @@
     <div class="container text-center col-xs-10 col-xs-push-1" style="background-color: rgba(235, 235, 235, 0.8) !important">
 
       <h1 style="color: black">Log In</h1>
+      <h1 style="color: black; font-size: 18px">Don't have an account? <%= link_to "Sign up", new_user_registration_path %> today!</h1>
 
       <%= simple_form_for(resource, as: resource_name, url: user_session_path) do |f| %>
         <div class="form-inputs text-left">

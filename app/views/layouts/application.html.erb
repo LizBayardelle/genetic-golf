@@ -13,45 +13,45 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 
 </head>
+
 <body>
+  <div class="very-top row">
+    <div class="pull-right user-info text-right">
+      <p>
+        <% if current_user %>
+          <%= link_to "My Locker", user_path(current_user) %>
+             | <%= link_to "My Golf Tips", newsletters_path, style: "margin-bottom: -40px" %>
+          <% if current_user.admin == true %>
+             | <%= link_to "Admin Panel", welcome_admin_path, style: "margin-bottom: -40px" %>
+          <% end %>
+          <% if current_user.swing_book != nil %>
+          <br><%= current_user.first_name %>'s ID Code:
+              <%= current_user.swing_book.swing01 %>
+              <%= current_user.swing_book.swing02 %>
+              <%= current_user.swing_book.swing03 %>
+              -
+              <%= current_user.swing_book.swing04 %>
+              <%= current_user.swing_book.swing05 %>
+              <%= current_user.swing_book.swing06 %>
+              -
+              <%= current_user.swing_book.swing07 %>
+              <%= current_user.swing_book.swing08 %>
+              <%= current_user.swing_book.swing09 %>
+              <%= current_user.swing_book.swing10 %>
+          <% end %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path %> or
+          <%= link_to "Sign Up", new_user_registration_path %>
+        <% end %>
+      </p>
+    </div> <!-- user info -->
 
-<div class="wrapper">
-
-<div class="very-top row">
-  <div class="pull-right user-info text-right">
-  <p><% if current_user %>
-      <%= link_to "My Locker", user_path(current_user) %>
-       | <%= link_to "My Golf Tips", newsletters_path, style: "margin-bottom: -40px" %>
-    <% if current_user.admin == true %>
-       | <%= link_to "Admin Panel", welcome_admin_path, style: "margin-bottom: -40px" %>
-    <% end %>
-    <% if current_user.swing_book != nil %>
-    <br><%= current_user.first_name %>'s ID Code:
-        <%= current_user.swing_book.swing01 %>
-        <%= current_user.swing_book.swing02 %>
-        <%= current_user.swing_book.swing03 %>
-        -
-        <%= current_user.swing_book.swing04 %>
-        <%= current_user.swing_book.swing05 %>
-        <%= current_user.swing_book.swing06 %>
-        -
-        <%= current_user.swing_book.swing07 %>
-        <%= current_user.swing_book.swing08 %>
-        <%= current_user.swing_book.swing09 %>
-        <%= current_user.swing_book.swing10 %>
-    <% end %>
-  <% else %>
-    <%= link_to "Sign In", new_user_session_path %> or
-    <%= link_to "Sign Up", new_user_registration_path %>
-  <% end %></p>
-  </div> <!-- user info -->
-
-  <div class="col-xs-2">
-    <a href="/">
-      <%= image_tag "V3   Genetic Golf   Array-02.png", alt: "Genetic Golf main logo" %>
-    </a>
-  </div> <!-- GG Logo -->
-</div><!-- very-top -->
+    <div class="col-xs-2">
+      <a href="/">
+        <%= image_tag "V3   Genetic Golf   Array-02.png", alt: "Genetic Golf main logo" %>
+      </a>
+    </div> <!-- GG Logo -->
+  </div><!-- very-top -->
 
 <div class="container" id="header-detail">
   <div class="row" style="margin-top: -20px">
@@ -162,11 +162,7 @@
 
 
 <div class="buffer-25"></div>
-<div class="push"></div>
 
-
-
-</div> <!-- wrapper div end -->
 
 <div class="footer">
   <div class="col-sm-10 col-sm-offset-1" id="sf-steps">
@@ -237,36 +233,29 @@
     </div> <!-- facebook end -->
   </div> <!-- sm end -->
 
+
+
+
   <div class="container col-xs-12 col-sm-9" id="sf-philosophy">
     <h4 class="text-center">Genetic Golf Philosophy</h4>
-    <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons! We don’t guess, we test. Instead of telling everyone to make the exact same swing or guessing at what might benefit you, we test your body and your mind. As a result we find your body’s best genetic and neurokinetic motion and match that up to you and your golf game and you can start to repeat it with success.
+    <p>Genetic Golf’s new personal dynamic learning style will change the future of golf lessons! We don’t guess, we test. Instead of telling everyone to make the exact same swing or guessing at what might benefit you, we test your body and your mind. As a result we find your body’s best genetic and neurokinetic motion and match that up to you and your golf swing. You now have a personalized golf game that you can repeat with success!
     <br><small>© Copyright 2014 by Genetic Golf. All Rights Reserved.</small></p>
   </div> <!-- end philosophy -->
 
-    <div id="ff-image-container" class="container" style="padding-top: 20px">
-      <div class="row">
-        <div class="col-xs-2"><%= image_tag "V3   Genetic Golf   Array-01.png", class: "f-footer-logo", alt: "Genetic Golf Logo" %></div>
-        <div class="col-xs-2"><%= image_tag "Featured Bar Icons/PGA Logo NB.png", class: "f-footer-logo", alt: "PGA Certified Logo" %></div>
-        <div class="col-xs-2"><%= image_tag "Featured Bar Icons/Golf Magazine Top 100 Logo.png", class: "f-footer-logo", alt: "Golf Magazine Top 100 Logo" %></div>
-        <div class="col-xs-2"><%= image_tag "Featured Bar Icons/Golf Tips Top 25 Teachers Logo NB.png", class: "f-footer-logo", alt: "Golf Tips Top 25 Teachers Logo" %></div>
-        <div class="col-xs-2"><%= image_tag "Featured Bar Icons/TPI Certified Logo NB.png", class: "f-footer-logo", alt: "TPI Certified Logo" %></div>
-        <div class="col-xs-2"><%= image_tag "Featured Bar Icons/EliteGolf 360 Logo NB.png", class: "f-footer-logo", alt: "Elite Golf 360 Logo" %></div>
-      </div> <!-- row ends -->
-    </div> <!-- ff-container ends -->
-
-</div> <!-- sticky footer end -->
 
 
 
+  <div id="ff-image-container" class="container" style="padding-top: 20px">
+    <div class="text-center">
+        <%= image_tag "Featured Bar Icons/PGA Logo NB.png", class: "f-footer-logo", alt: "PGA Certified Logo" %>
+        <%= image_tag "Featured Bar Icons/Golf Magazine Top 100 Logo.png", class: "f-footer-logo", alt: "Golf Magazine Top 100 Logo" %>
+        <%= image_tag "Featured Bar Icons/Golf Tips Top 25 Teachers Logo NB.png", class: "f-footer-logo", alt: "Golf Tips Top 25 Teachers Logo" %>
+        <%= image_tag "Featured Bar Icons/TPI Certified Logo NB.png", class: "f-footer-logo", alt: "TPI Certified Logo" %>
+        <%= image_tag "Featured Bar Icons/EliteGolf 360 Logo NB.png", class: "f-footer-logo", alt: "Elite Golf 360 Logo" %>
+      </div> <!-- bigger logo row -->
+  </div> <!-- ff-container ends -->
 
-
-
-
-
-
-
-
-
+</div> <!-- footer end -->
 
 </body>
 </html>

@@ -10,4 +10,8 @@ class AboutController < ApplicationController
 
   def contact
   end
+
+  def howitworks
+    @user = current_user
+  end
 end

@@ -1,5 +1,5 @@
 class PerQuizzesController < ApplicationController
-  before_action :require_sign_in
+  before_action :require_sign_up
 
     def show
       @per_quiz = PerQuiz.find(params[:id])
@@ -48,6 +48,13 @@ class PerQuizzesController < ApplicationController
         redirect_to welcome_index_path
       end
     end
+    
+  def require_sign_up
+    unless current_user
+      redirect_to new_user_registration_path
+      flash[:alert] = "Sorry, you have to be logged in to do that."
+    end
+  end
 
     private
     def per_quiz_params

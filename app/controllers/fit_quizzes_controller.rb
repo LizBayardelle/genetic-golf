@@ -1,5 +1,5 @@
 class FitQuizzesController < ApplicationController
-  before_action :require_sign_in
+  before_action :require_sign_up
 
   def new
     if current_user.fit_quiz
@@ -34,6 +34,13 @@ class FitQuizzesController < ApplicationController
     else
       render action: 'new'
       flash[:alert] = "There has been an issue saving your results. Please try again."
+    end
+  end
+  
+  def require_sign_up
+    unless current_user
+      redirect_to new_user_registration_path
+      flash[:alert] = "Sorry, you have to be logged in to do that."
     end
   end
 

@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'gg.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'frozen-lowlands-30190.herokuapp.com' }
 
   # replace this with your tracker code
   GA.tracker = "UA-62869646-1"

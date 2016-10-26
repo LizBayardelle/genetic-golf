@@ -1,6 +1,6 @@
 class FlexQuizzesController < ApplicationController
 
-    before_action :require_sign_in
+    before_action :require_sign_up
 
       def show
         @flex_quiz = FlexQuiz.find(params[:id])
@@ -56,6 +56,13 @@ class FlexQuizzesController < ApplicationController
           redirect_to welcome_index_path
         end
       end
+      
+  def require_sign_up
+    unless current_user
+      redirect_to new_user_registration_path
+      flash[:alert] = "Sorry, you have to be logged in to do that."
+    end
+  end
 
       private
       def flex_quiz_params

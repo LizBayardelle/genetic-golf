@@ -1,5 +1,5 @@
 class BalQuizzesController < ApplicationController
-  before_action :require_sign_in
+  before_action :require_sign_up
 
   def show
     @bal_quiz = BalQuiz.find(params[:id])
@@ -49,6 +49,13 @@ class BalQuizzesController < ApplicationController
     else
       flash.now[:alert] = "There was an error saving your results. Please try again."
       redirect_to welcome_index_path
+    end
+  end
+
+  def require_sign_up
+    unless current_user
+      redirect_to new_user_registration_path
+      flash[:alert] = "Sorry, you have to be logged in to do that."
     end
   end
 

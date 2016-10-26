@@ -1,0 +1,73 @@
+<div class="grass">
+	<div class="text-center row" style="padding: 25px 0 25px 0; font-weight: bolder">
+		<h1 style="font-weight: bolder">Welcome to Genetic Golf!</h1>
+		<h4 style="font-weight: bold">
+			We give you coaching and advice that fits your body and mind,
+			<br>but first we have to get to know you a little better.
+		</h4>
+		<h4 style="font-weight: bold">
+			The Genetic Golf process is as easy as 1, 2, 3...
+		</h4>
+	</div> <!-- heading -->
+</div> <!-- grass -->
+
+<div class="container">
+	<div class="row text-center" id="step-1">
+		<div class="col-sm-4">
+			<h3>
+				<strong>Step 1</strong>
+				<br>Test Your Personality
+			</h3>
+			<%= image_tag 'icon_yourid.png', class: "index-step-icon", alt: "Image of Hands Inside a Lightbulb" %>
+		</div> <!-- name and picture -->
+		<div class="col-sm-8 text-left step-text">
+			<h4><strong>What You Do:</strong>
+			<br>Take tests to assess your personality</h4>
+			<h4><strong>What You Get:</strong>
+			<br>A bi-weekly newsletter with golf tips and coaching for your specific mindset</h4>
+			<h4><strong><%= link_to "Test your personality now!", new_per_quiz_path %></strong></h4>
+		</div> <!-- description -->
+	</div> <!-- step 1 row -->
+
+	<div class="row">
+		<hr class="col-xs-6 col-xs-push-3">
+	</div> <!-- hr row -->
+
+	<div class="row text-center" id="step-2">
+		<div class="col-sm-4">
+			<h3>
+				<strong>Step 2</strong>
+				<br>Know Your Body
+			</h3>
+			<%= image_tag 'icon_dynamics.png', class: " index-step-icon", alt: "Image of the Outline Image of a Body Being Examined" %>
+		</div> <!-- name and picture -->
+		<div class="col-sm-8 text-left step-text">
+			<h4><strong>What You Do:</strong>
+			<br>Take tests to assess your body</h4>
+			<h4><strong>What You Get:</strong>
+			<br>Your coaching now focuses in on your genetic predispositions and physical capabilities</h4>
+			<h4><strong><%= link_to "Test your body now!", user_path(@user) %></strong></h4>
+		</div> <!-- description -->
+	</div> <!-- step 2 row -->
+
+	<div class="row">
+		<hr class="col-xs-6 col-xs-push-3">
+	</div> <!-- hr row -->
+
+	<div class="row text-center" id="step-3">
+		<div class="col-sm-4">
+			<h3>
+				<strong>Step 3</strong>
+				<br>Test Your Personality
+			</h3>
+			<%= image_tag 'icon_TEMP_yourcode.jpg', class: "index-step-icon", alt: "Image of Three Diffferent Golf Swings of Pro Golfers" %>
+		</div> <!-- name and picture -->
+		<div class="col-sm-8 text-left step-text">
+			<h4><strong>What You Do:</strong>
+			<br>Work through the Genetic Golf Swing Book with your local pro and input your 10-digit swing code</h4>
+			<h4><strong>What You Get:</strong>
+			<br>The most personalized golf coaching you can get, fitted to your individual swing, mind, and body</h4>
+			<h4><strong><%= link_to "Get my full swing book now!", new_swing_book_path %></strong></h4>
+		</div> <!-- description -->
+	</div> <!-- step 3 row -->
+</div> <!-- page container -->
