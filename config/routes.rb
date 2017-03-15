@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   resources :per_quizzes
   resources :fit_quizzes
   resources :swing_books
-  resources :contact, only: [:new, :create]
+  resources :contact, only: [:new, :create, :destroy]
   resources :newsletters
   resources :club_fittings
 

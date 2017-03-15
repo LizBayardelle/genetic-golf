@@ -29,6 +29,7 @@ class WelcomeController < ApplicationController
       redirect_to welcome_index_path
       flash[:alert] = "Sorry, you have to be an admin to see that!"
     end
-    @users = User.order("last_name DESC")
+    @users = User.order("last_name ASC")
+    @contacts = Contact.order("created_at DESC")
   end
 end

@@ -15,7 +15,7 @@ class ContactController < ApplicationController
     @contact.message = params[:contact][:message]
 
     if current_user
-      @contact.name = current_user.name
+      @contact.name = current_user.first_name + " " + current_user.last_name
       @contact.email = current_user.email
     end
 
@@ -26,5 +26,16 @@ class ContactController < ApplicationController
       flash[:alert] = "Sorry, your message could not be sent."
       redirect_to welcome_index_path
     end
+  end
+
+  def destroy
+    @contact = Contact.find(params[:id])
+    @contact.destroy
+    redirect_to :back
+  end
+
+  private
+  def contact_params
+    params.require(:contact).permit(:name, :email, :message)
   end
 end

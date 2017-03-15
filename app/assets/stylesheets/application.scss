@@ -22,6 +22,8 @@
 $primary-font: 'Khula', sans-serif;
 $accent-font: 'Cinzel', Garamond, 'Big Caslon', 'Times New Roman', serif !important;
 $color-green: #567E3A;
+$color-grey: #f5f5f5;
+$color-yellow: #F9E0B1;
 
 
 
@@ -610,7 +612,11 @@ a.black-text {
 
 
 
-/* DEVISE */
+/* 
+====================
+DEVISE
+====================
+*/
 
 .shared-login-links * {
 	font-size: 18px;
@@ -620,7 +626,14 @@ a.black-text {
 
 
 
-/* QUIZZES */
+
+
+
+/* 
+======================
+QUIZZES 
+======================
+*/
 .radio input[type="radio"] {
   margin-left: 20px;
 }
@@ -1156,7 +1169,11 @@ body {
 
 
 
-/* INTRO PAGE */
+/* 
+==================
+INTRO PAGE 
+==================
+*/
 
 
 
@@ -1176,7 +1193,64 @@ body {
 
 
 
- /* Box Shadow Outset */
+
+
+
+/*
+==========================
+ADMIN PANEL
+==========================
+*/
+
+.left-admin-menu {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 0 0 30px;
+	border-right: solid thin $color-grey;
+	height: 100vh;
+	background-color: $color-yellow;
+}
+
+.left-admin-menu h2 {
+	border-bottom: solid $color-green thin;
+	font-size: 18px;
+	padding: 15px 5px 15px 5px;
+	margin: 0;
+}
+
+.left-admin-menu h2:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.left-admin-menu h2.active {
+	color: $color-green;
+	font-weight: bolder;
+}
+
+.right-admin-content {
+	display: inline-block;
+	vertical-align: top;
+	width: 75%;
+}
+
+
+
+
+
+
+
+
+
+
+
+ /* 
+ ==========================
+ Box Shadow Outset 
+ ==========================
+ */
  .hvr-box-shadow-outset {
    display: inline-block;
    vertical-align: middle;
@@ -1194,6 +1268,7 @@ body {
  .hvr-box-shadow-outset:hover, .hvr-box-shadow-outset:focus, .hvr-box-shadow-outset:active {
    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
  }
+
 
 
  /*
@@ -1463,6 +1538,24 @@ body {
  }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  /*
  ==============================================
  slideRightSlider
@@ -1490,7 +1583,18 @@ body {
  @-webkit-keyframes slideRightSlider {
  	0% { -webkit-transform: translateX(-150%); }
  	100% { -webkit-transform: translateX(0%); }
- }/*
+ }
+
+
+
+
+
+
+
+
+
+
+/*
 ==============================================
 fadeIn
 ==============================================

@@ -1,6 +1,4 @@
 class BodQuizzesController < ApplicationController
-  include Wicked::Wizard
-  steps :page_1, :page_2, :page_3
   before_action :require_sign_up
 
   def show
@@ -12,7 +10,6 @@ class BodQuizzesController < ApplicationController
       redirect_to edit_bod_quiz_path(current_user.bod_quiz)
     else
       @bod_quiz = current_user.build_bod_quiz
-      render_wizard
     end
   end
 
@@ -40,7 +37,6 @@ class BodQuizzesController < ApplicationController
 
   def edit
     @bod_quiz = BodQuiz.find(params[:id])
-#    render_wizard
   end
 
   def update
